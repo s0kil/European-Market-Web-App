@@ -1,0 +1,22 @@
+<script context="module">
+  export async function preload({ params, query }) {
+    const res = await this.fetch(`locations/${params.slug}.json`);
+    const data = await res.json();
+
+    if (res.status === 200) {
+      return { location: data };
+    } else {
+      this.error(res.status, data.message);
+    }
+  }
+</script>
+
+<script>
+  export let location;
+</script>
+
+<svelte:head>
+  <title>{location.location} | European Market</title>
+</svelte:head>
+
+<h1>{location.location}</h1>

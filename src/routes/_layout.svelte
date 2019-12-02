@@ -26,6 +26,9 @@
     padding: 0 0 0.4rem 0;
     max-width: 80rem;
 
+    /* Subtract From Top & Bottom Nav Bar */
+    min-height: calc(100vh - 110px);
+
     background: white;
   }
 </style>

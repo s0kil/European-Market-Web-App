@@ -7,6 +7,7 @@
     "dev": "PORT=8000 sapper dev",
     "build": "sapper build",
     "export": "sapper export",
+    "subfont": "subfont __sapper__/export/index.html -i -r --dynamic",
     "start": "PORT=8000 node __sapper__/build",
     "startExport": "simple-http-server -i __sapper__/export"
   },
@@ -23,6 +24,7 @@
     "@babel/plugin-transform-runtime": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
     "@babel/runtime": "^7.7.4",
+    "@rollup/plugin-image": "^2.0.0",
     "@rollup/plugin-replace": "^2.2.1",
     "rollup": "^1.27.7",
     "rollup-plugin-babel": "^4.3.3",
