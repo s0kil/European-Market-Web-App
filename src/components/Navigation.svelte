@@ -31,7 +31,7 @@
     height: inherit;
     display: flex;
     align-items: center;
-    padding: 0.4rem;
+    padding: 0.4rem 0 0.4rem 16px;
   }
   .page-name {
     text-transform: capitalize;
@@ -77,8 +77,7 @@
   }
 
   #footer a:hover {
-    opacity: 0.8;
-    font-weight: bold;
+    background: #9a1915;
   }
 </style>
 

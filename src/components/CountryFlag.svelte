@@ -6,19 +6,22 @@
   p {
     font-family: "Lato", sans-serif;
     display: inline;
-    margin-right: 1.5rem;
   }
   img {
     height: auto;
-    max-height: 20px;
+    width: 40px;
+    margin-right: 0.4rem;
     vertical-align: middle;
+
+    /* Seperate Flag Colors From Background  */
+    border: 1px solid rgb(200, 200, 200);
   }
 </style>
 
 <p>
-  {country}
   <img
     src="images/country-flags/flag-of-{country}.svg"
     alt="Flag Of {country}"
     title="Flag Of {country}" />
+  {country}
 </p>
