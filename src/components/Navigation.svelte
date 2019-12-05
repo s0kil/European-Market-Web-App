@@ -97,11 +97,11 @@
     <a href=".">
       {#if !segment}
         <img
-          src={imageCDN('/images/logo/logo.png')}
+          src={imageCDN('/images/min/logo.png')}
           alt="European Market Logo" />
       {:else}
         <img
-          src={imageCDN('/images/logo/logo-sign.png')}
+          src={imageCDN('/images/min/logo-sign.png')}
           alt="European Market Logo" />
         <div class="page-name">{segment}</div>
       {/if}
