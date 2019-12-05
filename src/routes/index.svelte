@@ -146,14 +146,14 @@
   </div>
 
   <img
-    src={imageCDN('images/min/european-countries.png')}
+    src={imageCDN('/images/min/european-countries.png')}
     alt="European Countries" />
 </section>
 
 <section id="our-story">
   <div>
     <img
-      src={imageCDN('images/min/polish-meats.jpeg')}
+      src={imageCDN('/images/min/polish-meats.jpeg')}
       loading="lazy"
       alt=" Meats" />
   </div>
