@@ -1,5 +1,16 @@
 <script>
   export let segment;
+
+  function imageCDN(path) {
+    if (typeof document === "object") {
+      if (!location.origin.includes(":8000")) {
+        // https://images.weserv.nl/
+        return `https://images.weserv.nl/?url=${location.origin}${path}`;
+      } else {
+        return path;
+      }
+    }
+  }
 </script>
 
 <style>
@@ -85,9 +96,13 @@
   <div id="header">
     <a href=".">
       {#if !segment}
-        <img src="images/logo/logo.png" alt="European Market Logo" />
+        <img
+          src={imageCDN('/images/logo/logo.png')}
+          alt="European Market Logo" />
       {:else}
-        <img src="images/logo/logo-sign.png" alt="European Market Logo" />
+        <img
+          src={imageCDN('/images/logo/logo-sign.png')}
+          alt="European Market Logo" />
         <div class="page-name">{segment}</div>
       {/if}
     </a>
