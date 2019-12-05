@@ -1,4 +1,5 @@
 import babel from "rollup-plugin-babel";
+import closureCompiler from "@ampproject/rollup-plugin-closure-compiler";
 import commonjs from "rollup-plugin-commonjs";
 import config from "sapper/config/rollup.js";
 import pkg from "./package.json";
@@ -17,6 +18,41 @@ const onwarn = (warning, onwarn) =>
   onwarn(warning);
 const dedupe = importee =>
   importee === "svelte" || importee.startsWith("svelte/");
+
+function optimizer(module = false) {
+  /*
+  return closureCompiler({
+    // warning_level: "VERBOSE",
+    language_out: "ECMASCRIPT_2019",
+    compilation_level: "ADVANCED",
+    jscomp_off: "undefinedVars"
+  });
+  */
+
+  return terser({
+    module,
+    // ecma: 8,
+    compress: {
+      // ecma: 8,
+      passes: 3,
+      warnings: true,
+      arguments: true,
+      booleans_as_integers: true,
+
+      unsafe: true,
+      unsafe_math: true,
+      unsafe_comps: true,
+      unsafe_arrows: true,
+      unsafe_regexp: true,
+      unsafe_methods: true,
+      unsafe_Function: true,
+      unsafe_undefined: true
+    },
+    mangle: {
+      eval: true
+    }
+  });
+}
 
 export default {
   client: {
@@ -62,10 +98,7 @@ export default {
           ]
         }),
 
-      !dev &&
-        terser({
-          module: true
-        })
+      !dev && optimizer(true)
     ],
 
     onwarn
@@ -106,7 +139,8 @@ export default {
         "process.env.NODE_ENV": JSON.stringify(mode)
       }),
       commonjs(),
-      !dev && terser()
+
+      !dev && optimizer()
     ],
 
     onwarn

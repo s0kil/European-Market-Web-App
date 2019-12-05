@@ -3,6 +3,7 @@ dependencies:
   polka: 1.0.0-next.9
   sirv: 1.0.0-next.2
 devDependencies:
+  '@ampproject/rollup-plugin-closure-compiler': 0.13.0_rollup@1.27.8
   '@babel/core': 7.7.4
   '@babel/plugin-syntax-dynamic-import': 7.7.4_@babel+core@7.7.4
   '@babel/plugin-transform-runtime': 7.7.4_@babel+core@7.7.4
@@ -22,6 +23,22 @@ devDependencies:
   svelte-forms: 1.2.0_svelte@3.16.0
 lockfileVersion: 5.1
 packages:
+  /@ampproject/rollup-plugin-closure-compiler/0.13.0_rollup@1.27.8:
+    dependencies:
+      acorn: 7.1.0
+      acorn-dynamic-import: 4.0.0_acorn@7.1.0
+      acorn-walk: 7.0.0
+      google-closure-compiler: 20191111.0.0
+      magic-string: 0.25.4
+      rollup: 1.27.8
+      temp-write: 4.0.0
+    dev: true
+    engines:
+      node: '>=8'
+    peerDependencies:
+      rollup: '>= 0.67.4'
+    resolution:
+      integrity: sha512-uvbNj/ngTZxHZM7y1RLC+hQ1qUZ9JH0BVdVmcAWRH6U/25ek18V/r+ks9VKmkzRfn8Oe9nY4XmXHJozfQGVOIQ==
   /@babel/code-frame/7.5.5:
     dependencies:
       '@babel/highlight': 7.5.0
@@ -711,7 +728,7 @@ packages:
       '@babel/plugin-transform-typeof-symbol': 7.7.4_@babel+core@7.7.4
       '@babel/plugin-transform-unicode-regex': 7.7.4_@babel+core@7.7.4
       '@babel/types': 7.7.4
-      browserslist: 4.8.0
+      browserslist: 4.8.2
       core-js-compat: 3.4.7
       invariant: 2.2.4
       js-levenshtein: 1.1.6
@@ -825,6 +842,14 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-Il80Qs2WjYlJIBNzNkK6KYqlVMTbZLXgHx2oT0pU/fjRHyEp+PEfEPY0R3WCwAGVOtauxh1hOxNgIf5bv7dQpA==
+  /acorn-dynamic-import/4.0.0_acorn@7.1.0:
+    dependencies:
+      acorn: 7.1.0
+    dev: true
+    peerDependencies:
+      acorn: ^6.0.0
+    resolution:
+      integrity: sha512-d3OEjQV4ROpoflsnUA8HozoIR504TFxNivYEUi6uwz0IYhBkTDXGuWlNdMtybRt3nqVx/L6XqMt0FxkXuWKZhw==
   /acorn-globals/4.3.4:
     dependencies:
       acorn: 6.4.0
@@ -846,6 +871,12 @@ packages:
       node: '>=0.4.0'
     resolution:
       integrity: sha512-7evsyfH1cLOCdAzZAd43Cic04yKydNx0cF+7tiA19p1XnLLPU4dpCQOqpjqwokFe//vS0QqfqqjCS2JkiIs0cA==
+  /acorn-walk/7.0.0:
+    dev: true
+    engines:
+      node: '>=0.4.0'
+    resolution:
+      integrity: sha512-7Bv1We7ZGuU79zZbb6rRqcpxo3OY+zrdtloZWoyD8fmGX+FeXRjE+iuGkZjSXLVovLzrsvMGMy0EkwA0E0umxg==
   /acorn/5.7.3:
     dev: true
     engines:
@@ -1127,7 +1158,7 @@ packages:
     dev: true
     resolution:
       integrity: sha1-HhNyLP3g2F8SFnbCpyztUzoBiGk=
-  /browserslist/4.8.0:
+  /browserslist/4.8.2:
     dependencies:
       caniuse-lite: 1.0.30001015
       electron-to-chromium: 1.3.322
@@ -1135,7 +1166,7 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-HYnxc/oLRWvJ3TsGegR0SRL/UDnknGq2s/a8dYYEO+kOQ9m9apKoS5oiathLKZdh/e9uE+/J3j92qPlGD/vTqA==
+      integrity: sha512-+M4oeaTplPm/f1pXDw84YohEv7B1i/2Aisei8s4s6k3QsoSHa7i5sz8u/cGQkkatCPxMASKxPualR4wwYgVboA==
   /buffer-equal/0.0.1:
     dev: true
     engines:
@@ -1216,7 +1247,7 @@ packages:
       integrity: sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
   /caniuse-api/3.0.0:
     dependencies:
-      browserslist: 4.8.0
+      browserslist: 4.8.2
       caniuse-lite: 1.0.30001015
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
@@ -1289,12 +1320,36 @@ packages:
     dev: true
     resolution:
       integrity: sha512-PYeGSEmmHM6zvoef2w8TPzlrnNpXIjTipYK780YswmIP9vjxmd6Y2a3CB2Ks6/AU8NHjZugXvo8w3oWM2qnwXA==
+  /clone-buffer/1.0.0:
+    dev: true
+    engines:
+      node: '>= 0.10'
+    resolution:
+      integrity: sha1-4+JbIHrE5wGvch4staFnksrD3Fg=
+  /clone-stats/1.0.0:
+    dev: true
+    resolution:
+      integrity: sha1-s3gt/4u1R04Yuba/D9/ngvh3doA=
   /clone/1.0.4:
     dev: true
     engines:
       node: '>=0.8'
     resolution:
       integrity: sha1-2jCcwmPfFZlMaIypAheco8fNfH4=
+  /clone/2.1.2:
+    dev: true
+    engines:
+      node: '>=0.8'
+    resolution:
+      integrity: sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=
+  /cloneable-readable/1.1.3:
+    dependencies:
+      inherits: 2.0.4
+      process-nextick-args: 2.0.1
+      readable-stream: 2.3.6
+    dev: true
+    resolution:
+      integrity: sha512-2EF8zTQOxYq70Y4XKtorQupqF0m49MBz2/yf5Bj+MHjvpG3Hy7sImifnqD6UA+TKYxeSV+u6qqQPawN5UvnpKQ==
   /coa/2.0.2:
     dependencies:
       '@types/q': 1.5.2
@@ -1413,7 +1468,7 @@ packages:
       integrity: sha512-4FJkXzKXEDB1snCFZlLP4gpC3JILicCpGbzG9f9G7tGqGCzETQ2hWPrcinA9oU4wtf2biUaEH5065UnMeR33oA==
   /core-js-compat/3.4.7:
     dependencies:
-      browserslist: 4.8.0
+      browserslist: 4.8.2
       semver: 6.3.0
     dev: true
     resolution:
@@ -2199,6 +2254,47 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==
+  /google-closure-compiler-java/20191111.0.0:
+    dev: true
+    resolution:
+      integrity: sha512-JgsQtJVVgDuj50VPQV1OgHxMy78daTL3d607V6zF/qETl3rEEiazEGfXDGUX/1V1SUOW+Y03Ct9bcO3LMxNlxg==
+  /google-closure-compiler-js/20191111.0.0:
+    dev: true
+    resolution:
+      integrity: sha512-W3Oy5NF5CMgUv31CMbgLN7zhdCTVMTnNI//iEPYMotzXfX8viyOnTMipDDwJNeMnY7lfXbQrYOo+QkWP6WzZtg==
+  /google-closure-compiler-linux/20191111.0.0:
+    dev: true
+    optional: true
+    resolution:
+      integrity: sha512-pxxB83Ae7G9OHFSOEzOYlp844YyqQgU1RXBpCGBKeDAQrs3dykHqRhNGZdI7N1tsby/pT+hKL1US2l/CslPqag==
+  /google-closure-compiler-osx/20191111.0.0:
+    dev: true
+    optional: true
+    resolution:
+      integrity: sha512-sviL1DLN+dDfYBLzmU6+2Yk19P1uzUHQuKaXrHxEYZkU4jTJNq/TC4xi6t0ZgvLQEm2Vf7xhOrt80TYKnoQaVg==
+  /google-closure-compiler-windows/20191111.0.0:
+    dev: true
+    optional: true
+    resolution:
+      integrity: sha512-iKdz2bWrrM4zLv3USCRtWX4kLWzZhbj/afh/W6giLxg5XQzbNg+UpVF+2G6f/LEYK9UNBgS2TdyNTuw8mod+Mg==
+  /google-closure-compiler/20191111.0.0:
+    dependencies:
+      chalk: 2.4.2
+      google-closure-compiler-java: 20191111.0.0
+      google-closure-compiler-js: 20191111.0.0
+      minimist: 1.2.0
+      vinyl: 2.2.0
+      vinyl-sourcemaps-apply: 0.2.1
+    dev: true
+    engines:
+      node: '>=8'
+    hasBin: true
+    optionalDependencies:
+      google-closure-compiler-linux: 20191111.0.0
+      google-closure-compiler-osx: 20191111.0.0
+      google-closure-compiler-windows: 20191111.0.0
+    resolution:
+      integrity: sha512-Ji+FaqYKXNbJ78N5Do6hu61mPrB9D+8xSnmRO59u2CrIbmNCtoFnqkCAAL4Ye8LR8foRqtkDdiKJSblpe+5ttg==
   /got/6.7.1:
     dependencies:
       create-error-class: 3.0.2
@@ -2571,6 +2667,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-EtSj3U5o4Lec6428hBc66A2RykQ=
+  /is-stream/2.0.0:
+    dev: true
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-XCoy+WlUr7d1+Z8GgSuXmpuUFC9fOhRXglJMx+dwLKTkL44Cjd4W1Z5P+BQZpr+cR93aGP4S/s7Ftw6Nd/kiEw==
   /is-svg/3.0.0:
     dependencies:
       html-comment-regex: 1.1.2
@@ -2892,6 +2994,14 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-2w31R7SJtieJJnQtGc7RVL2StM2vGYVfqUOvUDxH6bC6aJTxPxTF0GnIgCyu7tjockiUWAYQRbxa7vKn34s5sQ==
+  /make-dir/3.0.0:
+    dependencies:
+      semver: 6.3.0
+    dev: true
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-grNJDhb8b1Jm1qeqW5R/O63wUo4UXo2v2HMic6YT9i/HBlF93S8jkMgH7yugvY9ABDShH4VZMn8I+U8+fCNegw==
   /map-obj/1.0.1:
     dev: true
     engines:
@@ -3351,7 +3461,7 @@ packages:
       integrity: sha512-oXqx0m6tb4N3JGdmeMSc/i91KppbYsFZKdH0xMOqK8V1rJlzrKlTdokz8ozUXLVejydRN6u2IddxpcijRj2FqQ==
   /postcss-colormin/4.0.3:
     dependencies:
-      browserslist: 4.8.0
+      browserslist: 4.8.2
       color: 3.1.2
       has: 1.0.3
       postcss: 7.0.23
@@ -3415,7 +3525,7 @@ packages:
       integrity: sha512-alx/zmoeXvJjp7L4mxEMjh8lxVlDFX1gqWHzaaQewwMZiVhLo42TEClKaeHbRf6J7j82ZOdTJ808RtN0ZOZwvw==
   /postcss-merge-rules/4.0.3:
     dependencies:
-      browserslist: 4.8.0
+      browserslist: 4.8.2
       caniuse-api: 3.0.0
       cssnano-util-same-parent: 4.0.1
       postcss: 7.0.23
@@ -3449,7 +3559,7 @@ packages:
   /postcss-minify-params/4.0.2:
     dependencies:
       alphanum-sort: 1.0.2
-      browserslist: 4.8.0
+      browserslist: 4.8.2
       cssnano-util-get-arguments: 4.0.0
       postcss: 7.0.23
       postcss-value-parser: 3.3.1
@@ -3532,7 +3642,7 @@ packages:
       integrity: sha512-acwJY95edP762e++00Ehq9L4sZCEcOPyaHwoaFOhIwWCDfik6YvqsYNxckee65JHLKzuNSSmAdxwD2Cud1Z54A==
   /postcss-normalize-unicode/4.0.1:
     dependencies:
-      browserslist: 4.8.0
+      browserslist: 4.8.2
       postcss: 7.0.23
       postcss-value-parser: 3.3.1
     dev: true
@@ -3572,7 +3682,7 @@ packages:
       integrity: sha512-2fCObh5UanxvSxeXrtLtlwVThBvHn6MQcu4ksNT2tsaV2Fg76R2CV98W7wNSlX+5/pFwEyaDwKLLoEV7uRybAw==
   /postcss-reduce-initial/4.0.3:
     dependencies:
-      browserslist: 4.8.0
+      browserslist: 4.8.2
       caniuse-api: 3.0.0
       has: 1.0.3
       postcss: 7.0.23
@@ -3930,6 +4040,10 @@ packages:
       node: '>= 0.10'
     resolution:
       integrity: sha1-VNvzd+UUQKypCkzSdGANP/LYiKk=
+  /remove-trailing-separator/1.1.0:
+    dev: true
+    resolution:
+      integrity: sha1-wkvOKig62tW8P1jg1IJJuSN52O8=
   /repeat-string/1.6.1:
     dev: true
     engines:
@@ -3944,6 +4058,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-UhTFOpJtNVJwdSf7q0FdvAjQbdo=
+  /replace-ext/1.0.0:
+    dev: true
+    engines:
+      node: '>= 0.10'
+    resolution:
+      integrity: sha1-3mMSg3P8v3w8z6TeWkgMRaZ5WOs=
   /request-promise-core/1.1.3_request@2.88.0:
     dependencies:
       lodash: 4.17.15
@@ -4472,7 +4592,7 @@ packages:
       integrity: sha1-PFMZQukIwml8DsNEhYwobHygpgo=
   /stylehacks/4.0.3:
     dependencies:
-      browserslist: 4.8.0
+      browserslist: 4.8.2
       postcss: 7.0.23
       postcss-selector-parser: 3.1.1
     dev: true
@@ -4617,6 +4737,24 @@ packages:
     dev: true
     resolution:
       integrity: sha512-Er4CNK1mccfc2uvN+QkJcAU+4j6QtMA9cHrdnxF9Y8VzuTKMRnnHyVrmxfyLLCK23SyPAYkWBe7EBjmwC7sRNQ==
+  /temp-dir/1.0.0:
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-CnwOom06Oa+n4OvqnB/AvE2qAR0=
+  /temp-write/4.0.0:
+    dependencies:
+      graceful-fs: 4.2.3
+      is-stream: 2.0.0
+      make-dir: 3.0.0
+      temp-dir: 1.0.0
+      uuid: 3.3.3
+    dev: true
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-HIeWmj77uOOHb0QX7siN3OtwV3CTntquin6TNVg6SHOqCP3hYKmox90eeFOGaY1MqJ9WYDDjkyZrW6qS5AWpbw==
   /term-size/1.2.0:
     dependencies:
       execa: 0.7.0
@@ -4935,6 +5073,25 @@ packages:
       '0': node >=0.6.0
     resolution:
       integrity: sha1-OhBcoXBTr1XW4nDB+CiGguGNpAA=
+  /vinyl-sourcemaps-apply/0.2.1:
+    dependencies:
+      source-map: 0.5.7
+    dev: true
+    resolution:
+      integrity: sha1-q2VJ1h0XLCsbh75cUI0jnI74dwU=
+  /vinyl/2.2.0:
+    dependencies:
+      clone: 2.1.2
+      clone-buffer: 1.0.0
+      clone-stats: 1.0.0
+      cloneable-readable: 1.1.3
+      remove-trailing-separator: 1.1.0
+      replace-ext: 1.0.0
+    dev: true
+    engines:
+      node: '>= 0.10'
+    resolution:
+      integrity: sha512-MBH+yP0kC/GQ5GwBqrTPTzEfiiLjta7hTtvQtbxBgTeSXsmKQRQecjibMbxIXzVT3Y9KJK+drOz1/k+vsu8Nkg==
   /vlq/0.2.3:
     dev: true
     resolution:
@@ -5096,6 +5253,7 @@ packages:
     resolution:
       integrity: sha1-lSj0QtqxsihOWLQ3m7GU4i4MQAU=
 specifiers:
+  '@ampproject/rollup-plugin-closure-compiler': ^0.13.0
   '@babel/core': ^7.7.4
   '@babel/plugin-syntax-dynamic-import': ^7.7.4
   '@babel/plugin-transform-runtime': ^7.7.4
