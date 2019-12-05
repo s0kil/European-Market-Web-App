@@ -1,16 +1,7 @@
 <script>
   export let segment;
 
-  function imageCDN(path) {
-    if (typeof document === "object") {
-      if (!location.origin.includes(":8000")) {
-        // https://images.weserv.nl/
-        return `https://images.weserv.nl/?url=${location.origin}${path}&l=9`;
-      } else {
-        return path;
-      }
-    }
-  }
+  import { imageCDN } from "../_utils/image.js";
 </script>
 
 <style>

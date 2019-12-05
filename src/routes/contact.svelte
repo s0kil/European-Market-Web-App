@@ -1,5 +1,5 @@
 <script>
-  import { submitForm } from "./_utils/form.js";
+  import { submitForm } from "../_utils/form.js";
 
   let formSubmitted = false;
   let formErrors = false;

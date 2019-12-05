@@ -1,6 +1,6 @@
 <script>
   import { onMount, onDestroy } from "svelte";
-
+  import { imageCDN } from "../_utils/image.js";
   import CountryFlag from "../components/CountryFlag.svelte";
 
   const countries = [
@@ -29,37 +29,22 @@
   let readyState;
   const updateReadyState = () => (readyState = document.readyState);
 
-  async function webpIsSupported() {
-    if (!self.createImageBitmap) return false;
-    const blob = await fetch(
-      "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoCAAEAAQAcJaQAA3AA/v3AgAA="
-    ).then(r => r.blob());
-    return createImageBitmap(blob).then(() => true, () => false);
-  }
-
-  onMount(async () => {
+  onMount(() => {
     if (typeof document === "object") {
       let headerHeight = document.getElementById("intro-header").offsetHeight;
 
-      if (!location.origin.includes(":8000")) {
-        let webp = await webpIsSupported();
-        // https://images.weserv.nl/
-        headerImgSrc = `https://images.weserv.nl/?url=${
-          location.origin
-        }/images/european-meats.jpg&h=${headerHeight}&il${
-          webp === true ? "&output=webp" : ""
-        }`;
-      } else {
-        headerImgSrc = "/images/min/european-meats.jpeg";
-      }
+      headerImgSrc = imageCDN(
+        "/images/min/european-meats.jpeg",
+        `&h=${headerHeight}`
+      );
 
-      // updateReadyState();
-      // document.addEventListener("readystatechange", updateReadyState);
+      updateReadyState();
+      document.addEventListener("readystatechange", updateReadyState);
     }
   });
 
   onDestroy(() => {
-    // document.removeEventListener("readystatechange", updateReadyState);
+    document.removeEventListener("readystatechange", updateReadyState);
   });
 </script>
 
@@ -158,12 +143,17 @@
 
   </div>
 
-  <img src="images/european-countries.png" alt="European Countries" />
+  <img
+    src={imageCDN('images/min/european-countries.png')}
+    alt="European Countries" />
 </section>
 
 <section id="our-story">
   <div>
-    <img src="images/min/polish-meats.jpeg" loading="lazy" alt=" Meats" />
+    <img
+      src={imageCDN('images/min/polish-meats.jpeg')}
+      loading="lazy"
+      alt=" Meats" />
   </div>
 
   <div>
