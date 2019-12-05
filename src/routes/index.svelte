@@ -37,7 +37,7 @@
         location.origin +
         "/images/european-meats.jpg&w=" +
         document.body.clientWidth +
-        "&il";
+        "&q=100&il";
     } else {
       headerImgSrc = "/images/min/european-meats.jpeg";
     }
