@@ -1,4 +1,6 @@
 <script>
+  import { onMount, onDestroy } from "svelte";
+
   import CountryFlag from "../components/CountryFlag.svelte";
 
   const countries = [
@@ -21,6 +23,20 @@
     "Turkey",
     "Ukraine"
   ];
+
+  let readyState;
+  const updateReadyState = () => (readyState = document.readyState);
+
+  if (typeof document === "object") {
+    onMount(() => {
+      updateReadyState();
+      document.addEventListener("readystatechange", updateReadyState);
+    });
+
+    onDestroy(() => {
+      document.removeEventListener("readystatechange", updateReadyState);
+    });
+  }
 </script>
 
 <style>
@@ -107,11 +123,13 @@
     <h1>Delicious & Nutritious Products From 25+ Different Countries</h1>
 
     <div class="countries">
-      {#each countries as country}
-        <p>
-          <svelte:component this={CountryFlag} {country} />
-        </p>
-      {/each}
+      {#if readyState === 'complete'}
+        {#each countries as country}
+          <p>
+            <svelte:component this={CountryFlag} {country} />
+          </p>
+        {/each}
+      {/if}
     </div>
 
   </div>

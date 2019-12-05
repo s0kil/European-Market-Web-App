@@ -12,8 +12,6 @@
     width: 40px;
     margin-right: 0.4rem;
     vertical-align: middle;
-
-    /* Seperate Flag Colors From Background  */
     border: 1px solid rgb(200, 200, 200);
   }
 </style>
