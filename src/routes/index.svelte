@@ -31,12 +31,13 @@
 
   if (typeof document === "object") {
     if (!location.origin.includes(":8000")) {
+      // https://images.weserv.nl/
       headerImgSrc =
         "https://images.weserv.nl/?url=" +
         location.origin +
         "/images/min/european-meats.jpeg&w=" +
         document.body.clientWidth +
-        "&il";
+        "&q=100&il";
     } else {
       headerImgSrc = "/images/min/european-meats.jpeg";
     }
