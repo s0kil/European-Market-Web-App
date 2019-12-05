@@ -29,13 +29,26 @@
   let readyState;
   const updateReadyState = () => (readyState = document.readyState);
 
-  onMount(() => {
+  async function webpIsSupported() {
+    if (!self.createImageBitmap) return false;
+    const blob = await fetch(
+      "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoCAAEAAQAcJaQAA3AA/v3AgAA="
+    ).then(r => r.blob());
+    return createImageBitmap(blob).then(() => true, () => false);
+  }
+
+  onMount(async () => {
     if (typeof document === "object") {
       let headerHeight = document.getElementById("intro-header").offsetHeight;
 
       if (!location.origin.includes(":8000")) {
+        let webp = await webpIsSupported();
         // https://images.weserv.nl/
-        headerImgSrc = `https://images.weserv.nl/?url=${location.origin}/images/european-meats.jpg&h=${headerHeight}&il`;
+        headerImgSrc = `https://images.weserv.nl/?url=${
+          location.origin
+        }/images/european-meats.jpg&h=${headerHeight}&il${
+          webp === true ? "&output=webp" : ""
+        }`;
       } else {
         headerImgSrc = "/images/min/european-meats.jpeg";
       }
