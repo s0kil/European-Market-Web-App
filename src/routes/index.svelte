@@ -27,10 +27,11 @@
   let headerImgSrc = "";
 
   let readyState;
+  const isBrowser = typeof document === "object";
   const updateReadyState = () => (readyState = document.readyState);
 
   onMount(() => {
-    if (typeof document === "object") {
+    if (isBrowser) {
       let headerHeight = document.getElementById("intro-header").offsetHeight;
 
       headerImgSrc = imageCDN(
@@ -44,7 +45,8 @@
   });
 
   onDestroy(() => {
-    document.removeEventListener("readystatechange", updateReadyState);
+    if (isBrowser)
+      document.removeEventListener("readystatechange", updateReadyState);
   });
 </script>
 
