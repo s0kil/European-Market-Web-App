@@ -16,17 +16,18 @@
     width: 100%;
     height: calc(100vh - 120px);
 
-    background-size: 100% auto;
+    background-size: cover;
     background-image: url("/images/min/fresh-vegetables.jpeg");
     background-repeat: no-repeat;
     background-position: top;
+    background-position-x: 60%;
 
     display: flex;
+    align-items: center;
     justify-content: center;
   }
 
   form {
-    margin: 18% 0;
     display: flex;
     flex-direction: column;
   }
@@ -42,6 +43,13 @@
     font-size: 1.2em;
     background: transparent;
     margin-bottom: 0.5em;
+  }
+
+  @media (max-width: 1000px) {
+    form input,
+    form textarea {
+      background: rgba(255, 255, 255, 0.8);
+    }
   }
 
   form textarea {
