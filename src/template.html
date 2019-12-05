@@ -24,6 +24,13 @@
 <body>
   <div id="app">%sapper.html%</div>
 
+  <!-- Netlify Form -->
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <textarea name="message" />
+  </form>
+
   %sapper.scripts%
 </body>
 
