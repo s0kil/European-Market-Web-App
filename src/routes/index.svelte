@@ -30,14 +30,11 @@
   const updateReadyState = () => (readyState = document.readyState);
 
   if (typeof document === "object") {
+    let headerHeight = document.getElementById("intro-header").offsetHeight;
+
     if (!location.origin.includes(":8000")) {
       // https://images.weserv.nl/
-      headerImgSrc =
-        "https://images.weserv.nl/?url=" +
-        location.origin +
-        "/images/european-meats.jpg&w=" +
-        document.body.clientWidth +
-        "&q=100&il";
+      headerImgSrc = `https://images.weserv.nl/?url=${location.origin}/images/european-meats.jpg&h=${headerHeight}&q=100&il`;
     } else {
       headerImgSrc = "/images/min/european-meats.jpeg";
     }
@@ -130,7 +127,7 @@
   <title>Home | European Market</title>
 </svelte:head>
 
-<header style="background-image: url({headerImgSrc});" />
+<header id="intro-header" style="background-image: url({headerImgSrc});" />
 
 <section id="about">
   <div style="flex: 2">
