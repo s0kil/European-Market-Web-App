@@ -1,3 +1,25 @@
+<script>
+  function submitForm(event) {
+    event.preventDefault();
+
+    let form = event.target;
+    let formData = Object.values(form).reduce((obj, field) => {
+      obj[field.name] = field.value;
+      return obj;
+    }, {});
+  }
+  /*
+  $("#my-form").submit(function(e) {
+    e.preventDefault();
+
+    var $form = $(this);
+    $.post($form.attr("action"), $form.serialize()).then(function() {
+      alert("Thank you!");
+    });
+  });
+  */
+</script>
+
 <style>
   form {
     margin: 2rem;
@@ -15,7 +37,13 @@
 
 <h1>Contact</h1>
 
-<form name="contact" method="POST" data-netlify="true">
+<form name="contact" netlify netlify-honeypot="bot-field" hidden>
+  <input type="text" name="name" />
+  <input type="email" name="email" />
+  <textarea name="message" />
+</form>
+
+<form name="contact" method="POST" data-netlify="true" on:submit={submitForm}>
   <p>
     <label>
       Your Name:
