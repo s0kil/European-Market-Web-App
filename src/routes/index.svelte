@@ -153,7 +153,7 @@
 <section id="our-story">
   <div>
     <img
-      src={imageCDN('/images/min/polish-meats.jpeg')}
+      src={imageCDN('/images/min/polish-meats.jpeg', `${isBrowser === true ? '&w=' + window.screen.width : ''}`)}
       loading="lazy"
       alt=" Meats" />
   </div>
