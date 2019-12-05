@@ -1,24 +1,9 @@
 <script>
-  const encode = data => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
-  };
+  import { submitForm } from "./_form.js";
 
-  function submitForm(event) {
-    console.log(event);
-    let form = event.target;
-    let formData = Object.values(form).reduce((obj, field) => {
-      obj[field.name] = field.value;
-      return obj;
-    }, {});
-
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...formData })
-    })
-      .then(() => console.log("Success!"))
+  function handleSubmit(event) {
+    submitForm(event.target)
+      .then(() => console.log("Ok"))
       .catch(error => console.error(error));
   }
 </script>
@@ -45,7 +30,11 @@
   method="POST"
   action="/contact"
   data-netlify="true"
-  on:submit|preventDefault={submitForm}>
+  netlify-honeypot="bot-field"
+  on:submit|preventDefault={handleSubmit}>
+
+  <input type="hidden" name="bot-field" />
+
   <p>
     <label>
       Your Name:
