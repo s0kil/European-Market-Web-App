@@ -40,7 +40,7 @@
     }
 
     onMount(() => {
-      updateReadyState();
+      // updateReadyState();
       // document.addEventListener("readystatechange", updateReadyState);
     });
 
