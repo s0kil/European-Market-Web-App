@@ -24,10 +24,23 @@
     "Ukraine"
   ];
 
+  let headerImgSrc = "";
+
   let readyState;
   const updateReadyState = () => (readyState = document.readyState);
 
   if (typeof document === "object") {
+    if (!location.origin.includes(":8000")) {
+      headerImgSrc =
+        "https://images.weserv.nl/?url=" +
+        location.origin +
+        "/images/min/european-meats.jpeg&w=" +
+        document.body.clientWidth +
+        "&il";
+    } else {
+      headerImgSrc = "/images/min/european-meats.jpeg";
+    }
+
     onMount(() => {
       updateReadyState();
       document.addEventListener("readystatechange", updateReadyState);
@@ -47,7 +60,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom center;
-    background-image: url("/images/min/european-meats.jpeg");
+    /* background-image: url("/images/min/european-meats.jpeg"); */
   }
 
   h1,
@@ -116,7 +129,7 @@
   <title>Home | European Market</title>
 </svelte:head>
 
-<header />
+<header style="background-image: url({headerImgSrc});" />
 
 <section id="about">
   <div style="flex: 2">
@@ -139,7 +152,7 @@
 
 <section id="our-story">
   <div>
-    <img src="images/min/polish-meats.jpeg" alt=" Meats" />
+    <img src="images/min/polish-meats.jpeg" loading="lazy" alt=" Meats" />
   </div>
 
   <div>
