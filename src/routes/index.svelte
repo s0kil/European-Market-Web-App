@@ -41,11 +41,11 @@
 
     onMount(() => {
       updateReadyState();
-      document.addEventListener("readystatechange", updateReadyState);
+      // document.addEventListener("readystatechange", updateReadyState);
     });
 
     onDestroy(() => {
-      document.removeEventListener("readystatechange", updateReadyState);
+      // document.removeEventListener("readystatechange", updateReadyState);
     });
   }
 </script>
