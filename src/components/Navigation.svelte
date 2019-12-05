@@ -5,7 +5,7 @@
     if (typeof document === "object") {
       if (!location.origin.includes(":8000")) {
         // https://images.weserv.nl/
-        return `https://images.weserv.nl/?url=${location.origin}${path}&l=9&il`;
+        return `https://images.weserv.nl/?url=${location.origin}${path}&l=9`;
       } else {
         return path;
       }
