@@ -7,10 +7,11 @@
     "dev": "PORT=8000 sapper dev",
     "build": "sapper build",
     "export": "sapper export",
-    "subfont": "subfont __sapper__/export/ -i",
+    "subfont": "subfont __sapper__/export/ -i -r",
+    "optimizeImages": "imager -i static/images/**/*.jpg -o static/images/min/",
     "start": "PORT=8000 node __sapper__/build",
     "prod": "npm run export && npm run subfont",
-    "serveExport": "simple-http-server -i __sapper__/export"
+    "serveExport": "simple-http-server -i -t=8 --nosort --nocache __sapper__/export"
   },
   "dependencies": {
     "compression": "^1.7.4",
@@ -33,6 +34,7 @@
     "rollup-plugin-terser": "^5.1.2",
     "sapper": "^0.27.9",
     "subfont": "^4.0.4",
-    "svelte": "^3.16.0"
+    "svelte": "^3.16.0",
+    "svelte-forms": "^1.2.0"
   }
 }
