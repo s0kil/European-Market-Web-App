@@ -29,25 +29,25 @@
   let readyState;
   const updateReadyState = () => (readyState = document.readyState);
 
-  if (typeof document === "object") {
-    let headerHeight = document.getElementById("intro-header").offsetHeight;
+  onMount(() => {
+    if (typeof document === "object") {
+      let headerHeight = document.getElementById("intro-header").offsetHeight;
 
-    if (!location.origin.includes(":8000")) {
-      // https://images.weserv.nl/
-      headerImgSrc = `https://images.weserv.nl/?url=${location.origin}/images/european-meats.jpg&h=${headerHeight}&il`;
-    } else {
-      headerImgSrc = "/images/min/european-meats.jpeg";
-    }
+      if (!location.origin.includes(":8000")) {
+        // https://images.weserv.nl/
+        headerImgSrc = `https://images.weserv.nl/?url=${location.origin}/images/european-meats.jpg&h=${headerHeight}&il`;
+      } else {
+        headerImgSrc = "/images/min/european-meats.jpeg";
+      }
 
-    onMount(() => {
       // updateReadyState();
       // document.addEventListener("readystatechange", updateReadyState);
-    });
+    }
+  });
 
-    onDestroy(() => {
-      // document.removeEventListener("readystatechange", updateReadyState);
-    });
-  }
+  onDestroy(() => {
+    // document.removeEventListener("readystatechange", updateReadyState);
+  });
 </script>
 
 <style>
