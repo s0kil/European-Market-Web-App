@@ -35,9 +35,9 @@
       headerImgSrc =
         "https://images.weserv.nl/?url=" +
         location.origin +
-        "/images/min/european-meats.jpeg&w=" +
+        "/images/european-meats.jpg&w=" +
         document.body.clientWidth +
-        "&q=100&il";
+        "&il";
     } else {
       headerImgSrc = "/images/min/european-meats.jpeg";
     }
