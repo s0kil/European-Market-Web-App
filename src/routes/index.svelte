@@ -34,7 +34,7 @@
 
     if (!location.origin.includes(":8000")) {
       // https://images.weserv.nl/
-      headerImgSrc = `https://images.weserv.nl/?url=${location.origin}/images/european-meats.jpg&h=${headerHeight}&q=100&il`;
+      headerImgSrc = `https://images.weserv.nl/?url=${location.origin}/images/european-meats.jpg&h=${headerHeight}&il`;
     } else {
       headerImgSrc = "/images/min/european-meats.jpeg";
     }
