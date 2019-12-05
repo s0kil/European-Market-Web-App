@@ -1,23 +1,26 @@
 <script>
-  function submitForm(event) {
-    event.preventDefault();
+  const encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  };
 
+  function submitForm(event) {
+    console.log(event);
     let form = event.target;
     let formData = Object.values(form).reduce((obj, field) => {
       obj[field.name] = field.value;
       return obj;
     }, {});
-  }
-  /*
-  $("#my-form").submit(function(e) {
-    e.preventDefault();
 
-    var $form = $(this);
-    $.post($form.attr("action"), $form.serialize()).then(function() {
-      alert("Thank you!");
-    });
-  });
-  */
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...formData })
+    })
+      .then(() => console.log("Success!"))
+      .catch(error => console.error(error));
+  }
 </script>
 
 <style>
@@ -37,7 +40,12 @@
 
 <h1>Contact</h1>
 
-<form name="contact" method="POST" data-netlify="true">
+<form
+  name="contact"
+  method="POST"
+  action="/contact"
+  data-netlify="true"
+  on:submit|preventDefault={submitForm}>
   <p>
     <label>
       Your Name:
