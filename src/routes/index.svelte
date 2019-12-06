@@ -150,17 +150,21 @@
 
   </div>
 
-  <img
-    src={imageCDN('/images/min/european-countries.png')}
-    alt="European Countries" />
+  {#if readyState === 'complete'}
+    <img
+      src={imageCDN('/images/min/european-countries.png')}
+      alt="European Countries" />
+  {/if}
 </section>
 
 <section id="our-story">
   <div>
-    <img
-      src={imageCDN('/images/min/polish-meats.jpeg', `${isBrowser === true ? '&w=' + window.screen.width : ''}`)}
-      loading="lazy"
-      alt=" Meats" />
+    {#if readyState === 'complete'}
+      <img
+        src={imageCDN('/images/min/polish-meats.jpeg', `${isBrowser === true ? '&w=' + window.screen.width : ''}`)}
+        loading="lazy"
+        alt=" Meats" />
+    {/if}
   </div>
 
   <div>
