@@ -7,7 +7,7 @@
     "dev": "PORT=8000 sapper dev",
     "build": "sapper build",
     "export": "sapper export",
-    "subfont": "subfont __sapper__/export/ -i -r",
+    "subfont": "subfont __sapper__/export/ -i",
     "optimizeImages": "imager -i static/images/**/*.jpg -o static/images/min/",
     "start": "PORT=8000 node __sapper__/build",
     "prod": "npm run export && npm run subfont",

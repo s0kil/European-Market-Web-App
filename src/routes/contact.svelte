@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from "svelte";
   import { submitForm } from "../_utils/form.js";
   import { imageCDN } from "../_utils/image.js";
 
@@ -11,10 +12,16 @@
       .catch(error => console.error(error));
   }
 
-  let screenHeight = null;
-  if (typeof document === "object") {
-    screenHeight = screen.height;
-  }
+  let backgroundImage = "";
+  onMount(() => {
+    if (typeof document === "object") {
+      let screenHeight = screen.height;
+      backgroundImage = imageCDN(
+        "/images/min/fresh-vegetables.jpeg",
+        `${screenHeight != null ? "&h=" + screenHeight : ""}`
+      );
+    }
+  });
 </script>
 
 <style>
@@ -92,8 +99,7 @@
   <title>Contact | European Market</title>
 </svelte:head>
 
-<section
-  style="background-image: url({imageCDN('/images/min/fresh-vegetables.jpeg', `${screenHeight != null ? '&h=' + screenHeight : ''}`)});">
+<section style="background-image: url({backgroundImage});">
   <form
     name="contact"
     method="POST"
