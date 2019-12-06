@@ -106,6 +106,7 @@ export default {
     ],
     external: Object.keys(pkg.dependencies).concat(
       require("module").builtinModules ||
+        // @ts-ignore
         Object.keys(process.binding("natives"))
     ),
 

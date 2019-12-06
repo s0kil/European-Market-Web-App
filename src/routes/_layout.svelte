@@ -1,4 +1,5 @@
 <script>
+  import "modern-normalize/modern-normalize.css";
   import Navigation from "../components/Navigation.svelte";
 
   export let segment;
