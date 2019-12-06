@@ -29,5 +29,7 @@ export function imageCDN(path, options = "") {
       return `https://images.weserv.nl/?url=${location.origin}${path}&l=9&il${webp}${options}`;
     }
   }
-  // return path;
+  // https://stackoverflow.com/a/19126281
+  // Return Empty Img Src
+  return "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D";
 }
