@@ -152,8 +152,8 @@
 
   {#if readyState === 'complete'}
     <img
-      src={imageCDN('/images/min/european-countries.png')}
-      alt="European Countries" />
+      alt="European Countries"
+      src={imageCDN('/images/min/european-countries.png')} />
   {/if}
 </section>
 
@@ -161,9 +161,8 @@
   <div>
     {#if readyState === 'complete'}
       <img
-        src={imageCDN('/images/min/polish-meats.jpeg', `${isBrowser === true ? '&w=' + window.screen.width : ''}`)}
-        loading="lazy"
-        alt=" Meats" />
+        alt="Polish Meats"
+        src={imageCDN('/images/min/polish-meats.jpeg', `${isBrowser === true ? '&w=' + window.screen.width : ''}`)} />
     {/if}
   </div>
 
