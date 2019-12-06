@@ -1,7 +1,5 @@
 <script>
   export let segment;
-
-  import { imageCDN } from "../_utils/image.js";
 </script>
 
 <style>
@@ -87,13 +85,9 @@
   <div id="header">
     <a href=".">
       {#if !segment}
-        <img
-          src={imageCDN('/images/min/logo.png')}
-          alt="European Market Logo" />
+        <img src="/images/min/logo.png" alt="European Market Logo" />
       {:else}
-        <img
-          src={imageCDN('/images/min/logo-sign.png')}
-          alt="European Market Logo" />
+        <img src="/images/min/logo-sign.png" alt="European Market Logo" />
         <div class="page-name">{segment}</div>
       {/if}
     </a>
