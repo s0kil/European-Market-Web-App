@@ -7,15 +7,15 @@
     "dev": "PORT=8000 sapper dev",
     "build": "sapper build",
     "export": "sapper export",
-    "subfont": "subfont __sapper__/export/ --canonical-root -i -r",
+    "subFont": "subfont __sapper__/export/ -i -r",
+    "fixStaticPaths": "node tools/fixStaticPaths.js",
     "optimizeImages": "imager -i static/images/**/*.jpg -o static/images/min/",
     "start": "PORT=8000 node __sapper__/build",
-    "prod": "npm run export && npm run subfont",
+    "prod": "npm run export && npm run fixStaticPaths && npm run subFont",
     "serveExport": "simple-http-server -i -t=8 --nosort --nocache __sapper__/export"
   },
   "dependencies": {
     "compression": "^1.7.4",
-    "netlify-plugin-subfont": "^3.0.0",
     "polka": "next",
     "sirv": "next"
   },
@@ -29,6 +29,7 @@
     "@rollup/plugin-replace": "^2.2.1",
     "@types/node": "^12.12.14",
     "modern-normalize": "^0.5.0",
+    "replace-in-files": "^2.0.3",
     "rollup": "^1.27.8",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
