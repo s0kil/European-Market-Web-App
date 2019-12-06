@@ -20,10 +20,14 @@ export function imageCDN(path, options = "") {
   if (typeof document === "object") {
     if (!location.origin.includes(":8000")) {
       let webp = "";
-      if (!path.endsWith(".png") && webpIsSupported()) webp = "&output=webp";
+      if (webpIsSupported())
+        webp =
+          (path.endsWith(".jpg") || path.endsWith(".jpeg")) === true
+            ? "&output=webp"
+            : "";
+
       return `https://images.weserv.nl/?url=${location.origin}${path}&l=9&il${webp}${options}`;
-    } else {
-      return path;
     }
   }
+  return path;
 }

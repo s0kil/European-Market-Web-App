@@ -1,5 +1,6 @@
 <script>
   import { submitForm } from "../_utils/form.js";
+  import { imageCDN } from "../_utils/image.js";
 
   let formSubmitted = false;
   let formErrors = false;
@@ -9,6 +10,11 @@
       .then(() => console.log("Ok"))
       .catch(error => console.error(error));
   }
+
+  let screenHeight = null;
+  if (typeof document === "object") {
+    screenHeight = screen.height;
+  }
 </script>
 
 <style>
@@ -17,7 +23,6 @@
     height: calc(100vh - 120px);
 
     background-size: cover;
-    background-image: url("/images/min/fresh-vegetables.jpeg");
     background-repeat: no-repeat;
     background-position: top;
     background-position-x: 60%;
@@ -87,7 +92,8 @@
   <title>Contact | European Market</title>
 </svelte:head>
 
-<section>
+<section
+  style="background-image: url({imageCDN('/images/min/fresh-vegetables.jpeg', `${screenHeight != null ? '&h=' + screenHeight : ''}`)});">
   <form
     name="contact"
     method="POST"
