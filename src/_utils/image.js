@@ -10,7 +10,7 @@ async function webpIsSupported() {
 
   createImageBitmap(blob).then(
     () => (webpSupport = true),
-    () => (webpSupport = true)
+    () => (webpSupport = false)
   );
 
   return webpSupport;

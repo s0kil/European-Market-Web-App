@@ -58,7 +58,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom center;
-    /* background-image: url("/images/min/european-meats.jpeg"); */
   }
 
   h1,
@@ -84,6 +83,7 @@
   #about img {
     max-width: 100%;
     max-height: 100%;
+    margin: 0 auto;
   }
 
   #our-story {
@@ -95,15 +95,10 @@
   }
   .countries {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(4, minmax(100px, auto));
     margin-left: 1rem;
   }
 
-  @media (min-width: 50rem) {
-    .countries {
-      grid-template-columns: repeat(3, auto);
-    }
-  }
   @media (min-width: 50rem) {
     #our-story div {
       flex: 1;
@@ -116,9 +111,19 @@
       margin-left: 1rem;
     }
   }
-  @media (max-width: 30rem) {
+
+  @media (min-width: 50rem) {
     .countries {
-      grid-template-columns: repeat(2, auto);
+      grid-template-columns: repeat(3, auto);
+    }
+  }
+  @media (max-width: 36rem) {
+    .countries {
+      grid-template-columns: repeat(2, minmax(100px, auto));
+      justify-content: space-between;
+    }
+    .countries p {
+      font-size: 1em;
     }
   }
 </style>

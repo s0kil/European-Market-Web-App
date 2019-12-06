@@ -1,5 +1,4 @@
 import babel from "rollup-plugin-babel";
-import closureCompiler from "@ampproject/rollup-plugin-closure-compiler";
 import commonjs from "rollup-plugin-commonjs";
 import config from "sapper/config/rollup.js";
 import pkg from "./package.json";
@@ -20,24 +19,11 @@ const dedupe = importee =>
   importee === "svelte" || importee.startsWith("svelte/");
 
 function optimizer(module = false) {
-  /*
-  return closureCompiler({
-    // warning_level: "VERBOSE",
-    language_out: "ECMASCRIPT_2019",
-    compilation_level: "ADVANCED",
-    jscomp_off: "undefinedVars"
-  });
-  */
-
   return terser({
     module,
-    // ecma: 8,
     compress: {
-      // ecma: 8,
       passes: 3,
       warnings: true,
-      arguments: true,
-      booleans_as_integers: true,
 
       unsafe: true,
       unsafe_math: true,
@@ -47,9 +33,6 @@ function optimizer(module = false) {
       unsafe_methods: true,
       unsafe_Function: true,
       unsafe_undefined: true
-    },
-    mangle: {
-      eval: true
     }
   });
 }
@@ -60,7 +43,7 @@ export default {
     output: config.client.output(),
     plugins: [
       replace({
-        "process.browser": true,
+        "process.browser": JSON.stringify(true),
         "process.env.NODE_ENV": JSON.stringify(mode)
       }),
       svelte({
@@ -109,7 +92,7 @@ export default {
     output: config.server.output(),
     plugins: [
       replace({
-        "process.browser": false,
+        "process.browser": JSON.stringify(false),
         "process.env.NODE_ENV": JSON.stringify(mode)
       }),
       svelte({
@@ -135,7 +118,7 @@ export default {
     plugins: [
       resolve(),
       replace({
-        "process.browser": true,
+        "process.browser": JSON.stringify(true),
         "process.env.NODE_ENV": JSON.stringify(mode)
       }),
       commonjs(),
