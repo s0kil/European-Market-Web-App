@@ -7,7 +7,7 @@
     "dev": "PORT=8000 sapper dev",
     "build": "sapper build",
     "export": "sapper export",
-    "subFont": "subfont __sapper__/export/ -i -r",
+    "subFont": "subfont __sapper__/export/ -i -r --inline-css",
     "fixStaticPaths": "node tools/fixStaticPaths.js",
     "optimizeImages": "imager -i static/images/**/*.jpg -o static/images/min/",
     "start": "PORT=8000 node __sapper__/build",
