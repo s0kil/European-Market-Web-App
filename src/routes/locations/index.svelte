@@ -63,7 +63,7 @@
     }
     .location p {
       margin-bottom: 0;
-      box-shadow: 0 0 10px 0 #f59c00;
+      box-shadow: 0 0 2px 0 #f59c00;
       background: linear-gradient(to right, #f59c00 40%, #9a1915);
     }
     .location a {
