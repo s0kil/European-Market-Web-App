@@ -89,11 +89,11 @@
       {#if !segment}
         <img
           alt="European Market Logo"
-          src={imageCDN('/images/min/logo.png', '&w=175&h=50')} />
+          src={imageCDN('/images/min/logo.png', '&w=400&h=110')} />
       {:else}
         <img
           alt="European Market Logo"
-          src={imageCDN('/images/min/logo-sign.png', '&w=175&h=50')} />
+          src={imageCDN('/images/min/logo-sign.png', '&w=400&h=110')} />
         <div class="page-name">{segment}</div>
       {/if}
     </a>
