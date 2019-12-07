@@ -26,8 +26,9 @@
 
   let headerImgSrc = "";
 
-  let readyState;
+  let readyState, loadState;
   const isBrowser = typeof document === "object";
+  const updateLoadState = () => (loadState = true);
   const updateReadyState = () => (readyState = document.readyState);
 
   onMount(() => {
@@ -40,13 +41,16 @@
       );
 
       updateReadyState();
+      window.addEventListener("load", updateLoadState);
       document.addEventListener("readystatechange", updateReadyState);
     }
   });
 
   onDestroy(() => {
-    if (isBrowser)
+    if (isBrowser) {
+      window.removeEventListener("load", updateLoadState);
       document.removeEventListener("readystatechange", updateReadyState);
+    }
   });
 </script>
 
@@ -152,6 +156,7 @@
 
   {#if readyState === 'complete'}
     <img
+      loading="lazy"
       alt="European Countries"
       src={imageCDN('/images/min/european-countries.png')} />
   {/if}
@@ -159,8 +164,9 @@
 
 <section id="our-story">
   <div>
-    {#if readyState === 'complete'}
+    {#if loadState}
       <img
+        loading="lazy"
         alt="Polish Meats"
         src={imageCDN('/images/min/polish-meats.jpeg', `${isBrowser === true ? '&w=' + window.screen.width : ''}`)} />
     {/if}
