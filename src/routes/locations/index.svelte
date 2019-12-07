@@ -63,13 +63,15 @@
     }
     .location p {
       margin-bottom: 0;
-      box-shadow: 0 0 2px 0 #f59c00;
-      background: linear-gradient(to right, #f59c00 40%, #9a1915);
+      border: 2px solid #9a1915;
+
+      /* box-shadow: 0 0 2px 0 #f59c00; */
+      /* background: linear-gradient(to right, #f59c00 40%, #9a1915); */
     }
     .location a {
       width: 50%;
       margin-left: auto;
-      padding: 0.6em;
+      padding: 0.6em 1.6em;
       text-align: left;
     }
   }
