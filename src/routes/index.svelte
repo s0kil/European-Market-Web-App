@@ -26,9 +26,8 @@
 
   let headerImgSrc = "";
 
-  let readyState, loadState;
+  let readyState;
   const isBrowser = typeof document === "object";
-  const updateLoadState = () => (loadState = true);
   const updateReadyState = () => (readyState = document.readyState);
 
   onMount(() => {
@@ -41,14 +40,12 @@
       );
 
       updateReadyState();
-      window.addEventListener("load", updateLoadState);
       document.addEventListener("readystatechange", updateReadyState);
     }
   });
 
   onDestroy(() => {
     if (isBrowser) {
-      window.removeEventListener("load", updateLoadState);
       document.removeEventListener("readystatechange", updateReadyState);
     }
   });
@@ -164,7 +161,7 @@
 
 <section id="our-story">
   <div>
-    {#if loadState}
+    {#if readyState === 'complete'}
       <img
         loading="lazy"
         alt="Polish Meats"
