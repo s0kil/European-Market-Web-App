@@ -165,7 +165,7 @@
       <img
         loading="lazy"
         alt="Polish Meats"
-        src={imageCDN('/images/min/polish-meats.jpeg', `${isBrowser === true ? '&w=' + window.screen.width : ''}`)} />
+        src={imageCDN('/images/min/polish-meats.jpeg', '&w=765')} />
     {/if}
   </div>
 
