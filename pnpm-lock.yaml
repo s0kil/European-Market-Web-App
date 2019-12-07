@@ -9,6 +9,7 @@ devDependencies:
   '@babel/preset-env': 7.7.5_@babel+core@7.7.5
   '@babel/runtime': 7.7.5
   '@rollup/plugin-image': 2.0.0_rollup@1.27.8
+  '@rollup/plugin-json': 4.0.0_rollup@1.27.8
   '@rollup/plugin-replace': 2.2.1_rollup@1.27.8
   '@types/node': 12.12.14
   modern-normalize: 0.5.0
@@ -22,7 +23,6 @@ devDependencies:
   sapper: 0.27.9_svelte@3.16.0
   subfont: 4.0.4
   svelte: 3.16.0
-  svelte-forms: 1.2.0_svelte@3.16.0
 lockfileVersion: 5.1
 packages:
   /@babel/code-frame/7.5.5:
@@ -803,6 +803,15 @@ packages:
       rollup: ^1.20.0
     resolution:
       integrity: sha512-kMWISpMskDtWx8DMt4BnuWVUVaQwT8RgPlSZefP/oUqALtasLYTTWzhM/+epbLLww9y4cGvIwgh7ZCcQ0Zw+Ow==
+  /@rollup/plugin-json/4.0.0_rollup@1.27.8:
+    dependencies:
+      rollup: 1.27.8
+      rollup-pluginutils: 2.8.2
+    dev: true
+    peerDependencies:
+      rollup: ^1.20.0
+    resolution:
+      integrity: sha512-Z65CtEVWv40+ri4CvmswyhtuUtki9yP5p0UJN/GyCKKyU4jRuDS9CG0ZuV7/XuS7zGkoajyE7E4XBEaC4GW62A==
   /@rollup/plugin-replace/2.2.1_rollup@1.27.8:
     dependencies:
       magic-string: 0.25.4
@@ -4779,14 +4788,6 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-qe1jfm1Mg7Nq/NSh6XE24gPXROEVsWHxC1LIx//XNlD9iw7YZQGjZNjYN7xGaEG6iKdA8EtNFW6R0gjnVXp+wQ==
-  /svelte-forms/1.2.0_svelte@3.16.0:
-    dependencies:
-      svelte: 3.16.0
-    dev: true
-    peerDependencies:
-      svelte: ^3.0.0
-    resolution:
-      integrity: sha512-nhnI/1hROqqaLX8IZBM12mdUHs5S8zxpayrm5amUjDq8y6RO3HgJwfVtOF7yxEX7XAp5sGJFA1MaPuhh7Qc82w==
   /svelte/3.16.0:
     dev: true
     engines:
@@ -5362,6 +5363,7 @@ specifiers:
   '@babel/preset-env': ^7.7.5
   '@babel/runtime': ^7.7.5
   '@rollup/plugin-image': ^2.0.0
+  '@rollup/plugin-json': ^4.0.0
   '@rollup/plugin-replace': ^2.2.1
   '@types/node': ^12.12.14
   compression: ^1.7.4
@@ -5378,4 +5380,3 @@ specifiers:
   sirv: next
   subfont: ^4.0.4
   svelte: ^3.16.0
-  svelte-forms: ^1.2.0

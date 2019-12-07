@@ -1,24 +1,46 @@
 <script>
   import { onMount } from "svelte";
-  import { submitForm } from "../_utils/form.js";
   import { imageCDN } from "../_utils/image.js";
+  import { submitForm } from "../_utils/form.js";
 
-  let formSubmitted = false;
-  let formErrors = false;
+  let formStatus = "";
 
   function handleSubmit(event) {
+    let isContactFormValid = validateForm([
+      "#person-name",
+      "#person-email",
+      "#person-message"
+    ]);
+    if (!isContactFormValid) {
+      formStatus = "Please Fill In All Input Fields";
+      return;
+    }
+
     submitForm(event.target)
-      .then(() => console.log("Ok"))
-      .catch(error => console.error(error));
+      .then(() => {
+        formStatus = "Message Sent, We Will Contact You Soon.";
+        event.target.reset();
+      })
+      .catch(error => {
+        formStatus = `Message Failed To Send, Error Message: ${error}`;
+        console.error(error);
+      });
+  }
+
+  function validateForm(inputsArray) {
+    if (typeof document === "object") {
+      let inputs = document.querySelectorAll(inputsArray);
+      return [...inputs].every(input => input.value.length > 0);
+    }
+    return false;
   }
 
   let backgroundImage = "";
   onMount(() => {
     if (typeof document === "object") {
-      let screenHeight = screen.height;
       backgroundImage = imageCDN(
         "/images/min/fresh-vegetables.jpeg",
-        `${screenHeight != null ? "&h=" + screenHeight : ""}`
+        `&h=${screen.height}`
       );
     }
   });
@@ -56,6 +78,11 @@
     background: transparent;
     margin-bottom: 0.5em;
   }
+  form input:focus,
+  form textarea:focus {
+    outline: 2px solid #517a3e;
+    box-shadow: 0 0 8px #517a3e;
+  }
 
   @media (max-width: 1000px) {
     form input,
@@ -80,6 +107,10 @@
   form button:hover {
     background: #9a1915;
   }
+  form button:focus {
+    outline: none !important;
+    border: 1px #9a1915;
+  }
 
   ::placeholder {
     color: #202020;
@@ -93,6 +124,13 @@
   ::-ms-input-placeholder {
     color: #202020;
   }
+
+  p {
+    padding: 0 1em;
+    line-height: 2em;
+    color: #202020;
+    background: rgb(129, 184, 20);
+  }
 </style>
 
 <svelte:head>
@@ -100,6 +138,7 @@
 </svelte:head>
 
 <section style="background-image: url({backgroundImage});">
+
   <form
     name="contact"
     method="POST"
@@ -110,12 +149,29 @@
 
     <input type="hidden" name="bot-field" />
 
-    <input type="text" name="name" placeholder="Name" />
+    <p>{formStatus}</p>
 
-    <input type="email" name="email" placeholder="Email" />
+    <input
+      required
+      name="name"
+      type="text"
+      id="person-name"
+      placeholder="Name" />
 
-    <textarea name="message" placeholder="Message" />
+    <input
+      required
+      name="email"
+      type="email"
+      id="person-email"
+      placeholder="Email" />
+
+    <textarea
+      required
+      name="message"
+      id="person-message"
+      placeholder="Message" />
 
     <button type="submit">Send</button>
+
   </form>
 </section>

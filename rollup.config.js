@@ -1,6 +1,7 @@
 import babel from "rollup-plugin-babel";
 import commonjs from "rollup-plugin-commonjs";
 import config from "sapper/config/rollup.js";
+import json from "@rollup/plugin-json";
 import pkg from "./package.json";
 import replace from "@rollup/plugin-replace";
 import resolve from "rollup-plugin-node-resolve";
@@ -42,6 +43,7 @@ export default {
     input: config.client.input(),
     output: config.client.output(),
     plugins: [
+      json(),
       replace({
         "process.browser": JSON.stringify(true),
         "process.env.NODE_ENV": JSON.stringify(mode)
@@ -91,6 +93,7 @@ export default {
     input: config.server.input(),
     output: config.server.output(),
     plugins: [
+      json(),
       replace({
         "process.browser": JSON.stringify(false),
         "process.env.NODE_ENV": JSON.stringify(mode)
