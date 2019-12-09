@@ -53,7 +53,7 @@
 
 <style>
   header {
-    height: calc(62vh);
+    height: calc(60vh);
     width: 100%;
 
     background-size: cover;
