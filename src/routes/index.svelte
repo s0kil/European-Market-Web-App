@@ -61,6 +61,10 @@
     background-position: bottom center;
   }
 
+  section {
+    padding-bottom: 4rem;
+  }
+
   h1,
   h2 {
     font-family: "Merriweather", serif;
@@ -73,31 +77,27 @@
     line-height: 2rem;
   }
 
-  section {
-    margin: 1rem 1rem 4rem 1rem;
-  }
-
   #about {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 4rem;
   }
   #about img {
     max-width: 100%;
-    max-height: 100%;
+    height: auto;
     margin: 0 auto;
   }
-
+  .countries {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(100px, auto));
+    margin-left: 1rem;
+  }
   #our-story {
     display: flex;
     flex-wrap: wrap;
   }
   #our-story img {
     max-width: 100%;
-  }
-  .countries {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(100px, auto));
-    margin-left: 1rem;
   }
 
   @media (min-width: 50rem) {
@@ -135,51 +135,53 @@
 
 <header id="intro-header" style="background-image: url({headerImgSrc});" />
 
-<section id="about">
-  <div style="flex: 2">
-    <h1>Delicious & Nutritious Products From 25+ Different Countries</h1>
+<section>
+  <div id="about">
+    <div>
+      <h1>Delicious & Nutritious Products From 25+ Different Countries</h1>
 
-    <div class="countries">
-      {#if readyState === 'complete'}
-        {#each countries as country}
-          <p>
-            <svelte:component this={CountryFlag} {country} />
-          </p>
-        {/each}
-      {/if}
+      <div class="countries">
+        {#if readyState === 'complete'}
+          {#each countries as country}
+            <p>
+              <svelte:component this={CountryFlag} {country} />
+            </p>
+          {/each}
+        {/if}
+      </div>
+
     </div>
 
-  </div>
-
-  {#if readyState === 'complete'}
-    <img
-      loading="lazy"
-      alt="European Countries"
-      src={imageCDN('/images/min/european-countries.png')} />
-  {/if}
-</section>
-
-<section id="our-story">
-  <div>
     {#if readyState === 'complete'}
       <img
         loading="lazy"
-        alt="Polish Meats"
-        src={imageCDN('/images/min/polish-meats.jpeg', '&w=765')} />
+        alt="European Countries"
+        src={imageCDN('/images/min/european-countries.png')} />
     {/if}
   </div>
 
-  <div>
-    <h2>How we started</h2>
-    <p>
-      We have started our company in Chattanooga, TN in November 1999. When we
-      opened our store, we started to sell only Russian products. Then we had a
-      lot of other customers from different countries requesting products from
-      their countries.
-    </p>
-    <p>
-      We also started to make homemade cabbage rolls, pierogies, bulochki,
-      chebureki, blintzes and bake German bread daily.
-    </p>
+  <div id="our-story">
+    <div>
+      {#if readyState === 'complete'}
+        <img
+          loading="lazy"
+          alt="Polish Meats"
+          src={imageCDN('/images/min/polish-meats.jpeg', '&w=765')} />
+      {/if}
+    </div>
+
+    <div>
+      <h2>How we started</h2>
+      <p>
+        We have started our company in Chattanooga, TN in November 1999. When we
+        opened our store, we started to sell only Russian products. Then we had
+        a lot of other customers from different countries requesting products
+        from their countries.
+      </p>
+      <p>
+        We also started to make homemade cabbage rolls, pierogies, bulochki,
+        chebureki, blintzes and bake German bread daily.
+      </p>
+    </div>
   </div>
 </section>

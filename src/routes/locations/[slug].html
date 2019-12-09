@@ -1,10 +1,15 @@
 <script context="module">
-  export async function preload({ params, query }) {
+  export async function preload({
+    params,
+    query
+  }) {
     const res = await this.fetch(`locations/${params.slug}.json`);
     const data = await res.json();
 
     if (res.status === 200) {
-      return { location: data };
+      return {
+        location: data
+      };
     } else {
       this.error(res.status, data.message);
     }
@@ -12,11 +17,107 @@
 </script>
 
 <script>
+  import loadAsset from "loadjs";
+  import {
+    onMount
+  } from "svelte";
+
   export let location;
+
+  onMount(() => {
+    if (!loadAsset.isDefined("modestMaps")) {
+      loadAsset(
+        "https://cdn.jsdelivr.net/gh/modestmaps/modestmaps-js@3.3.6/modestmaps.min.js",
+        "modestMaps"
+      );
+    }
+
+    loadAsset.ready("modestMaps", () => {
+      let provider = new MM.TemplatedLayer(
+        "https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{Z}/{X}/{Y}?access_token=pk.eyJ1IjoiZHRlY2h0b3VycyIsImEiOiJjajMxcHhmaDEwMDlyMnFvN3B3OGpiajB3In0.hbF_zxyF-PpLHvvra1h7gw"
+      );
+
+      let map = new MM.Map("map", provider);
+
+      map.setZoom(16).setCenter({
+        lat: location.coordinates.latitude,
+        lon: location.coordinates.longitude
+      });
+    });
+  });
 </script>
+
+<style>
+  #map {
+    background: white;
+
+
+    width: 100%;
+    height: calc(100vh - 110px);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: -1;
+  }
+
+  .location {
+    position: relative;
+
+    padding: 1rem;
+
+    --bg-color: rgba(255, 255, 255, 0.8);
+    background: linear-gradient(var(--bg-color), var(--bg-color));
+  }
+
+  .location h1 {
+    font-family: "Merriweather", serif;
+    color: #9a1915;
+  }
+
+  .location p {
+    font-family: "Lato", sans-serif;
+    font-size: 1.2rem;
+    color: #202020;
+  }
+
+  .location a {
+    color: #202020;
+    text-decoration-color: #9a1915;
+  }
+
+  @media (max-width: 400px) {
+    .location h1 {
+      font-size: 1.2rem;
+    }
+
+    .location p {
+      font-size: 1rem;
+    }
+  }
+</style>
 
 <svelte:head>
   <title>{location.location} | European Market</title>
 </svelte:head>
 
-<h1>{location.location}</h1>
+<section class="location">
+  <h1>European Market {location.location}</h1>
+
+  <p>{location.hoursOfOperation}</p>
+
+  <a target="_blank" href="https://www.google.com/maps/place/{location.address}">
+    <p>{location.address}</p>
+  </a>
+
+  <a href="mailto:{location.emailAddress}">
+    <p>{location.emailAddress}</p>
+  </a>
+
+  <a href="tel:{location.phoneNumber}">
+    <p>{location.phoneNumber}</p>
+  </a>
+
+  <div id="map"></div>
+</section>

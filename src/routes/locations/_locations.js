@@ -52,7 +52,11 @@ const locations = [
     phoneNumber: "(864) 520-1033",
     status: Status.open,
     hoursOfOperation: "Mon - Sat 10:30am - 7pm, Sun 12:30pm - 3pm",
-    pageURL: "greenville-sc"
+    pageURL: "greenville-sc",
+    coordinates: {
+      latitude: "34.8197697",
+      longitude: "-82.2762912"
+    }
   },
   {
     location: "Hwy 9, Inman, SC",
@@ -61,7 +65,11 @@ const locations = [
     phoneNumber: "(864) 754-4545",
     status: Status.open,
     hoursOfOperation: "Mon - Sat 10:30am - 7pm, Sun 12:30pm - 3pm",
-    pageURL: "hwy-9-inman-sc"
+    pageURL: "hwy-9-inman-sc",
+    coordinates: {
+      latitude: "35.072714",
+      longitude: "-82.0196507"
+    }
   },
   {
     location: "Warehouse Inman, SC",
@@ -70,7 +78,11 @@ const locations = [
     phoneNumber: "(864) 473-0299",
     status: Status.open,
     hoursOfOperation: "Mon - Sat 10:30am - 7pm, Sun 12:30pm - 3pm",
-    pageURL: "warehouse-inman-sc"
+    pageURL: "warehouse-inman-sc",
+    coordinates: {
+      latitude: "35.0401305",
+      longitude: "-82.1090651"
+    }
   },
   {
     location: "Ooltewah, TN",
@@ -80,7 +92,11 @@ const locations = [
     status: Status.open,
     hoursOfOperation:
       "Mon 3:30pm - 7pm, Tue - Sat 11am - 7pm, Sun 12:30pm - 3pm",
-    pageURL: "ooltewah-tn"
+    pageURL: "ooltewah-tn",
+    coordinates: {
+      latitude: "35.0586237",
+      longitude: "-85.0698952"
+    }
   }
 ];
 

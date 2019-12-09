@@ -6,7 +6,8 @@ import pkg from "./package.json";
 import replace from "@rollup/plugin-replace";
 import resolve from "rollup-plugin-node-resolve";
 import svelte from "rollup-plugin-svelte";
-import { terser } from "rollup-plugin-terser";
+import {terser} from "rollup-plugin-terser";
+// import reshadow from "reshadow/svelte/preprocess";
 
 const mode = process.env.NODE_ENV;
 const dev = mode === "development";
@@ -51,7 +52,8 @@ export default {
       svelte({
         dev,
         hydratable: true,
-        emitCss: true
+        emitCss: true,
+        // preprocess: reshadow()
       }),
       resolve({
         browser: true,
@@ -60,28 +62,28 @@ export default {
       commonjs(),
 
       legacy &&
-        babel({
-          extensions: [".js", ".mjs", ".html", ".svelte"],
-          runtimeHelpers: true,
-          exclude: ["node_modules/@babel/**"],
-          presets: [
-            [
-              "@babel/preset-env",
-              {
-                targets: "> 0.25%, not dead"
-              }
-            ]
-          ],
-          plugins: [
-            "@babel/plugin-syntax-dynamic-import",
-            [
-              "@babel/plugin-transform-runtime",
-              {
-                useESModules: true
-              }
-            ]
+      babel({
+        extensions: [".js", ".mjs", ".html", ".svelte"],
+        runtimeHelpers: true,
+        exclude: ["node_modules/@babel/**"],
+        presets: [
+          [
+            "@babel/preset-env",
+            {
+              targets: "> 0.25%, not dead"
+            }
           ]
-        }),
+        ],
+        plugins: [
+          "@babel/plugin-syntax-dynamic-import",
+          [
+            "@babel/plugin-transform-runtime",
+            {
+              useESModules: true
+            }
+          ]
+        ]
+      }),
 
       !dev && optimizer(true)
     ],
@@ -100,7 +102,8 @@ export default {
       }),
       svelte({
         generate: "ssr",
-        dev
+        dev,
+        // preprocess: reshadow()
       }),
       resolve({
         dedupe
@@ -109,8 +112,7 @@ export default {
     ],
     external: Object.keys(pkg.dependencies).concat(
       require("module").builtinModules ||
-        // @ts-ignore
-        Object.keys(process.binding("natives"))
+      Object.keys(process.binding("natives"))
     ),
 
     onwarn
