@@ -52,6 +52,7 @@
     bottom: 0;
 
     background: rgb(196, 0, 9);
+    /* background: #e30613; */
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.15);
   }
   #footer ul {

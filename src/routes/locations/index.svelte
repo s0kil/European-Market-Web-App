@@ -14,20 +14,20 @@
 
 <style>
   .location {
-    display: flex;
     font-size: 1.4em;
+    display: flex;
   }
 
   .location p {
     flex: 1;
+
     color: #202020;
-    background: #f59c00;
+    border: 1px solid #9a1915;
     font-family: "Merriweather", serif;
   }
 
   .location a {
     color: #fff;
-    margin: auto 0;
     text-decoration: none;
     background: #9a1915;
     transition: all 100ms ease;
@@ -46,7 +46,8 @@
 
   .location a,
   .location p {
-    padding: 1em 2em;
+    padding: 1rem 2rem;
+    margin: 1.2rem 0;
   }
 
   @media (max-width: 580px) {
@@ -59,28 +60,17 @@
     .location {
       font-size: 1em;
     }
-  }
-
-  @media (max-width: 500px) {
-    .location {
-      margin-bottom: 2em;
-      flex-direction: column;
-    }
-
+    .location a,
     .location p {
-      margin-bottom: 0;
-      border: 2px solid #9a1915;
-
-      /* box-shadow: 0 0 2px 0 #f59c00; */
-      /* background: linear-gradient(to right, #f59c00 40%, #9a1915); */
+      padding: 0.6rem 1.2rem;
+      margin: 1rem 0;
     }
-
-    .location a {
-      width: 50%;
-      margin-left: auto;
-      /*padding: 0.6em 1.8em;*/
-      padding: 0.8em 2em;
-      text-align: left;
+  }
+  @media (max-width: 400px) {
+    .location a,
+    .location p {
+      padding: 0.5rem 1rem;
+      margin: 1rem 0;
     }
   }
 </style>

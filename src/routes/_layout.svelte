@@ -7,9 +7,11 @@
 
 <style>
   :global(body) {
-    background: rgb(196, 0, 9);
+    background: #c40009;
+    background: linear-gradient(#9a1915, #c40009);
 
-    background: linear-gradient(#9a1915, #e30613);
+    /* background: #9a1915; */
+    /* background: linear-gradient(#9a1915, #e30613); */
     /* background: linear-gradient(#e74011, #e30613, #9a1915); */
   }
 
