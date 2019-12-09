@@ -11,3 +11,6 @@ plugins:
       fontDisplay: swap
       inlineCss: false
       inlineFonts: false
+  - type: "@netlify/plugin-sitemap"
+    config:
+      distPath: __sapper__/export
