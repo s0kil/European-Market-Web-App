@@ -68,7 +68,8 @@
   h1,
   h2 {
     font-family: "Merriweather", serif;
-    color: rgb(129, 184, 20);
+    /* color: rgb(129, 184, 20); */
+    color: #81b814;
   }
 
   p {

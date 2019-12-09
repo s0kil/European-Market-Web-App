@@ -48,9 +48,6 @@
 
 <style>
   section {
-    width: 100%;
-    height: calc(100vh - 120px);
-
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
@@ -128,8 +125,8 @@
   p {
     padding: 0 1em;
     line-height: 2em;
-    color: #202020;
-    background: rgb(129, 184, 20);
+    color: #fff;
+    background: #517a3e;
   }
 </style>
 
