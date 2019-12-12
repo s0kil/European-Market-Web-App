@@ -2,13 +2,15 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes, minimal-ui">
-  <meta name="theme-color" content="#870e14" />
+  <meta name="theme-color" content="#870e14"/>
 
-  <meta content="_I2Vj5uGpTxJOZ6LJhVdmlXjFa1mZ-7Sh7i2o2bkd28" name="google-site-verification">
+  <link href="https://images.weserv.nl" rel="dns-prefetch">
+  <link href="https://images.weserv.nl" rel="preconnect" crossorigin>
+
   <meta name="description" content="European Market | Delicious & Nutritious Products From 25+ Different Countries">
-  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <title>European Market</title>
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -23,14 +25,13 @@
       "logo": "https://europeanmarketus.com/images/logo/logo-sign.png"
     }
   </script>
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <meta content="_I2Vj5uGpTxJOZ6LJhVdmlXjFa1mZ-7Sh7i2o2bkd28" name="google-site-verification">
 
   %sapper.base%
 
-  <link href="https://images.weserv.nl" rel="dns-prefetch">
-  <link href="https://images.weserv.nl" rel="preconnect" crossorigin>
-
   <link href="https://fonts.googleapis.com/css?family=Lato|Merriweather&display=swap" rel="preload" as="style">
-  <link href="https://fonts.googleapis.com/css?family=Lato|Merriweather&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Lato|Merriweather&display=swap" rel="stylesheet"/>
 
   <!-- Sapper generates a <style> tag containing critical CSS for the current page. CSS for the rest of the app is loaded lazily when it precaches secondary pages -->
   %sapper.styles%
@@ -40,20 +41,22 @@
 </head>
 
 <body>
-  <div id="app">%sapper.html%</div>
+<div id="app">%sapper.html%</div>
 
-  %sapper.scripts%
+%sapper.scripts%
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-85690667-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'UA-85690667-1');
-  </script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-85690667-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-85690667-1');
+</script>
 </body>
 
 </html>
