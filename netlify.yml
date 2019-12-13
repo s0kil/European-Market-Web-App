@@ -1,16 +1,3 @@
 build:
   command: npm run prod;
   publish: __sapper__/export
-
-plugins:
-  - type: netlify-plugin-subfont
-    config:
-      entryPoints:
-        - "*.html"
-      recursive: true
-      fontDisplay: swap
-      inlineCss: false
-      inlineFonts: false
-  - type: "@netlify/plugin-sitemap"
-    config:
-      distPath: __sapper__/export

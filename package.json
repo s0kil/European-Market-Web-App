@@ -8,10 +8,9 @@
     "build": "sapper build",
     "export": "sapper export",
     "subFont": "subfont __sapper__/export/ -i -r --inline-css",
-    "fixStaticPaths": "node tools/fixStaticPaths.js",
     "optimizeImages": "imager -i static/images/**/*.jpg -o static/images/min/",
     "start": "PORT=8000 node __sapper__/build",
-    "prod": "npm run export && npm run fixStaticPaths && npm run subFont",
+    "prod": "npm run export && npm run subFont",
     "serveExport": "simple-http-server -i -t=8 --nosort --nocache __sapper__/export"
   },
   "dependencies": {
