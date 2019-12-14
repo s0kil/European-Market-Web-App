@@ -7,10 +7,10 @@
     "dev": "PORT=8000 sapper dev",
     "build": "sapper build",
     "export": "sapper export",
+    "prod": "npm run export && npm run subFont",
+    "checkTypes": "cd src; npx svelte-type-checker",
     "subFont": "subfont __sapper__/export/ -i -r --inline-css",
     "optimizeImages": "imager -i static/images/**/*.jpg -o static/images/min/",
-    "start": "PORT=8000 node __sapper__/build",
-    "prod": "npm run export && npm run subFont",
     "serveExport": "simple-http-server -i -t=8 --nosort --nocache __sapper__/export"
   },
   "dependencies": {
@@ -42,6 +42,8 @@
     "sapper": "^0.27.9",
     "sitemap-generator": "^8.4.2",
     "subfont": "^4.0.5",
-    "svelte": "^3.16.4"
+    "svelte": "^3.16.4",
+    "svelte-type-checker": "^0.1.4",
+    "typescript": "^3.7.3"
   }
 }
