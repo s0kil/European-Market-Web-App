@@ -7,6 +7,7 @@
     font-family: "Lato", sans-serif;
     display: inline;
   }
+
   img {
     height: auto;
     width: 40px;
@@ -18,9 +19,9 @@
 
 <p>
   <img
-    src="images/country-flags/flag-of-{country}.svg"
-    loading="lazy"
-    alt="Flag Of {country}"
-    title="Flag Of {country}" />
-  {country}
+      src="images/country-flags/flag-of-{country}.svg"
+      loading="lazy"
+      alt="Flag Of {country}"
+      title="Flag Of {country}"/>
+    {country}
 </p>

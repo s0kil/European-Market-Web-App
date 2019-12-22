@@ -9,6 +9,7 @@
     font-family: "Lato", sans-serif;
     display: inline;
   }
+
   svg {
     height: auto;
     width: 40px;
@@ -20,29 +21,29 @@
 
 <p>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox={svgSize}>
-    <path fill="#F2A800" d="M0 0h1200v600H0z" />
-    <path fill="#0033A0" d="M0 0h1200v400H0z" />
-    <path fill="#D90012" d="M0 0h1200v200H0z" />
+    <path fill="#F2A800" d="M0 0h1200v600H0z"/>
+    <path fill="#0033A0" d="M0 0h1200v400H0z"/>
+    <path fill="#D90012" d="M0 0h1200v200H0z"/>
   </svg>
   Armenia
 </p>
 
 <p>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox={svgSize}>
-    <rect fill="#ed2939" width={svgWidth} height={svgHeight} />
-    <rect fill="#fff" y="200" width={svgWidth} height={svgHeight / 3} />
+    <rect fill="#ed2939" width={svgWidth} height={svgHeight}/>
+    <rect fill="#fff" y="200" width={svgWidth} height={svgHeight / 3}/>
   </svg>
   Austria
 </p>
 
 <p>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox={svgSize}>
-    <path d="M0 0h1890v945H0z" fill="#c8313e" />
-    <path d="M10 0h210v945H10z" fill="#fff" />
-    <path d="M220 630h1670v315H220z" fill="#4aa657" />
+    <path d="M0 0h1890v945H0z" fill="#c8313e"/>
+    <path d="M10 0h210v945H10z" fill="#fff"/>
+    <path d="M220 630h1670v315H220z" fill="#4aa657"/>
     <g fill="#c8313e">
       <path
-        d="M10 7.121h8.219v18.965H10zM220 7.121h-8.219v18.965H220zM110.426
+          d="M10 7.121h8.219v18.965H10zM220 7.121h-8.219v18.965H220zM110.426
         0h9.148v34.167h-9.148zM57.121 60.993h10.324v18.944H57.121zM162.555
         60.993h10.324v18.944h-10.324zM10 110.575h8.219v20.381H10zM220
         110.575h-8.219v20.381H220zM110.426 112.488h9.148v28.782h-9.148zM10
@@ -70,9 +71,9 @@
         723.113v14.283H75.092v14.842h-8.354v19.244h8.354v14.784h10.043v14.263h11.732v-14.263h10.082v-14.784h16.102v14.784h10.082v14.263h11.732v-14.263h10.043v-14.784h8.354v-19.244h-8.354v-14.842h-10.043v-14.283h-11.732v14.283H123.05v14.842h-16.102v-14.842H96.867v-14.283zm1.537
         29.586h8.68v18.324h-8.68v-9.162zm47.976 0h8.68v18.324h-8.68zM190.166
         723.113v14.283h-10.14v14.842h-8.296v19.244h8.295v14.784h10.141v14.263h11.637v-14.263h10.047v-14.784H220v-19.244h-8.15v-14.842h-10.047v-14.283zm1.4
-        29.586h8.68v18.324h-8.68v-9.162z" />
+        29.586h8.68v18.324h-8.68v-9.162z"/>
       <path
-        d="M54.39
+          d="M54.39
         790.848v12.963h-6.683v15.498h-9.539v14.388H26.484v16.596h-8.289v13.65H10v21.123h8.195v13.623h8.29v16.584h11.683v14.405h9.539V945h29.19v-15.322h9.505v-14.405H98.06V898.69h8.314v-13.623h17.254v13.623h8.314v16.584h11.657v14.405h9.506V945h29.189v-15.322h9.539v-14.405h11.684V898.69h8.289v-13.623H220v-21.123h-8.195v-13.65h-8.29v-16.596h-11.683V819.31h-9.539V803.81h-6.684v-12.963h-15.785v12.963h-6.72v15.498h-9.506v14.388H131.94v16.596h-8.314v13.65h-17.254v-13.65H98.06v-16.596H86.402V819.31h-9.506V803.81h-6.72v-12.963zm3.612
         44.888h8.562v12.684h8.124v16.092h8.123v19.974h-8.124v16.084h-8.123v12.696h-8.562V900.57H49.82v-16.084h-8.058v-19.974h8.058V848.42h8.182zm105.434
         0h8.562v12.684h8.182v16.092h8.058v19.974h-8.058v16.084h-8.182v12.696h-8.562V900.57h-8.123v-16.084h-8.124v-19.974h8.123V848.42h8.124zM56.828
@@ -81,7 +82,7 @@
         162.375h15.406v14.162h3.477v14.683h9.16v14.325h5.683v10.482h5.782v11.14h10.043v10.883h14.422v52.532h-14.422v10.882h-10.043v11.141h-5.782v10.482h-5.683v14.325h-9.16v14.683h-3.477v14.162h-15.406V560.28h-3.477v-14.683h-9.16V531.27h-5.683V520.79h-5.782v-11.14H73.152v-10.883H58.73v-52.532h14.422v-10.882h10.043V424.21h5.782v-10.482h5.683v-14.325h9.16v-14.683h3.477zM47.707
         0v15.322h-9.539v14.405H26.484V46.31h-8.289v13.623H10v21.123h8.195v13.65h8.29v16.596h11.683v14.388h9.539v15.498h6.684v12.963h15.785V141.19h6.72v-15.498h9.506v-14.388H98.06V94.707h8.314v-13.65h17.254v13.65h8.314v16.596h11.657v14.388h9.506v15.498h6.72v12.963h15.785V141.19h6.684v-15.498h9.539v-14.388h11.684V94.707h8.289v-13.65H220V59.934h-8.195V46.31h-8.29V29.727h-11.683V15.322h-9.539V0h-29.19v15.322h-9.505v14.405H131.94V46.31h-8.314v13.623h-17.254V46.31H98.06V29.727H86.402V15.322h-9.506V0zm10.295
         31.734h8.562V44.43h8.124v16.084h8.123v19.974h-8.124V96.58h-8.123v12.684h-8.562V96.852l-8.182-.272V80.488h-8.058V60.514h8.058V44.43h8.182zm105.434
-        0h8.562V44.43h8.182v16.084h8.058v19.974h-8.058V96.58h-8.182v12.684h-8.562V96.58h-8.123V80.488h-8.124V60.514h8.123V44.43h8.124z" />
+        0h8.562V44.43h8.182v16.084h8.058v19.974h-8.058V96.58h-8.182v12.684h-8.562V96.58h-8.123V80.488h-8.124V60.514h8.123V44.43h8.124z"/>
     </g>
   </svg>
   Belarus
@@ -89,38 +90,38 @@
 
 <p>
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={svgWidth}
-    height={svgHeight}
-    viewBox="0 0 6 3">
-    <rect width="6" height="3" fill="#fff" />
-    <rect width="6" height="2" y="1" fill="#00966E" />
-    <rect width="6" height="1" y="2" fill="#D62612" />
+      xmlns="http://www.w3.org/2000/svg"
+      width={svgWidth}
+      height={svgHeight}
+      viewBox="0 0 6 3">
+    <rect width="6" height="3" fill="#fff"/>
+    <rect width="6" height="2" y="1" fill="#00966E"/>
+    <rect width="6" height="1" y="2" fill="#D62612"/>
   </svg>
   Bulgaria
 </p>
 
 <p>
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="800"
-    height="480"
-    viewBox="0 0 800 480">
-    <path fill="#FFF" d="m0,0h800v480H0" />
-    <path stroke="#CD202C" stroke-width="96" d="m0,240h800M400,0v480" />
+      xmlns="http://www.w3.org/2000/svg"
+      width="800"
+      height="480"
+      viewBox="0 0 800 480">
+    <path fill="#FFF" d="m0,0h800v480H0"/>
+    <path stroke="#CD202C" stroke-width="96" d="m0,240h800M400,0v480"/>
   </svg>
   England
 </p>
 
 <p>
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="900"
-    height="600"
-    viewBox="0 0 900 600">
-    <rect width="900" height="600" fill="#ED2939" />
-    <rect width="600" height="600" fill="#fff" />
-    <rect width="300" height="600" fill="#002395" />
+      xmlns="http://www.w3.org/2000/svg"
+      width="900"
+      height="600"
+      viewBox="0 0 900 600">
+    <rect width="900" height="600" fill="#ED2939"/>
+    <rect width="600" height="600" fill="#fff"/>
+    <rect width="300" height="600" fill="#002395"/>
   </svg>
   France
 </p>

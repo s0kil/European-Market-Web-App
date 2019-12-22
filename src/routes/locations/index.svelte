@@ -1,10 +1,10 @@
 <script context="module">
-  export function preload({ params, query }) {
+  export function preload({params, query}) {
     return this.fetch("locations.json")
-      .then(r => r.json())
-      .then(locations => {
-        return { locations };
-      });
+        .then(r => r.json())
+        .then(locations => {
+          return {locations};
+        });
   }
 </script>
 
@@ -60,12 +60,14 @@
     .location {
       font-size: 1em;
     }
+
     .location a,
     .location p {
       padding: 0.6rem 1.2rem;
       margin: 1rem 0;
     }
   }
+
   @media (max-width: 400px) {
     .location a,
     .location p {
@@ -80,13 +82,13 @@
 </svelte:head>
 
 <section id="locations">
-  {#each locations as location}
-    <div class="location">
-      <p>{location.location}</p>
-      <a href={'/locations/' + location.pageURL}>
-        More Info
-        <span>></span>
-      </a>
-    </div>
-  {/each}
+    {#each locations as location}
+      <div class="location">
+        <p>{location.location}</p>
+        <a rel=prefetch href={'/locations/' + location.pageURL}>
+          More Info
+          <span>></span>
+        </a>
+      </div>
+    {/each}
 </section>

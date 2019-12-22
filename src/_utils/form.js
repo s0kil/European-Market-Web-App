@@ -14,7 +14,7 @@ export async function submitForm(form) {
 
   return fetch("/", {
     method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: encode({ "form-name": "contact", ...formData })
+    headers: {"Content-Type": "application/x-www-form-urlencoded"},
+    body: encode({"form-name": "contact", ...formData})
   });
 }

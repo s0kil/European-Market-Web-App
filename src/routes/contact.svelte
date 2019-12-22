@@ -1,7 +1,7 @@
 <script>
-  import { onMount } from "svelte";
-  import { imageCDN } from "../_utils/image.js";
-  import { submitForm } from "../_utils/form.js";
+  import {onMount} from "svelte";
+  import {imageCDN} from "../_utils/image.js";
+  import {submitForm} from "../_utils/form.js";
 
   let formStatus = "";
 
@@ -17,14 +17,14 @@
     }
 
     submitForm(event.target)
-      .then(() => {
-        formStatus = "Message Sent, We Will Contact You Soon.";
-        event.target.reset();
-      })
-      .catch(error => {
-        formStatus = `Message Failed To Send, Error Message: ${error}`;
-        console.error(error);
-      });
+        .then(() => {
+          formStatus = "Message Sent, We Will Contact You Soon.";
+          event.target.reset();
+        })
+        .catch(error => {
+          formStatus = `Message Failed To Send, Error Message: ${error}`;
+          console.error(error);
+        });
   }
 
   function validateForm(inputsArray) {
@@ -39,8 +39,8 @@
   onMount(() => {
     if (typeof document === "object") {
       backgroundImage = imageCDN(
-        "/images/min/fresh-vegetables.jpeg",
-        `&h=${screen.height}`
+          "/images/min/fresh-vegetables.jpeg",
+          `&h=${screen.height}`
       );
     }
   });
@@ -75,6 +75,7 @@
     background: transparent;
     margin-bottom: 0.5em;
   }
+
   form input:focus,
   form textarea:focus {
     outline: 2px solid #517a3e;
@@ -104,6 +105,7 @@
   form button:hover {
     background: #9a1915;
   }
+
   form button:focus {
     outline: none !important;
     border: 1px #9a1915;
@@ -137,36 +139,36 @@
 <section style="background-image: url({backgroundImage});">
 
   <form
-    name="contact"
-    method="POST"
-    action="/contact"
-    data-netlify="true"
-    netlify-honeypot="bot-field"
-    on:submit|preventDefault={handleSubmit}>
+      name="contact"
+      method="POST"
+      action="/contact"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      on:submit|preventDefault={handleSubmit}>
 
-    <input type="hidden" name="bot-field" />
+    <input type="hidden" name="bot-field"/>
 
     <p>{formStatus}</p>
 
     <input
-      required
-      name="name"
-      type="text"
-      id="person-name"
-      placeholder="Name" />
+        required
+        name="name"
+        type="text"
+        id="person-name"
+        placeholder="Name"/>
 
     <input
-      required
-      name="email"
-      type="email"
-      id="person-email"
-      placeholder="Email" />
+        required
+        name="email"
+        type="email"
+        id="person-email"
+        placeholder="Email"/>
 
     <textarea
-      required
-      name="message"
-      id="person-message"
-      placeholder="Message" />
+        required
+        name="message"
+        id="person-message"
+        placeholder="Message"></textarea>
 
     <button type="submit">Send</button>
 

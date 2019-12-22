@@ -6,7 +6,7 @@ locations.forEach(location => {
 });
 
 export function get(req, res) {
-  const { slug } = req.params;
+  const {slug} = req.params;
 
   if (lookup.has(slug)) {
     res.writeHead(200, {
