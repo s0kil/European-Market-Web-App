@@ -5,8 +5,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "PORT=8000 sapper dev",
-    "build": "sapper build",
-    "export": "sapper export",
+    "build": "sapper build --legacy",
+    "export": "sapper export --legacy",
     "prod": "npm run export && npm run subFont",
     "checkTypes": "cd src; npx svelte-type-checker",
     "subFont": "subfont __sapper__/export/ -i -r --inline-css",
@@ -26,8 +26,8 @@
     "@babel/runtime": "^7.7.7",
     "@reshadow/svelte": "^0.0.1-alpha.72",
     "@rollup/plugin-image": "^2.0.0",
-    "@rollup/plugin-json": "^4.0.0",
-    "@rollup/plugin-replace": "^2.2.1",
+    "@rollup/plugin-json": "^4.0.1",
+    "@rollup/plugin-replace": "^2.3.0",
     "@types/node": "^12.12.21",
     "loadjs": "^4.2.0",
     "modern-normalize": "^0.5.0",
@@ -44,6 +44,6 @@
     "subfont": "^4.0.5",
     "svelte": "^3.16.5",
     "svelte-type-checker": "^0.1.4",
-    "typescript": "^3.7.3"
+    "typescript": "^3.7.4"
   }
 }
