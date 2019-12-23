@@ -163,8 +163,7 @@
         required
         name="message"
         id="person-message"
-        placeholder="Message">
-    </textarea>
+        placeholder="Message"></textarea>
 
     <button type="submit">Send</button>
 
