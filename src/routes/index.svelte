@@ -1,7 +1,8 @@
 <script>
-  import {onMount, onDestroy} from "svelte";
+  import {onMount} from "svelte";
   import {imageCDN} from "../_utils/image.js";
   import CountryFlag from "../components/CountryFlag.svelte";
+  import beforeMount from "../_utils/beforeMount.js";
 
   const countries = [
     "Armenia",
@@ -24,30 +25,19 @@
     "Ukraine"
   ];
 
-  let headerImgSrc = "";
-
   let readyState;
-  const isBrowser = typeof document === "object";
   const updateReadyState = () => (readyState = document.readyState);
 
-  onMount(() => {
-    if (isBrowser) {
-      let headerHeight = document.getElementById("intro-header").offsetHeight;
-
-      headerImgSrc = imageCDN(
-          "/images/min/european-meats.jpeg",
-          `&h=${headerHeight}`
-      );
-
-      updateReadyState();
-      document.addEventListener("readystatechange", updateReadyState);
-    }
+  let headerImgSrc = "";
+  beforeMount(() => {
+    let headerHeight = document.getElementById("intro-header").offsetHeight;
+    headerImgSrc = imageCDN("/images/min/european-meats.jpeg", `&h=${headerHeight}`);
   });
 
-  onDestroy(() => {
-    if (isBrowser) {
-      document.removeEventListener("readystatechange", updateReadyState);
-    }
+  onMount(() => {
+    updateReadyState();
+    document.addEventListener("readystatechange", updateReadyState);
+    return () => document.removeEventListener("readystatechange", updateReadyState)
   });
 </script>
 
@@ -141,7 +131,10 @@
   <title>Home | European Market</title>
 </svelte:head>
 
-<header id="intro-header" style="background-image: url({headerImgSrc});"/>
+<header
+    id="intro-header"
+    style="background-image: url({headerImgSrc});">
+</header>
 
 <section>
   <div id="about">

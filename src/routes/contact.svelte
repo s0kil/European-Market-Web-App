@@ -1,5 +1,5 @@
 <script>
-  import {onMount} from "svelte";
+  import beforeMount from "../_utils/beforeMount";
   import {imageCDN} from "../_utils/image.js";
   import {submitForm} from "../_utils/form.js";
 
@@ -36,13 +36,8 @@
   }
 
   let backgroundImage = "";
-  onMount(() => {
-    if (typeof document === "object") {
-      backgroundImage = imageCDN(
-          "/images/min/fresh-vegetables.jpeg",
-          `&h=${screen.height}`
-      );
-    }
+  beforeMount(() => {
+    backgroundImage = imageCDN("/images/min/fresh-vegetables.jpeg", `&h=${screen.height}`)
   });
 </script>
 
@@ -168,7 +163,8 @@
         required
         name="message"
         id="person-message"
-        placeholder="Message"></textarea>
+        placeholder="Message">
+    </textarea>
 
     <button type="submit">Send</button>
 

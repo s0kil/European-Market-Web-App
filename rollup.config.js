@@ -26,16 +26,6 @@ function optimizer(module = false) {
     module,
     compress: {
       passes: 3,
-      warnings: true,
-
-      unsafe: true,
-      unsafe_math: true,
-      unsafe_comps: true,
-      unsafe_arrows: true,
-      unsafe_regexp: true,
-      unsafe_methods: true,
-      unsafe_Function: true,
-      unsafe_undefined: true
     }
   });
 }

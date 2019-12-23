@@ -15,13 +15,11 @@
 
 <script>
   import loadAsset from "loadjs";
-  import {
-    onMount
-  } from "svelte";
+  import beforeMount from "../../_utils/beforeMount";
 
   export let location;
 
-  onMount(() => {
+  beforeMount(() => {
     if (!loadAsset.isDefined("modestMaps")) {
       loadAsset(
         "https://cdn.jsdelivr.net/gh/modestmaps/modestmaps-js@3.3.6/modestmaps.min.js",
