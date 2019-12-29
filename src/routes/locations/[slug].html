@@ -15,7 +15,7 @@
 
 <script>
   import {onMount} from "svelte";
-  import {tinyMap} from "@s0kil/tiny-map";
+  import {tinyMap} from "/home/sokil/Desktop/Lab/tiny-map/index.js";
 
   import saveData from "../../_utils/saveData";
 
@@ -32,8 +32,7 @@
         tinyMap(document.getElementById("map"), {
           zoom: 16,
           center: [longitude, latitude],
-          tileUrl: `https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=${mapBoxAccessToken}`,
-          subdomains: "",
+          tileUrl: `https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=${mapBoxAccessToken}`
         });
       }
     }
