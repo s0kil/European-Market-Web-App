@@ -17,21 +17,25 @@
   import {onMount} from "svelte";
   import {tinyMap} from "@s0kil/tiny-map";
 
+  import saveData from "../../_utils/saveData";
+
   export let location;
 
   const mapBoxAccessToken =
     "pk.eyJ1IjoiZGFuaWVsc29raWwiLCJhIjoiY2s0NDZjaTFmMDh6ajNrbW1mb3h4cjJobiJ9.AcOfKPFXipCVNgaxZ66WTg";
 
   onMount(() => {
-    let {latitude, longitude} = location.coordinates;
+    if (!saveData()) { // Check Is User Has Save Data Enabled.
+      let {latitude, longitude} = location.coordinates;
 
-    if (latitude && longitude) {
-      tinyMap(document.getElementById("map"), {
-        zoom: 16,
-        center: [longitude, latitude],
-        tileUrl: `https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=${mapBoxAccessToken}`,
-        subdomains: "",
-      });
+      if (latitude && longitude) {
+        tinyMap(document.getElementById("map"), {
+          zoom: 16,
+          center: [longitude, latitude],
+          tileUrl: `https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=${mapBoxAccessToken}`,
+          subdomains: "",
+        });
+      }
     }
   });
 </script>
@@ -91,9 +95,6 @@
 
 <svelte:head>
   <title>{location.location} | European Market</title>
-
-  <link href="https://api.mapbox.com" rel="dns-prefetch">
-  <link href="https://api.mapbox.com" rel="preconnect" crossorigin>
 </svelte:head>
 
 <section class="location">

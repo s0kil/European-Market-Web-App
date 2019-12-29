@@ -85,6 +85,10 @@
 
 <svelte:head>
   <title>Locations | European Market</title>
+
+  <!-- Pre-Connect To Maps Server, For `locations/[slug].html` Page -->
+  <link href="https://api.mapbox.com" rel="dns-prefetch">
+  <link href="https://api.mapbox.com" rel="preconnect" crossorigin>
 </svelte:head>
 
 <section id="locations">
