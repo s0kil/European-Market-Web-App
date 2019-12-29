@@ -68,15 +68,15 @@ const locations = [
   },
   {
     location: "Anderson, SC",
-    address: "418 N Main St, Anderson, SC 29621",
+    address: "715 E Greenville St, Anderson, SC 29621",
     emailAddress: Default.emailAddress,
     phoneNumber: Default.phoneNumber,
     status: Status.Open,
     hoursOfOperation: "Mon - Sat 10:30am - 7pm",
     pageSlug: "anderson-sc",
     coordinates: {
-      latitude: "34.5066776",
-      longitude: "-82.6527905"
+      latitude: "34.5153964",
+      longitude: "-82.648982"
     }
   },
   {
@@ -98,7 +98,7 @@ const locations = [
     emailAddress: Default.emailAddress,
     phoneNumber: "(864) 520-1033",
     status: Status.Open,
-    hoursOfOperation: "Mon - Sat 10:30am - 7pm, Sun 12:30pm - 3pm",
+    hoursOfOperation: "Mon - Sat 10:30am - 6:30pm",
     pageSlug: "greenville-sc",
     coordinates: {
       latitude: "34.8197697",
@@ -111,7 +111,7 @@ const locations = [
     emailAddress: Default.emailAddress,
     phoneNumber: "(864) 754-4545",
     status: Status.Open,
-    hoursOfOperation: "Mon - Sat 10:30am - 7pm, Sun 12:30pm - 3pm",
+    hoursOfOperation: "Mon - Sat 10:30am - 7pm",
     pageSlug: "hwy-9-inman-sc",
     coordinates: {
       latitude: "35.072714",
