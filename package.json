@@ -29,7 +29,6 @@
     "@rollup/plugin-image": "^2.0.0",
     "@rollup/plugin-json": "^4.0.1",
     "@rollup/plugin-replace": "^2.3.0",
-    "@types/node": "^12.12.21",
     "loadjs": "^4.2.0",
     "modern-normalize": "^0.5.0",
     "replace-in-files": "^2.0.3",
@@ -43,7 +42,7 @@
     "sapper": "^0.27.9",
     "sitemap-generator": "^8.4.2",
     "subfont": "^4.0.5",
-    "svelte": "^3.16.5",
+    "svelte": "^3.16.7",
     "svelte-type-checker": "^0.1.4",
     "typescript": "^3.7.4"
   }
