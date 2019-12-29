@@ -29,6 +29,7 @@
     "@rollup/plugin-image": "^2.0.0",
     "@rollup/plugin-json": "^4.0.1",
     "@rollup/plugin-replace": "^2.3.0",
+    "@s0kil/tiny-map": "0.0.4",
     "loadjs": "^4.2.0",
     "modern-normalize": "^0.5.0",
     "replace-in-files": "^2.0.3",

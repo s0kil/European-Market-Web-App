@@ -14,34 +14,23 @@
 </script>
 
 <script>
-  import loadAsset from "loadjs";
-  import beforeMount from "../../_utils/beforeMount";
+  import {onMount} from "svelte";
+  import {tinyMap} from "@s0kil/tiny-map";
 
   export let location;
 
-  beforeMount(() => {
+  const mapBoxAccessToken =
+    "pk.eyJ1IjoiZGFuaWVsc29raWwiLCJhIjoiY2s0NDZjaTFmMDh6ajNrbW1mb3h4cjJobiJ9.AcOfKPFXipCVNgaxZ66WTg";
+
+  onMount(() => {
     let {latitude, longitude} = location.coordinates;
 
     if (latitude && longitude) {
-      if (!loadAsset.isDefined("modestMaps")) {
-        loadAsset(
-          "https://cdn.jsdelivr.net/gh/modestmaps/modestmaps-js@3.3.6/modestmaps.min.js",
-          "modestMaps"
-        );
-      }
-
-      loadAsset.ready("modestMaps", () => {
-        const mapBoxAccessToken = "pk.eyJ1IjoiZGFuaWVsc29raWwiLCJhIjoiY2s0NDZjaTFmMDh6ajNrbW1mb3h4cjJobiJ9.AcOfKPFXipCVNgaxZ66WTg";
-        let provider = new MM.TemplatedLayer(
-          "https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{Z}/{X}/{Y}?access_token=" + mapBoxAccessToken
-        );
-
-        let map = new MM.Map("map", provider);
-
-        map.setZoom(16).setCenter({
-          lat: latitude,
-          lon: longitude
-        });
+      tinyMap(document.getElementById("map"), {
+        zoom: 16,
+        center: [longitude, latitude],
+        tileUrl: `https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=${mapBoxAccessToken}`,
+        subdomains: "",
       });
     }
   });
@@ -50,15 +39,13 @@
 <style>
   #map {
     background: white;
-
     width: 100%;
     height: calc(100vh - 110px);
-
     position: absolute;
     top: 0;
     left: 0;
-
     z-index: -1;
+    overflow: hidden;
   }
 
   .location {
@@ -104,6 +91,9 @@
 
 <svelte:head>
   <title>{location.location} | European Market</title>
+
+  <link href="https://api.mapbox.com" rel="dns-prefetch">
+  <link href="https://api.mapbox.com" rel="preconnect" crossorigin>
 </svelte:head>
 
 <section class="location">
