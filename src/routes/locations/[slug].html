@@ -1,5 +1,5 @@
 <script context="module">
-  export async function preload({params, query}) {
+  export async function preload({params}) {
     const res = await this.fetch(`locations/${params.slug}.json`);
     const data = await res.json();
 
@@ -25,7 +25,7 @@
     "pk.eyJ1IjoiZGFuaWVsc29raWwiLCJhIjoiY2s0NDZjaTFmMDh6ajNrbW1mb3h4cjJobiJ9.AcOfKPFXipCVNgaxZ66WTg";
 
   onMount(() => {
-    if (!saveData()) { // Check Is User Has Save Data Enabled.
+    if (!saveData()) { // Check Is User Has Save-Data Enabled.
       let {latitude, longitude} = location.coordinates;
 
       if (latitude && longitude) {
