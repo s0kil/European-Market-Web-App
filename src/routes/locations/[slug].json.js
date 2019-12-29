@@ -2,7 +2,7 @@ import locations from "./_locations.js";
 
 const lookup = new Map();
 locations.forEach(location => {
-  lookup.set(location.pageURL, JSON.stringify(location));
+  lookup.set(location.pageSlug, JSON.stringify(location));
 });
 
 export function get(req, res) {

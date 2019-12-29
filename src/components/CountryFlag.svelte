@@ -3,7 +3,7 @@
 </script>
 
 <style>
-  p {
+  div {
     font-family: "Lato", sans-serif;
     display: inline;
   }
@@ -17,11 +17,10 @@
   }
 </style>
 
-<p>
+<div>
   <img
       src="images/country-flags/flag-of-{country}.svg"
-      loading="lazy"
       alt="Flag Of {country}"
       title="Flag Of {country}"/>
     {country}
-</p>
+</div>

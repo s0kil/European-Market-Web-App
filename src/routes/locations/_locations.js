@@ -1,7 +1,7 @@
 const Status = {
-  open: "Open",
-  openingSoon: "Opening Soon",
-  closed: "Closed"
+  Open: "Open",
+  Closed: "Closed",
+  Soon: "Coming Soon",
 };
 
 const Default = {
@@ -9,50 +9,97 @@ const Default = {
   emailAddress: "europeanmarketus@gmail.com"
 };
 
+/*
+Template
+{
+  location: "",
+  address: "",
+  emailAddress: Default.emailAddress,
+  phoneNumber: Default.phoneNumber,
+  status: Status.Soon,
+  hoursOfOperation: "",
+  pageSlug: "",
+  coordinates: {
+    latitude: "",
+    longitude: ""
+  }
+},
+*/
+
 const locations = [
-  /*
   {
-      location: 'Spartanburg, SC',
-      address: '',
-      emailAddress: Default.emailAddress,
-      phoneNumber: Default.phoneNumber,
-      status: Status.closed,
-      hoursOfOperation: '',
-      pageURL: 'spartanburg-sc'
-  },
-  */
-  {
-    location: "Anderson, SC",
-    address: "418 N Main St, Anderson, SC 29621, USA",
+    location: "Columbia, SC",
+    address: "",
     emailAddress: Default.emailAddress,
     phoneNumber: Default.phoneNumber,
-    status: Status.open,
+    status: Status.Soon,
+    hoursOfOperation: "",
+    pageSlug: "columbia-sc",
+    coordinates: {
+      latitude: "",
+      longitude: ""
+    }
+  },
+  {
+    location: "Spartanburg, SC",
+    address: "8047 Warren H Abernathy Hwy, Spartanburg, SC 29301",
+    emailAddress: Default.emailAddress,
+    phoneNumber: Default.phoneNumber,
+    status: Status.Soon,
+    hoursOfOperation: "",
+    pageSlug: "spartanburg-sc",
+    coordinates: {
+      latitude: "34.9353588",
+      longitude: "-82.0065515"
+    }
+  },
+  {
+    location: "Indian Land, SC",
+    address: "9792 Charlotte Hwy, Indian Land, SC 29707",
+    emailAddress: Default.emailAddress,
+    phoneNumber: Default.phoneNumber,
+    status: Status.Open,
+    hoursOfOperation: "Mon - Fri 6am - 9pm, Sat 7am - 9pm, Sun 8am - 8pm",
+    pageSlug: "indian-land-sc",
+    coordinates: {
+      latitude: "35.002738",
+      longitude: "-80.8571356"
+    }
+  },
+  {
+    location: "Anderson, SC",
+    address: "418 N Main St, Anderson, SC 29621",
+    emailAddress: Default.emailAddress,
+    phoneNumber: Default.phoneNumber,
+    status: Status.Open,
     hoursOfOperation: "Mon - Sat 10:30am - 7pm",
-    pageURL: "anderson-sc",
+    pageSlug: "anderson-sc",
     coordinates: {
       latitude: "34.5066776",
       longitude: "-82.6527905"
     }
   },
-  /*
   {
-      location: 'Boiling Springs, SC',
-      address: '8275 Asheville Hwy, Boiling Springs, SC 29316, USA',
-      emailAddress: Default.emailAddress,
-      phoneNumber: Default.phoneNumber,
-      status: Status.closed,
-      hoursOfOperation: '',
-      pageURL: 'boiling-springs-sc'
+    location: "Boiling Springs, SC",
+    address: "8275 Asheville Hwy, Boiling Springs, SC 29316",
+    emailAddress: Default.emailAddress,
+    phoneNumber: Default.phoneNumber,
+    status: Status.Soon,
+    hoursOfOperation: "",
+    pageSlug: "boiling-springs-sc",
+    coordinates: {
+      latitude: "34.9957813",
+      longitude: "-82.0013986"
+    }
   },
-  */
   {
     location: "Greenville, SC",
-    address: "1635 Woodruff Rd, Greenville, SC 29607, USA",
+    address: "1635 Woodruff Rd, Greenville, SC 29607",
     emailAddress: Default.emailAddress,
     phoneNumber: "(864) 520-1033",
-    status: Status.open,
+    status: Status.Open,
     hoursOfOperation: "Mon - Sat 10:30am - 7pm, Sun 12:30pm - 3pm",
-    pageURL: "greenville-sc",
+    pageSlug: "greenville-sc",
     coordinates: {
       latitude: "34.8197697",
       longitude: "-82.2762912"
@@ -60,12 +107,12 @@ const locations = [
   },
   {
     location: "Hwy 9, Inman, SC",
-    address: "5545 SC-9, Inman, SC 29349, USA",
+    address: "5545 SC-9, Inman, SC 29349",
     emailAddress: Default.emailAddress,
     phoneNumber: "(864) 754-4545",
-    status: Status.open,
+    status: Status.Open,
     hoursOfOperation: "Mon - Sat 10:30am - 7pm, Sun 12:30pm - 3pm",
-    pageURL: "hwy-9-inman-sc",
+    pageSlug: "hwy-9-inman-sc",
     coordinates: {
       latitude: "35.072714",
       longitude: "-82.0196507"
@@ -73,12 +120,12 @@ const locations = [
   },
   {
     location: "Warehouse Inman, SC",
-    address: "38 1st St, Inman, SC 29349, USA",
+    address: "38 1st St, Inman, SC 29349",
     emailAddress: Default.emailAddress,
     phoneNumber: "(864) 473-0299",
-    status: Status.open,
+    status: Status.Open,
     hoursOfOperation: "Mon - Sat 10:30am - 7pm, Sun 12:30pm - 3pm",
-    pageURL: "warehouse-inman-sc",
+    pageSlug: "warehouse-inman-sc",
     coordinates: {
       latitude: "35.0401305",
       longitude: "-82.1090651"
@@ -89,10 +136,10 @@ const locations = [
     address: "4921 Ooltewah Ringgold Rd Ooltewah, TN 37363",
     emailAddress: Default.emailAddress,
     phoneNumber: "(423) 899-3099",
-    status: Status.open,
+    status: Status.Open,
     hoursOfOperation:
       "Mon 3:30pm - 7pm, Tue - Sat 11am - 7pm, Sun 12:30pm - 3pm",
-    pageURL: "ooltewah-tn",
+    pageSlug: "ooltewah-tn",
     coordinates: {
       latitude: "35.0586237",
       longitude: "-85.0698952"

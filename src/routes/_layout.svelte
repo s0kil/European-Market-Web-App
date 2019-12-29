@@ -15,7 +15,7 @@
     margin: 60px auto 50px auto;
 
     max-width: 80rem;
-    /* Subtract From Top & Bottom Nav Bar */
+    /* Subtract Viewport Height From (Top & Bottom Nav Bar) */
     min-height: calc(100vh - 110px);
   }
 

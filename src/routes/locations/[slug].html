@@ -20,33 +20,36 @@
   export let location;
 
   beforeMount(() => {
-    if (!loadAsset.isDefined("modestMaps")) {
-      loadAsset(
-        "https://cdn.jsdelivr.net/gh/modestmaps/modestmaps-js@3.3.6/modestmaps.min.js",
-        "modestMaps"
-      );
-    }
+    let {latitude, longitude} = location.coordinates;
 
-    loadAsset.ready("modestMaps", () => {
-      const mapBoxAccessToken = "pk.eyJ1IjoiZGFuaWVsc29raWwiLCJhIjoiY2s0NDZjaTFmMDh6ajNrbW1mb3h4cjJobiJ9.AcOfKPFXipCVNgaxZ66WTg";
-      let provider = new MM.TemplatedLayer(
-        "https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{Z}/{X}/{Y}?access_token=" + mapBoxAccessToken
-      );
+    if (latitude && longitude) {
+      if (!loadAsset.isDefined("modestMaps")) {
+        loadAsset(
+          "https://cdn.jsdelivr.net/gh/modestmaps/modestmaps-js@3.3.6/modestmaps.min.js",
+          "modestMaps"
+        );
+      }
 
-      let map = new MM.Map("map", provider);
+      loadAsset.ready("modestMaps", () => {
+        const mapBoxAccessToken = "pk.eyJ1IjoiZGFuaWVsc29raWwiLCJhIjoiY2s0NDZjaTFmMDh6ajNrbW1mb3h4cjJobiJ9.AcOfKPFXipCVNgaxZ66WTg";
+        let provider = new MM.TemplatedLayer(
+          "https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{Z}/{X}/{Y}?access_token=" + mapBoxAccessToken
+        );
 
-      map.setZoom(16).setCenter({
-        lat: location.coordinates.latitude,
-        lon: location.coordinates.longitude
+        let map = new MM.Map("map", provider);
+
+        map.setZoom(16).setCenter({
+          lat: latitude,
+          lon: longitude
+        });
       });
-    });
+    }
   });
 </script>
 
 <style>
   #map {
     background: white;
-
 
     width: 100%;
     height: calc(100vh - 110px);
@@ -83,6 +86,11 @@
     text-decoration-color: #9a1915;
   }
 
+  .location .coming-soon {
+    font-weight: bolder;
+    text-decoration: underline;
+  }
+
   @media (max-width: 400px) {
     .location h1 {
       font-size: 1.2rem;
@@ -99,6 +107,10 @@
 </svelte:head>
 
 <section class="location">
+  {#if location.status != 'Open'}
+  <p class="coming-soon">Coming Soon</p>
+  {/if}
+
   <h1>European Market {location.location}</h1>
 
   <p>{location.hoursOfOperation}</p>

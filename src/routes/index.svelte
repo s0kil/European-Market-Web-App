@@ -25,6 +25,12 @@
     "Ukraine"
   ];
 
+  const ReadyState = {
+    loading: "loading",
+    complete: "complete",
+    interactive: "interactive",
+  };
+
   let readyState;
   const updateReadyState = () => (readyState = document.readyState);
 
@@ -142,7 +148,7 @@
       <h1>Delicious & Nutritious Products From 25+ Different Countries</h1>
 
       <div class="countries">
-          {#if readyState === 'complete'}
+          {#if readyState === ReadyState.complete}
               {#each countries as country}
                 <p>
                   <svelte:component this={CountryFlag} {country}/>
@@ -153,21 +159,23 @@
 
     </div>
 
-      {#if readyState === 'complete'}
+      {#if readyState === ReadyState.complete}
         <img
             loading="lazy"
             alt="European Countries"
-            src={imageCDN('/images/min/european-countries.png')}/>
+            src="{imageCDN('/images/min/european-countries.png')}"
+        />
       {/if}
   </div>
 
   <div id="our-story">
     <div>
-        {#if readyState === 'complete'}
+        {#if readyState === ReadyState.complete}
           <img
               loading="lazy"
               alt="Polish Meats"
-              src={imageCDN('/images/min/polish-meats.jpeg', '&w=765')}/>
+              src="{imageCDN('/images/min/polish-meats.jpeg', '&w=765')}"
+          />
         {/if}
     </div>
 

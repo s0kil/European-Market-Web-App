@@ -3,7 +3,7 @@
     return this.fetch("locations.json")
         .then(r => r.json())
         .then(locations => {
-          return {locations};
+          return {locations}
         });
   }
 </script>
@@ -20,10 +20,16 @@
 
   .location p {
     flex: 1;
-
     color: #202020;
     border: 1px solid #9a1915;
     font-family: "Merriweather", serif;
+  }
+
+  .location p span {
+    /*color: blue;*/
+    font-weight: bolder;
+    font-family: "Lato", sans-serif;
+    text-decoration: underline;
   }
 
   .location a {
@@ -39,7 +45,7 @@
     box-shadow: 0 0 8px #202020;
   }
 
-  .location span {
+  .location a span {
     vertical-align: middle;
     font-size: 1em;
   }
@@ -84,8 +90,12 @@
 <section id="locations">
     {#each locations as location}
       <div class="location">
-        <p>{location.location}</p>
-        <a rel=prefetch href={'/locations/' + location.pageURL}>
+          {#if location.status === "Open"}
+            <p>{location.location}</p>
+          {:else}
+            <p><span>Coming Soon</span> {location.location}</p>
+          {/if}
+        <a rel="prefetch" href="{'/locations/' + location.pageSlug}">
           More Info
           <span>></span>
         </a>

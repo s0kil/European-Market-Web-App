@@ -5,7 +5,8 @@ const contents = JSON.stringify(
     .map(location => {
       return {
         location: location.location,
-        pageURL: location.pageURL
+        pageSlug: location.pageSlug,
+        status: location.status,
       };
       // https://stackoverflow.com/questions/6712034/sort-array-by-firstname-alphabetically-in-javascript
     })
