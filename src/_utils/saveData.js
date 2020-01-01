@@ -1,6 +1,6 @@
 function saveData() {
   if ("connection" in navigator) {
-    return (navigator.connection.saveData === true);
+    return navigator.connection.saveData === true;
   } else return false;
 }
 

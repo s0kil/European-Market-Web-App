@@ -1,4 +1,4 @@
-import {beforeUpdate, onMount} from "svelte";
+import { beforeUpdate, onMount } from "svelte";
 
 let SSR = true;
 
@@ -6,9 +6,9 @@ let SSR = true;
 // `beforeMount` Is Used To Execute The
 // `callback` Before `onMount` Lifecycle Event
 function beforeMount(callback) {
-  let result = (function () {
+  let result = (function() {
     let executed = false;
-    return function () {
+    return function() {
       if (!executed) {
         executed = true;
         callback();

@@ -27,6 +27,6 @@
 </style>
 
 <main>
-  <Navigation {segment}/>
-  <slot/>
+  <Navigation {segment} />
+  <slot />
 </main>

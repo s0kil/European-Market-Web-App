@@ -1,10 +1,10 @@
 <script context="module">
-  export function preload({params, query}) {
+  export function preload({ params, query }) {
     return this.fetch("locations.json")
-        .then(r => r.json())
-        .then(locations => {
-          return {locations}
-        });
+      .then(r => r.json())
+      .then(locations => {
+        return { locations };
+      });
   }
 </script>
 
@@ -87,22 +87,25 @@
   <title>Locations | European Market</title>
 
   <!-- Pre-Connect To Maps Server, For `locations/[slug].html` Page -->
-  <link href="https://api.mapbox.com" rel="dns-prefetch">
-  <link href="https://api.mapbox.com" rel="preconnect" crossorigin>
+  <link href="https://api.mapbox.com" rel="dns-prefetch" />
+  <link href="https://api.mapbox.com" rel="preconnect" crossorigin />
 </svelte:head>
 
 <section id="locations">
-    {#each locations as location}
-      <div class="location">
-          {#if location.status === "Open"}
-            <p>{location.location}</p>
-          {:else}
-            <p><span>Coming Soon</span> {location.location}</p>
-          {/if}
-        <a rel="prefetch" href="{'/locations/' + location.pageSlug}">
-          More Info
-          <span>></span>
-        </a>
-      </div>
-    {/each}
+  {#each locations as location}
+    <div class="location">
+      {#if location.status === 'Open'}
+        <p>{location.location}</p>
+      {:else}
+        <p>
+          <span>Coming Soon</span>
+          {location.location}
+        </p>
+      {/if}
+      <a rel="prefetch" href="{'/locations/' + location.pageSlug}">
+        More Info
+        <span>></span>
+      </a>
+    </div>
+  {/each}
 </section>

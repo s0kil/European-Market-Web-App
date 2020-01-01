@@ -1,6 +1,6 @@
 <script>
-  import {onMount} from "svelte";
-  import {imageCDN} from "../_utils/image.js";
+  import { onMount } from "svelte";
+  import { imageCDN } from "../_utils/image.js";
   import CountryFlag from "../components/CountryFlag.svelte";
   import beforeMount from "../_utils/beforeMount.js";
 
@@ -28,7 +28,7 @@
   const ReadyState = {
     loading: "loading",
     complete: "complete",
-    interactive: "interactive",
+    interactive: "interactive"
   };
 
   let readyState;
@@ -37,13 +37,17 @@
   let headerImgSrc = "";
   beforeMount(() => {
     let headerHeight = document.getElementById("intro-header").offsetHeight;
-    headerImgSrc = imageCDN("/images/min/european-meats.jpeg", `&h=${headerHeight}`);
+    headerImgSrc = imageCDN(
+      "/images/min/european-meats.jpeg",
+      `&h=${headerHeight}`
+    );
   });
 
   onMount(() => {
     updateReadyState();
     document.addEventListener("readystatechange", updateReadyState);
-    return () => document.removeEventListener("readystatechange", updateReadyState)
+    return () =>
+      document.removeEventListener("readystatechange", updateReadyState);
   });
 </script>
 
@@ -138,9 +142,8 @@
 </svelte:head>
 
 <header
-    id="intro-header"
-    style="background-image: url({headerImgSrc});">
-</header>
+  id="intro-header"
+  style="background-image: url({headerImgSrc});"></header>
 
 <section>
   <div id="about">
@@ -148,35 +151,33 @@
       <h1>Delicious & Nutritious Products From 25+ Different Countries</h1>
 
       <div class="countries">
-          {#if readyState === ReadyState.complete}
-              {#each countries as country}
-                <p>
-                  <svelte:component this={CountryFlag} {country}/>
-                </p>
-              {/each}
-          {/if}
+        {#if readyState === ReadyState.complete}
+          {#each countries as country}
+            <p>
+              <svelte:component this="{CountryFlag}" {country} />
+            </p>
+          {/each}
+        {/if}
       </div>
 
     </div>
 
-      {#if readyState === ReadyState.complete}
-        <img
-            loading="lazy"
-            alt="European Countries"
-            src="{imageCDN('/images/min/european-countries.png')}"
-        />
-      {/if}
+    {#if readyState === ReadyState.complete}
+      <img
+        loading="lazy"
+        alt="European Countries"
+        src="{imageCDN('/images/min/european-countries.png')}" />
+    {/if}
   </div>
 
   <div id="our-story">
     <div>
-        {#if readyState === ReadyState.complete}
-          <img
-              loading="lazy"
-              alt="Polish Meats"
-              src="{imageCDN('/images/min/polish-meats.jpeg', '&w=765')}"
-          />
-        {/if}
+      {#if readyState === ReadyState.complete}
+        <img
+          loading="lazy"
+          alt="Polish Meats"
+          src="{imageCDN('/images/min/polish-meats.jpeg', '&w=765')}" />
+      {/if}
     </div>
 
     <div>

@@ -1,7 +1,7 @@
 const Status = {
   Open: "Open",
   Closed: "Closed",
-  Soon: "Coming Soon",
+  Soon: "Coming Soon"
 };
 
 const Default = {

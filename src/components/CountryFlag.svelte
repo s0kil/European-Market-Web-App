@@ -19,8 +19,8 @@
 
 <div>
   <img
-      src="images/country-flags/flag-of-{country}.svg"
-      alt="Flag Of {country}"
-      title="Flag Of {country}"/>
-    {country}
+    src="images/country-flags/flag-of-{country}.svg"
+    alt="Flag Of {country}"
+    title="Flag Of {country}" />
+  {country}
 </div>

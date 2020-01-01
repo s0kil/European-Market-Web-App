@@ -1,7 +1,7 @@
 <script>
   import beforeMount from "../_utils/beforeMount";
-  import {imageCDN} from "../_utils/image.js";
-  import {submitForm} from "../_utils/form.js";
+  import { imageCDN } from "../_utils/image.js";
+  import { submitForm } from "../_utils/form.js";
 
   let formStatus = "";
 
@@ -17,14 +17,14 @@
     }
 
     submitForm(event.target)
-        .then(() => {
-          formStatus = "Message Sent, We Will Contact You Soon.";
-          event.target.reset();
-        })
-        .catch(error => {
-          formStatus = `Message Failed To Send, Error Message: ${error}`;
-          console.error(error);
-        });
+      .then(() => {
+        formStatus = "Message Sent, We Will Contact You Soon.";
+        event.target.reset();
+      })
+      .catch(error => {
+        formStatus = `Message Failed To Send, Error Message: ${error}`;
+        console.error(error);
+      });
   }
 
   function validateForm(inputsArray) {
@@ -37,7 +37,10 @@
 
   let backgroundImage = "";
   beforeMount(() => {
-    backgroundImage = imageCDN("/images/min/fresh-vegetables.jpeg", `&h=${screen.height}`)
+    backgroundImage = imageCDN(
+      "/images/min/fresh-vegetables.jpeg",
+      `&h=${screen.height}`
+    );
   });
 </script>
 
@@ -134,36 +137,36 @@
 <section style="background-image: url({backgroundImage});">
 
   <form
-      name="contact"
-      method="POST"
-      action="/contact"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      on:submit|preventDefault={handleSubmit}>
+    name="contact"
+    method="POST"
+    action="/contact"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+    on:submit|preventDefault="{handleSubmit}">
 
-    <input type="hidden" name="bot-field"/>
+    <input type="hidden" name="bot-field" />
 
     <p>{formStatus}</p>
 
     <input
-        required
-        name="name"
-        type="text"
-        id="person-name"
-        placeholder="Name"/>
+      required
+      name="name"
+      type="text"
+      id="person-name"
+      placeholder="Name" />
 
     <input
-        required
-        name="email"
-        type="email"
-        id="person-email"
-        placeholder="Email"/>
+      required
+      name="email"
+      type="email"
+      id="person-email"
+      placeholder="Email" />
 
     <textarea
-        required
-        name="message"
-        id="person-message"
-        placeholder="Message"></textarea>
+      required
+      name="message"
+      id="person-message"
+      placeholder="Message"></textarea>
 
     <button type="submit">Send</button>
 
