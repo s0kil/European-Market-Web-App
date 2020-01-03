@@ -21,16 +21,45 @@
   import Switzerland from "./CountryFlags/Switzerland.svelte";
   import Turkey from "./CountryFlags/Turkey.svelte";
   import Ukraine from "./CountryFlags/Ukraine.svelte";
+
+  /*
+  const countries = [
+    "Armenia",
+    "Austria",
+    "Belarus",
+    "Bulgaria",
+    "England",
+    "France",
+    "Germany",
+    "Greece",
+    "Israel",
+    "Italy",
+    "Latvia",
+    "Moldova",
+    "Poland",
+    "Russia",
+    "Sweden",
+    "Switzerland",
+    "Turkey",
+    "Ukraine"
+  ];
+  */
 </script>
 
 <style>
+  div {
+    display: flex;
+    align-items: center;
+  }
+
   p {
+    font-size: 1.2rem;
+    line-height: 2rem;
     font-family: "Lato", sans-serif;
   }
 
   .country-icon {
     margin-right: 0.4rem;
-    vertical-align: middle;
   }
 
   :global(.country-icon svg) {
@@ -39,6 +68,10 @@
   }
 
   @media (max-width: 22rem) {
+    p {
+      font-size: 1rem;
+    }
+
     :global(.country-icon svg) {
       width: 40px;
       height: auto;
@@ -46,128 +79,128 @@
   }
 </style>
 
-<p>
+<div>
   <span class="country-icon">
     <Armenia />
   </span>
-  Armenia
-</p>
+  <p>Armenia</p>
+</div>
 
-<p>
+<div>
   <span class="country-icon">
     <Austria />
   </span>
-  Austria
-</p>
+  <p>Austria</p>
+</div>
 
-<p>
+<div>
   <span class="country-icon">
     <Belarus />
   </span>
-  Belarus
-</p>
+  <p>Belarus</p>
+</div>
 
-<p>
+<div>
   <span class="country-icon">
     <Bulgaria />
   </span>
-  Bulgaria
-</p>
+  <p>Bulgaria</p>
+</div>
 
-<p>
+<div>
   <span class="country-icon">
     <England />
   </span>
-  England
-</p>
+  <p>England</p>
+</div>
 
-<p>
+<div>
   <span class="country-icon">
     <France />
   </span>
-  France
-</p>
+  <p>France</p>
+</div>
 
-<p>
+<div>
   <span class="country-icon">
     <Germany />
   </span>
-  Germany
-</p>
+  <p>Germany</p>
+</div>
 
-<p>
+<div>
   <span class="country-icon">
     <Greece />
   </span>
-  Greece
-</p>
+  <p>Greece</p>
+</div>
 
-<p>
+<div>
   <span class="country-icon">
     <Israel />
   </span>
-  Israel
-</p>
+  <p>Israel</p>
+</div>
 
-<p>
+<div>
   <span class="country-icon">
     <Italy />
   </span>
-  Italy
-</p>
+  <p>Italy</p>
+</div>
 
-<p>
+<div>
   <span class="country-icon">
     <Latvia />
   </span>
-  Latvia
-</p>
+  <p>Latvia</p>
+</div>
 
-<p>
+<div>
   <span class="country-icon">
     <Moldova />
   </span>
-  Moldova
-</p>
+  <p>Moldova</p>
+</div>
 
-<p>
+<div>
   <span class="country-icon">
     <Poland />
   </span>
-  Poland
-</p>
+  <p>Poland</p>
+</div>
 
-<p>
+<div>
   <span class="country-icon">
     <Russia />
   </span>
-  Russia
-</p>
+  <p>Russia</p>
+</div>
 
-<p>
+<div>
   <span class="country-icon">
     <Sweden />
   </span>
-  Sweden
-</p>
+  <p>Sweden</p>
+</div>
 
-<p>
+<div>
   <span class="country-icon">
     <Switzerland />
   </span>
-  Switzerland
-</p>
+  <p>Switzerland</p>
+</div>
 
-<p>
+<div>
   <span class="country-icon">
     <Turkey />
   </span>
-  Turkey
-</p>
+  <p>Turkey</p>
+</div>
 
-<p>
+<div>
   <span class="country-icon">
     <Ukraine />
   </span>
-  Ukraine
-</p>
+  <p>Ukraine</p>
+</div>
