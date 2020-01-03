@@ -1,29 +1,9 @@
 <script>
   import { onMount } from "svelte";
   import { imageCDN } from "../_utils/image.js";
-  import CountryFlag from "../components/CountryFlag.svelte";
   import beforeMount from "../_utils/beforeMount.js";
 
-  const countries = [
-    "Armenia",
-    "Austria",
-    "Belarus",
-    "Bulgaria",
-    "England",
-    "France",
-    "Germany",
-    "Greece",
-    "Israel",
-    "Italy",
-    "Latvia",
-    "Moldova",
-    "Poland",
-    "Russia",
-    "Sweden",
-    "Switzerland",
-    "Turkey",
-    "Ukraine"
-  ];
+  import Countries from "../components/Countries.svelte";
 
   const ReadyState = {
     loading: "loading",
@@ -125,14 +105,17 @@
     }
   }
 
-  @media (max-width: 36rem) {
+  @media (max-width: 38rem) {
+    .countries {
+      grid-template-columns: repeat(3, minmax(100px, auto));
+      justify-content: space-between;
+    }
+  }
+
+  @media (max-width: 30rem) {
     .countries {
       grid-template-columns: repeat(2, minmax(100px, auto));
       justify-content: space-between;
-    }
-
-    .countries p {
-      font-size: 1em;
     }
   }
 </style>
@@ -151,13 +134,7 @@
       <h1>Delicious & Nutritious Products From 25+ Different Countries</h1>
 
       <div class="countries">
-        {#if readyState === ReadyState.complete}
-          {#each countries as country}
-            <p>
-              <svelte:component this="{CountryFlag}" {country} />
-            </p>
-          {/each}
-        {/if}
+        <Countries />
       </div>
 
     </div>
