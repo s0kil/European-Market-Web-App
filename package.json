@@ -42,7 +42,7 @@
     "rollup-plugin-terser": "^5.1.3",
     "sapper": "^0.27.9",
     "sitemap-generator": "^8.4.2",
-    "subfont": "^4.0.5",
+    "subfont": "^4.1.0",
     "svelte": "^3.16.7",
     "svelte-type-checker": "^0.1.4",
     "typescript": "^3.7.4"

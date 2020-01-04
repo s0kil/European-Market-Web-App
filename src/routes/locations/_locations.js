@@ -28,6 +28,19 @@ Template
 
 const locations = [
   {
+    location: "Lexington, SC",
+    address: "5483 Sunset Blvd Suite C, Lexington, SC 29072",
+    emailAddress: Default.emailAddress,
+    phoneNumber: Default.phoneNumber,
+    status: Status.Soon,
+    hoursOfOperation: "",
+    pageSlug: "lexington-sc",
+    coordinates: {
+      latitude: "33.9979416",
+      longitude: "-81.2205587"
+    }
+  },
+  {
     location: "Columbia, SC",
     address: "",
     emailAddress: Default.emailAddress,
@@ -111,7 +124,7 @@ const locations = [
     emailAddress: Default.emailAddress,
     phoneNumber: "(864) 754-4545",
     status: Status.Open,
-    hoursOfOperation: "Mon - Sat 10:30am - 7pm",
+    hoursOfOperation: "Mon - Sat 11am - 6:30pm",
     pageSlug: "hwy-9-inman-sc",
     coordinates: {
       latitude: "35.072714",
