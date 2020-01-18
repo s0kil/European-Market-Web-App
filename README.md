@@ -6,3 +6,8 @@
 
 - https://compressor.io
 - https://images.weserv.nl
+
+## Tools
+
+- [subset](https://www.npmjs.com/package/install-subseu)
+  - Used to install optional dependencies defined as `subsets` in `package.json`

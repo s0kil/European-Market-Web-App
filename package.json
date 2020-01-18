@@ -32,7 +32,6 @@
     "flag-icon-css": "^3.4.5",
     "loadjs": "^4.2.0",
     "modern-normalize": "^0.6.0",
-    "netlify-cli": "^2.30.0",
     "prettier": "^1.19.1",
     "prettier-plugin-svelte": "^0.7.0",
     "rollup": "^1.29.0",
@@ -47,5 +46,12 @@
     "svelte": "^3.17.1",
     "svelte-type-checker": "^0.1.4",
     "typescript": "^3.7.5"
+  },
+  "subsets": {
+    "netlify": {
+      "include": [
+        "netlify-cli"
+      ]
+    }
   }
 }
