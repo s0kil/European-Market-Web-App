@@ -52,6 +52,19 @@
 
     <!-- This contains the contents of the <svelte:head> component, if the current page has one -->
     %sapper.head%
+
+    <!-- Sentry Start -->
+    <script
+      src="https://browser.sentry-cdn.com/5.11.0/bundle.min.js"
+      integrity="sha384-jbFinqIbKkHNg+QL+yxB4VrBC0EAPTuaLGeRT0T+NfEV89YC6u1bKxHLwoo+/xxY"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      Sentry.init({
+        dsn: "https://40c5ac0d7ac6406392b743157d846946@sentry.io/1886618"
+      });
+    </script>
+    <!-- Sentry End -->
   </head>
 
   <body>
