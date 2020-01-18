@@ -1,7 +1,6 @@
 <script>
   import { onMount } from "svelte";
   import { imageCDN } from "../_utils/image.js";
-  import beforeMount from "../_utils/beforeMount.js";
 
   import Countries from "../components/Countries.svelte";
 
@@ -15,15 +14,13 @@
   const updateReadyState = () => (readyState = document.readyState);
 
   let headerImgSrc = "";
-  beforeMount(() => {
+  onMount(() => {
     let headerHeight = document.getElementById("intro-header").offsetHeight;
     headerImgSrc = imageCDN(
       "/images/min/european-meats.jpeg",
       `&h=${headerHeight}`
     );
-  });
 
-  onMount(() => {
     updateReadyState();
     document.addEventListener("readystatechange", updateReadyState);
     return () =>

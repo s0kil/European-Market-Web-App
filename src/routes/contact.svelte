@@ -1,5 +1,6 @@
 <script>
-  import beforeMount from "../_utils/beforeMount";
+  import { onMount } from "svelte";
+
   import { imageCDN } from "../_utils/image.js";
   import { submitForm } from "../_utils/form.js";
 
@@ -36,7 +37,7 @@
   }
 
   let backgroundImage = "";
-  beforeMount(() => {
+  onMount(() => {
     backgroundImage = imageCDN(
       "/images/min/fresh-vegetables.jpeg",
       `&h=${screen.height}`
