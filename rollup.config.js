@@ -24,6 +24,7 @@ const dedupe = importee =>
 function optimizer(module = false) {
   return terser({
     module,
+    safari10: true,
     compress: {
       passes: 3,
     }
@@ -33,7 +34,10 @@ function optimizer(module = false) {
 export default {
   client: {
     input: config.client.input(),
-    output: config.client.output(),
+    output: {
+      ...config.client.output(),
+      sourcemap: true,
+    },
     plugins: [
       json(),
       replace({
