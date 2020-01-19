@@ -33,6 +33,9 @@
   }
 
   .location a {
+    display: flex;
+    align-items: center;
+
     color: #fff;
     text-decoration: none;
     background: #9a1915;
@@ -103,8 +106,7 @@
         </p>
       {/if}
       <a rel="prefetch" href="{'/locations/' + location.pageSlug}">
-        More Info
-        <span>></span>
+        <span>More Info ></span>
       </a>
     </div>
   {/each}

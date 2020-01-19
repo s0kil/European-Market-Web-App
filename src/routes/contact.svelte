@@ -71,21 +71,14 @@
     padding: 0.4em;
     max-width: 500px;
     font-size: 1.2em;
-    background: transparent;
     margin-bottom: 0.5em;
+    background: rgba(255, 255, 255, 0.8);
   }
 
   form input:focus,
   form textarea:focus {
     outline: 2px solid #517a3e;
     box-shadow: 0 0 8px #517a3e;
-  }
-
-  @media (max-width: 1000px) {
-    form input,
-    form textarea {
-      background: rgba(255, 255, 255, 0.8);
-    }
   }
 
   form textarea {
