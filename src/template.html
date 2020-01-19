@@ -6,6 +6,10 @@
       name="viewport"
       content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes, minimal-ui"
     />
+
+    <!-- Polyfill.io -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?flags=gated&rum=true&features=fetch"></script>
+
     <meta name="theme-color" content="#870e14" />
 
     <link href="https://images.weserv.nl" rel="dns-prefetch" />
@@ -47,7 +51,7 @@
       rel="stylesheet"
     />
 
-    <!-- Sapper generates a <style> tag containing critical CSS for the current page. CSS for the rest of the app is loaded lazily when it precaches secondary pages -->
+    <!-- Sapper generates a <style> tag containing critical CSS for the current page. CSS for the rest of the app will be loaded lazily when it precaches secondary pages -->
     %sapper.styles%
 
     <!-- This contains the contents of the <svelte:head> component, if the current page has one -->
