@@ -34,7 +34,7 @@
     "modern-normalize": "^0.6.0",
     "prettier": "^1.19.1",
     "prettier-plugin-svelte": "^0.7.0",
-    "rollup": "^1.29.0",
+    "rollup": "^1.29.1",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
@@ -43,7 +43,7 @@
     "sapper": "^0.27.9",
     "sitemap-generator": "^8.4.2",
     "subfont": "^4.1.2",
-    "svelte": "^3.17.1",
+    "svelte": "^3.17.2",
     "svelte-type-checker": "^0.1.4",
     "typescript": "^3.7.5"
   },
