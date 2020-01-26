@@ -1,12 +1,12 @@
 import babel from "rollup-plugin-babel";
-import commonjs from "rollup-plugin-commonjs";
+import commonjs from "@rollup/plugin-commonjs";
 import config from "sapper/config/rollup.js";
 import json from "@rollup/plugin-json";
 import pkg from "./package.json";
 import replace from "@rollup/plugin-replace";
-import resolve from "rollup-plugin-node-resolve";
+import resolve from "@rollup/plugin-node-resolve";
 import svelte from "rollup-plugin-svelte";
-import {terser} from "rollup-plugin-terser";
+import { terser } from "rollup-plugin-terser";
 // import reshadow from "reshadow/svelte/preprocess";
 
 const mode = process.env.NODE_ENV;
@@ -26,7 +26,7 @@ function optimizer(module = false) {
     module,
     safari10: true,
     compress: {
-      passes: 3,
+      passes: 3
     }
   });
 }
@@ -36,7 +36,7 @@ export default {
     input: config.client.input(),
     output: {
       ...config.client.output(),
-      sourcemap: true,
+      sourcemap: true
     },
     plugins: [
       json(),
@@ -47,7 +47,7 @@ export default {
       svelte({
         dev,
         hydratable: true,
-        emitCss: true,
+        emitCss: true
         // preprocess: reshadow()
       }),
       resolve({
@@ -57,28 +57,28 @@ export default {
       commonjs(),
 
       legacy &&
-      babel({
-        extensions: [".js", ".mjs", ".html", ".svelte"],
-        runtimeHelpers: true,
-        exclude: ["node_modules/@babel/**"],
-        presets: [
-          [
-            "@babel/preset-env",
-            {
-              targets: "> 0.25%, not dead"
-            }
+        babel({
+          extensions: [".js", ".mjs", ".html", ".svelte"],
+          runtimeHelpers: true,
+          exclude: ["node_modules/@babel/**"],
+          presets: [
+            [
+              "@babel/preset-env",
+              {
+                targets: "> 0.25%, not dead"
+              }
+            ]
+          ],
+          plugins: [
+            "@babel/plugin-syntax-dynamic-import",
+            [
+              "@babel/plugin-transform-runtime",
+              {
+                useESModules: true
+              }
+            ]
           ]
-        ],
-        plugins: [
-          "@babel/plugin-syntax-dynamic-import",
-          [
-            "@babel/plugin-transform-runtime",
-            {
-              useESModules: true
-            }
-          ]
-        ]
-      }),
+        }),
 
       !dev && optimizer(true)
     ],
@@ -88,7 +88,10 @@ export default {
 
   server: {
     input: config.server.input(),
-    output: config.server.output(),
+    output: {
+      ...config.server.output(),
+      sourcemap: true
+    },
     plugins: [
       json(),
       replace({
@@ -97,7 +100,7 @@ export default {
       }),
       svelte({
         generate: "ssr",
-        dev,
+        dev
         // preprocess: reshadow()
       }),
       resolve({
@@ -107,7 +110,7 @@ export default {
     ],
     external: Object.keys(pkg.dependencies).concat(
       require("module").builtinModules ||
-      Object.keys(process.binding("natives"))
+        Object.keys(process.binding("natives"))
     ),
 
     onwarn
