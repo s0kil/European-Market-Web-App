@@ -91,7 +91,10 @@
 
   <!-- Pre-Connect To Maps Server, For `locations/[slug].html` Page -->
   <link href="https://api.mapbox.com" rel="dns-prefetch" />
-  <link href="https://api.mapbox.com" rel="preconnect" crossorigin />
+  <link
+    href="https://api.mapbox.com"
+    rel="preconnect"
+    crossorigin="anonymous" />
 </svelte:head>
 
 <section id="locations">
