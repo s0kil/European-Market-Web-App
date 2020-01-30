@@ -34,10 +34,7 @@ function optimizer(module = false) {
 export default {
   client: {
     input: config.client.input(),
-    output: {
-      ...config.client.output(),
-      sourcemap: true
-    },
+    output: config.client.output(),
     plugins: [
       json(),
       replace({
@@ -52,7 +49,7 @@ export default {
       }),
       resolve({
         browser: true,
-        dedupe
+        dedupe: ["svelte"]
       }),
       commonjs(),
 
@@ -88,10 +85,7 @@ export default {
 
   server: {
     input: config.server.input(),
-    output: {
-      ...config.server.output(),
-      sourcemap: true
-    },
+    output: config.server.output(),
     plugins: [
       json(),
       replace({
@@ -104,7 +98,7 @@ export default {
         // preprocess: reshadow()
       }),
       resolve({
-        dedupe
+        dedupe: ["svelte"]
       }),
       commonjs()
     ],
