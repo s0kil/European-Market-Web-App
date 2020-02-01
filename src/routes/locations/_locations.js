@@ -29,11 +29,11 @@ Template
 const locations = [
   {
     location: "Lexington, SC",
-    address: "5483 Sunset Blvd Suite C, Lexington, SC 29072",
+    address: "5483 Sunset Blvd, Lexington, SC 29072",
     emailAddress: Default.emailAddress,
     phoneNumber: Default.phoneNumber,
-    status: Status.Soon,
-    hoursOfOperation: "",
+    status: Status.Open,
+    hoursOfOperation: "Sun - Sat 9am - 7pm",
     pageSlug: "lexington-sc",
     coordinates: {
       latitude: "33.9979416",
