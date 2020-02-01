@@ -1,6 +1,7 @@
 const SitemapGenerator = require("sitemap-generator");
 
 let generator = SitemapGenerator("https://europeanmarketus.com", {
+  ignoreInvalidSSL: false,
   maxDepth: 100,
   lastMod: true,
   changeFreq: "weekly",
