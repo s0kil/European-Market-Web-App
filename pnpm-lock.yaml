@@ -9,11 +9,11 @@ devDependencies:
   '@babel/preset-env': 7.8.4_@babel+core@7.8.4
   '@babel/runtime': 7.8.4
   '@reshadow/svelte': 0.0.1-alpha.72_@babel+core@7.8.4
-  '@rollup/plugin-commonjs': 11.0.1_rollup@1.31.0
-  '@rollup/plugin-image': 2.0.1_rollup@1.31.0
-  '@rollup/plugin-json': 4.0.1_rollup@1.31.0
-  '@rollup/plugin-node-resolve': 7.0.0_rollup@1.31.0
-  '@rollup/plugin-replace': 2.3.0_rollup@1.31.0
+  '@rollup/plugin-commonjs': 11.0.2_rollup@1.31.0
+  '@rollup/plugin-image': 2.0.2_rollup@1.31.0
+  '@rollup/plugin-json': 4.0.2_rollup@1.31.0
+  '@rollup/plugin-node-resolve': 7.1.0_rollup@1.31.0
+  '@rollup/plugin-replace': 2.3.1_rollup@1.31.0
   '@s0kil/tiny-map': 0.1.1
   babel-loader: 8.0.6_@babel+core@7.8.4+webpack@4.41.5
   css-loader: 3.4.2_webpack@4.41.5
@@ -943,10 +943,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-2YBW1bRBCf9uplsnVRrB0HWh3+dVJ0BH/Z+3Sm5DOb9qEzvpe06K3N47RJtgHDC7kociIuSP9S7ZhAA1RAUHbA==
-  /@rollup/plugin-commonjs/11.0.1_rollup@1.31.0:
+  /@rollup/plugin-commonjs/11.0.2_rollup@1.31.0:
     dependencies:
-      '@rollup/pluginutils': 3.0.6_rollup@1.31.0
-      estree-walker: 0.6.1
+      '@rollup/pluginutils': 3.0.8_rollup@1.31.0
+      estree-walker: 1.0.1
       is-reference: 1.1.4
       magic-string: 0.25.6
       resolve: 1.15.0
@@ -957,10 +957,10 @@ packages:
     peerDependencies:
       rollup: ^1.20.0
     resolution:
-      integrity: sha512-SaVUoaLDg3KnIXC5IBNIspr1APTYDzk05VaYcI6qz+0XX3ZlSCwAkfAhNSOxfd5GAdcm/63Noi4TowOY9MpcDg==
-  /@rollup/plugin-image/2.0.1_rollup@1.31.0:
+      integrity: sha512-MPYGZr0qdbV5zZj8/2AuomVpnRVXRU5XKXb3HVniwRoRCreGlf5kOE081isNWeiLIi6IYkwTX9zE0/c7V8g81g==
+  /@rollup/plugin-image/2.0.2_rollup@1.31.0:
     dependencies:
-      '@rollup/pluginutils': 3.0.6_rollup@1.31.0
+      '@rollup/pluginutils': 3.0.8_rollup@1.31.0
       rollup: 1.31.0
     dev: true
     engines:
@@ -968,19 +968,19 @@ packages:
     peerDependencies:
       rollup: ^1.20.0
     resolution:
-      integrity: sha512-nvxtQGDWouAj2l9yK2DdkI6eKodskv3+GS2FGLrno2x4QyE9ro1eYFnnKotohSjAwN9Y28VZMUFhi47mNsC46Q==
-  /@rollup/plugin-json/4.0.1_rollup@1.31.0:
+      integrity: sha512-mNsPrtqXByCqaxrP5Xipn3AZw6Cn6Bp6KqEG7+737yFL0aTcQyvXmIZCR1dgP03QgrDkHs/7Y4/N7vZ8NIIL0Q==
+  /@rollup/plugin-json/4.0.2_rollup@1.31.0:
     dependencies:
+      '@rollup/pluginutils': 3.0.8_rollup@1.31.0
       rollup: 1.31.0
-      rollup-pluginutils: 2.8.2
     dev: true
     peerDependencies:
       rollup: ^1.20.0
     resolution:
-      integrity: sha512-soxllkhOGgchswBAAaTe7X9G80U2tjjHvXv0sBrriLJcC/89PkP59iTrKPOfbz3SjX088mKDmMhAscuyLz8ZSg==
-  /@rollup/plugin-node-resolve/7.0.0_rollup@1.31.0:
+      integrity: sha512-t4zJMc98BdH42mBuzjhQA7dKh0t4vMJlUka6Fz0c+iO5IVnWaEMiYBy1uBj9ruHZzXBW23IPDGL9oCzBkQ9Udg==
+  /@rollup/plugin-node-resolve/7.1.0_rollup@1.31.0:
     dependencies:
-      '@rollup/pluginutils': 3.0.6_rollup@1.31.0
+      '@rollup/pluginutils': 3.0.8_rollup@1.31.0
       '@types/resolve': 0.0.8
       builtin-modules: 3.1.0
       is-module: 1.0.0
@@ -992,18 +992,18 @@ packages:
     peerDependencies:
       rollup: ^1.20.0
     resolution:
-      integrity: sha512-+vOx2+WMBMFotYKM3yYeDGZxIvcQ7yO4g+SuKDFsjKaq8Lw3EPgfB6qNlp8Z/3ceDCEhHvC9/b+PgBGwDQGbzQ==
-  /@rollup/plugin-replace/2.3.0_rollup@1.31.0:
+      integrity: sha512-pN3fQsTYuA/guTDCyAthMHWqupoGVSO4bgUFVK8ulr/zmNY9bY/xewNO2ptHJYZY1FW3KkblF+I4a4MWEBYJQA==
+  /@rollup/plugin-replace/2.3.1_rollup@1.31.0:
     dependencies:
+      '@rollup/pluginutils': 3.0.8_rollup@1.31.0
       magic-string: 0.25.6
       rollup: 1.31.0
-      rollup-pluginutils: 2.8.2
     dev: true
     peerDependencies:
       rollup: ^1.20.0
     resolution:
-      integrity: sha512-rzWAMqXAHC1w3eKpK6LxRqiF4f3qVFaa1sGii6Bp3rluKcwHNOpPt+hWRCmAH6SDEPtbPiLFf0pfNQyHs6Btlg==
-  /@rollup/pluginutils/3.0.6_rollup@1.31.0:
+      integrity: sha512-qDcXj2VOa5+j0iudjb+LiwZHvBRRgWbHPhRmo1qde2KItTjuxDVQO21rp9/jOlzKR5YO0EsgRQoyox7fnL7y/A==
+  /@rollup/pluginutils/3.0.8_rollup@1.31.0:
     dependencies:
       estree-walker: 1.0.1
       rollup: 1.31.0
@@ -1013,7 +1013,7 @@ packages:
     peerDependencies:
       rollup: ^1.20.0
     resolution:
-      integrity: sha512-Nb6U7sg11v8D+E4mxRxwT+UumUL7MSnwI8V1SJB3THyW2MOGD/Q6GyxLtpnjrbT3zTRPSozzDMyVZwemgldO3w==
+      integrity: sha512-rYGeAc4sxcZ+kPG/Tw4/fwJODC3IXHYDH4qusdN/b6aLw5LPUbzpecYbEJh4sVQGPFJxd2dBU4kc1H3oy9/bnw==
   /@s0kil/tiny-map/0.1.1:
     dev: true
     resolution:
@@ -8227,11 +8227,11 @@ specifiers:
   '@babel/preset-env': ^7.8.4
   '@babel/runtime': ^7.8.4
   '@reshadow/svelte': ^0.0.1-alpha.72
-  '@rollup/plugin-commonjs': ^11.0.1
-  '@rollup/plugin-image': ^2.0.1
-  '@rollup/plugin-json': ^4.0.1
-  '@rollup/plugin-node-resolve': ^7.0.0
-  '@rollup/plugin-replace': ^2.3.0
+  '@rollup/plugin-commonjs': ^11.0.2
+  '@rollup/plugin-image': ^2.0.2
+  '@rollup/plugin-json': ^4.0.2
+  '@rollup/plugin-node-resolve': ^7.1.0
+  '@rollup/plugin-replace': ^2.3.1
   '@s0kil/tiny-map': 0.1.1
   babel-loader: ^8.0.6
   compression: ^1.7.4
