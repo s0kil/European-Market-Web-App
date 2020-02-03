@@ -1,8 +1,26 @@
 <script>
+  import * as ackeeTracker from "ackee-tracker";
   import "modern-normalize/modern-normalize.css";
   import Navigation from "../components/Navigation.svelte";
 
   export let segment;
+
+  // Ackee Analytics
+  const instance = ackeeTracker.create(
+    {
+      server: "https://esf-analytics.herokuapp.com",
+      domainId: "73a72786-e6ee-4d4c-b5b1-03fa7637c69e"
+    },
+    {
+      ignoreLocalhost: true,
+      detailed: true
+    }
+  );
+
+  // Listen For `segment` Changes
+  $: if ($$props && typeof window !== "undefined") {
+    instance.record();
+  }
 </script>
 
 <style>
