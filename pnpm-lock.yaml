@@ -18,6 +18,7 @@ devDependencies:
   babel-loader: 8.0.6_@babel+core@7.8.4+webpack@4.41.5
   css-loader: 3.4.2_webpack@4.41.5
   flag-icon-css: 3.4.5
+  instant.page: 3.0.0
   loadjs: 4.2.0
   mini-css-extract-plugin: 0.9.0_webpack@4.41.5
   modern-normalize: 0.6.0
@@ -3885,6 +3886,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-RZY5huIKCMRWDUqZlEi72f/lmXKMvuszcMBduliQ3nnWbx9X/ZBQO7DijMEYS9EhHBb2qacRUMtC7svLwe0lcw==
+  /instant.page/3.0.0:
+    dev: true
+    resolution:
+      integrity: sha512-cWTCMZlMZ/CKtY7+Rf3ZgeNtNPP9Yv/glRyriOMym98OhF484N5dRES9qv8q2MgMPmNwUb6T9mEHMdffICbnzw==
   /invariant/2.2.4:
     dependencies:
       loose-envify: 1.4.0
@@ -8237,6 +8242,7 @@ specifiers:
   compression: ^1.7.4
   css-loader: ^3.4.2
   flag-icon-css: ^3.4.5
+  instant.page: ^3.0.0
   loadjs: ^4.2.0
   mini-css-extract-plugin: ^0.9.0
   modern-normalize: ^0.6.0
