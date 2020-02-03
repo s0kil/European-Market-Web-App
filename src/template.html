@@ -79,6 +79,7 @@
     %sapper.scripts%
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!--
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=UA-85690667-1"
@@ -93,5 +94,15 @@
       gtag("js", new Date());
       gtag("config", "UA-85690667-1");
     </script>
+    -->
+
+    <!-- Acme Analytics -->
+    <script
+      async
+      src="https://esf-analytics.herokuapp.com/tracker.js"
+      data-ackee-opts='{ "ignoreLocalhost": true }'
+      data-ackee-server="https://esf-analytics.herokuapp.com"
+      data-ackee-domain-id="73a72786-e6ee-4d4c-b5b1-03fa7637c69e"
+    ></script>
   </body>
 </html>
