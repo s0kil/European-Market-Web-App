@@ -24,7 +24,7 @@
     "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/preset-env": "^7.8.4",
     "@babel/runtime": "^7.8.4",
-    "@reshadow/svelte": "^0.0.1-alpha.72",
+    "@reshadow/svelte": "^0.0.1-alpha.74",
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-image": "^2.0.4",
     "@rollup/plugin-json": "^4.0.2",
@@ -41,18 +41,18 @@
     "modern-normalize": "^0.6.0",
     "prettier": "^1.19.1",
     "prettier-plugin-svelte": "^0.7.0",
-    "rollup": "^1.31.0",
+    "rollup": "^1.31.1",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-svelte": "^5.1.1",
     "rollup-plugin-terser": "^5.2.0",
     "sapper": "^0.27.9",
     "sitemap-generator": "^8.4.2",
     "subfont": "^4.1.2",
-    "svelte": "^3.18.1",
+    "svelte": "^3.18.2",
     "svelte-loader": "^2.13.6",
     "svelte-type-checker": "^0.1.4",
     "typescript": "^3.7.5",
-    "webpack": "^4.41.5"
+    "webpack": "^4.41.6"
   },
   "subsets": {
     "netlify": {
