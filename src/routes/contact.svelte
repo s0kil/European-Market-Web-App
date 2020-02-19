@@ -3,6 +3,7 @@
 
   import { imageCDN } from "../_utils/image.js";
   import { submitForm } from "../_utils/form.js";
+  import { imageCDNWebPHelper } from "../_utils/webpSupport.js";
 
   let formStatus = "";
 
@@ -37,10 +38,10 @@
   }
 
   let backgroundImage = "";
-  onMount(() => {
+  onMount(async () => {
     backgroundImage = imageCDN(
       "/images/min/fresh-vegetables.jpeg",
-      `&h=${screen.height}`
+      `&h=${screen.height}${await imageCDNWebPHelper()}`
     );
   });
 </script>
