@@ -32,6 +32,7 @@ devDependencies:
   sapper: 0.27.9_svelte@3.18.2
   sitemap-generator: 8.4.2
   subfont: 4.1.2
+  supports-webp: 2.0.1
   svelte: 3.18.2
   svelte-loader: 2.13.6_svelte@3.18.2
   svelte-type-checker: 0.1.4_svelte@3.18.2+typescript@3.7.5
@@ -7414,6 +7415,10 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-qe1jfm1Mg7Nq/NSh6XE24gPXROEVsWHxC1LIx//XNlD9iw7YZQGjZNjYN7xGaEG6iKdA8EtNFW6R0gjnVXp+wQ==
+  /supports-webp/2.0.1:
+    dev: true
+    resolution:
+      integrity: sha512-dSnAw44W4hqeIBb6GwbETzEZoYOjNNmcROUsZWqMjdJd1mpSKxiVMKh59Py/DI2fH/RlojjS1wCYjFBT68Q9zA==
   /svelte-dev-helper/1.1.9:
     dev: true
     resolution:
@@ -8262,6 +8267,7 @@ specifiers:
   sirv: next
   sitemap-generator: ^8.4.2
   subfont: ^4.1.2
+  supports-webp: ^2.0.1
   svelte: ^3.18.2
   svelte-loader: ^2.13.6
   svelte-type-checker: ^0.1.4

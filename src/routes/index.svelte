@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { imageCDN } from "../_utils/image.js";
+  import { imageCDNWebPHelper } from "../_utils/webpSupport.js";
 
   import Countries from "../components/Countries.svelte";
 
@@ -14,11 +15,11 @@
   const updateReadyState = () => (readyState = document.readyState);
 
   let headerImgSrc = "";
-  onMount(() => {
+  onMount(async () => {
     let headerHeight = document.getElementById("intro-header").offsetHeight;
     headerImgSrc = imageCDN(
       "/images/min/european-meats.jpeg",
-      `&h=${headerHeight}`
+      `&h=${headerHeight}${await imageCDNWebPHelper()}`
     );
 
     updateReadyState();
