@@ -1,6 +1,8 @@
 <script>
-  import * as ackeeTracker from "ackee-tracker";
   import "modern-normalize/modern-normalize.css";
+
+  import * as ackeeTracker from "ackee-tracker";
+
   import Navigation from "../components/Navigation.svelte";
 
   export let segment;
@@ -41,6 +43,21 @@
     min-height: calc(100vh - 110px);
     padding: 1rem;
     background: #fff;
+  }
+
+  /* ScrollBar */
+  :global(body)::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  :global(body)::-webkit-scrollbar-track {
+    background: #c40009;
+    background: linear-gradient(#c40009, #9a1915);
+    /* box-shadow: inset 0 0 2px rgba(0, 0, 0, 1); */
+  }
+
+  :global(body)::-webkit-scrollbar-thumb {
+    background: rgb(255, 255, 255);
   }
 </style>
 
