@@ -6,7 +6,12 @@ function encode(data) {
     .join("&");
 }
 
-export async function submitForm(formData) {
+export async function submitForm(form) {
+  let formData = Object.values(form).reduce((obj, field) => {
+    obj[field.name] = field.value;
+    return obj;
+  }, {});
+
   return fetch("/", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
