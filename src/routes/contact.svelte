@@ -4,21 +4,45 @@
   import { imageCDN } from "../_utils/image.js";
   import { submitForm } from "../_utils/form.js";
   import { imageCDNWebPHelper } from "../_utils/webpSupport.js";
+  import { US_Regions, US_States } from "./_helpers/US_States.js";
+
+  const US_States_Select = US_States.map(state => {
+    return {
+      label: state.name,
+      group: state.region,
+      value: state.name.toLowerCase()
+    };
+  });
+
+  import Select from "svelte-select";
 
   let formStatus = "";
+  let personState = "";
 
   function handleSubmit(event) {
-    let isContactFormValid = validateForm([
+    let formElements = document.querySelectorAll([
       "#person-name",
       "#person-email",
       "#person-message"
     ]);
+
+    let isContactFormValid = validateForm(formElements);
+
     if (!isContactFormValid) {
       formStatus = "Please Fill In All Input Fields";
       return;
     }
 
-    submitForm(event.target)
+    let formData = {
+      ...Object.values(formElements).reduce((obj, field) => {
+        obj[field.name] = field.value;
+        return obj;
+      }, {}),
+
+      state: personState
+    };
+
+    submitForm(formData)
       .then(() => {
         formStatus = "Message Sent, We Will Contact You Soon.";
         event.target.reset();
@@ -29,10 +53,9 @@
       });
   }
 
-  function validateForm(inputsArray) {
+  function validateForm(formInputs) {
     if (typeof document === "object") {
-      let inputs = document.querySelectorAll(inputsArray);
-      return [...inputs].every(input => input.value.length > 0);
+      return [...formInputs].every(input => input.value.length > 0);
     }
     return false;
   }
@@ -123,6 +146,27 @@
     color: #fff;
     background: #517a3e;
   }
+
+  .state-select {
+    --border: none;
+    --borderRadius: 0;
+    --listBorderRadius: 0;
+    --listMaxHeight: 50vh;
+    --background: transparent;
+    --placeholderColor: #202020;
+    --listShadow: 0 0 8px #517a3e;
+    --listBackground: rgb(255, 255, 255);
+
+    margin-bottom: 0.5em;
+    border: 1px solid #517a3e;
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .state-select label {
+    display: block;
+    padding: 0.4em;
+    font-size: 1.2em;
+  }
 </style>
 
 <svelte:head>
@@ -162,6 +206,14 @@
       name="message"
       id="person-message"
       placeholder="Message"></textarea>
+
+    <div class="state-select">
+      <label>U.S. State You Live In</label>
+      <Select
+        items="{US_States_Select}"
+        groupBy="{item => item.group}"
+        on:select="{selectedItem => (personState = selectedItem.detail.label)}" />
+    </div>
 
     <button type="submit">Send</button>
 
