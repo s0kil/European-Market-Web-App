@@ -49,10 +49,10 @@
     "sitemap-generator": "^8.4.2",
     "subfont": "^4.2.0",
     "supports-webp": "^2.0.1",
-    "svelte": "^3.18.2",
+    "svelte": "^3.19.1",
     "svelte-loader": "^2.13.6",
     "svelte-type-checker": "^0.1.4",
-    "typescript": "^3.7.5",
+    "typescript": "^3.8.2",
     "webpack": "^4.41.6"
   },
   "subsets": {
