@@ -5,14 +5,13 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "PORT=8000 sapper dev",
-    "build": "sapper build --legacy",
-    "export": "sapper export --legacy",
+    "build": "sapper build",
+    "export": "sapper export",
     "prod": "NODE_ENV=production npm run export && npm run subFont",
     "checkTypes": "cd src; npx svelte-type-checker",
     "subFont": "subfont __sapper__/export --in-place --recursive --inline-css",
     "optimizeImages": "imager -i static/images/**/*.jpg -o static/images/min/",
-    "serveExport": "simple-http-server -i -t=8 --nosort --nocache __sapper__/export",
-    "prepare": "cd node_modules/sapper && npm link --force; npm link sapper --force;"
+    "serveExport": "simple-http-server -i -t=8 --nosort --nocache __sapper__/export"
   },
   "dependencies": {
     "compression": "^1.7.4",
@@ -46,7 +45,7 @@
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-svelte": "^5.1.1",
     "rollup-plugin-terser": "^5.2.0",
-    "sapper": "github:s0kil/sapper",
+    "sapper": "^0.27.9",
     "sitemap-generator": "^8.4.2",
     "subfont": "^4.2.0",
     "supports-webp": "^2.0.1",
