@@ -1,7 +1,7 @@
 <script>
   import "modern-normalize/modern-normalize.css";
 
-  import * as ackeeTracker from "ackee-tracker";
+  import * as ackeeTracker from "ackee-tracker/src/scripts/main";
 
   import Navigation from "../components/Navigation.svelte";
 
@@ -9,14 +9,14 @@
 
   // Ackee Analytics
   const instance = ackeeTracker.create(
-    {
-      server: "https://esf-analytics.herokuapp.com",
-      domainId: "73a72786-e6ee-4d4c-b5b1-03fa7637c69e"
-    },
-    {
-      ignoreLocalhost: true,
-      detailed: true
-    }
+      {
+        server: "https://esf-analytics.herokuapp.com",
+        domainId: "73a72786-e6ee-4d4c-b5b1-03fa7637c69e"
+      },
+      {
+        ignoreLocalhost: true,
+        detailed: true
+      }
   );
 
   // Listen For `segment` Changes
@@ -62,6 +62,6 @@
 </style>
 
 <main>
-  <Navigation {segment} />
-  <slot />
+  <Navigation {segment}/>
+  <slot/>
 </main>
