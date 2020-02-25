@@ -1,0 +1,6 @@
+[build]
+    command = " npm run prod"
+    publish = "__sapper__/export"
+
+[build.environment]
+    NPM_FLAGS = "--force"
