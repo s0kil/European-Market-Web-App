@@ -58,8 +58,8 @@ const locations = [
     address: "8047 Warren H Abernathy Hwy, Spartanburg, SC 29301",
     emailAddress: Default.emailAddress,
     phoneNumber: Default.phoneNumber,
-    status: Status.Soon,
-    hoursOfOperation: "",
+    status: Status.Open,
+    hoursOfOperation: "Mon - Sat 9am - 8pm",
     pageSlug: "spartanburg-sc",
     coordinates: {
       latitude: "34.9353588",
