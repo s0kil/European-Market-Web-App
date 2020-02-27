@@ -29,7 +29,7 @@ devDependencies:
   rollup-plugin-babel: 4.3.3_@babel+core@7.8.4+rollup@1.31.1
   rollup-plugin-svelte: 5.1.1_rollup@1.31.1+svelte@3.19.1
   rollup-plugin-terser: 5.2.0_rollup@1.31.1
-  sapper: 0.27.9_svelte@3.19.1
+  sapper: 0.27.10_svelte@3.19.1
   sitemap-generator: 8.4.2
   subfont: 4.2.0
   supports-webp: 2.0.1
@@ -48,7 +48,7 @@ packages:
       integrity: sha512-a9gxpmdXtZEInkCSHUJDLHZVBgb1QS0jhss4cPP93EW7s+uC5bikET2twEF3KV+7rDblJcmNvTR7VJejqd2C2g==
   /@babel/compat-data/7.8.5:
     dependencies:
-      browserslist: 4.8.7
+      browserslist: 4.9.0
       invariant: 2.2.4
       semver: 5.7.1
     dev: true
@@ -110,7 +110,7 @@ packages:
     dependencies:
       '@babel/compat-data': 7.8.5
       '@babel/core': 7.8.4
-      browserslist: 4.8.7
+      browserslist: 4.9.0
       invariant: 2.2.4
       levenary: 1.1.1
       semver: 5.7.1
@@ -805,7 +805,7 @@ packages:
       '@babel/plugin-transform-typeof-symbol': 7.8.4_@babel+core@7.8.4
       '@babel/plugin-transform-unicode-regex': 7.8.3_@babel+core@7.8.4
       '@babel/types': 7.8.3
-      browserslist: 4.8.7
+      browserslist: 4.9.0
       core-js-compat: 3.6.4
       invariant: 2.2.4
       levenary: 1.1.1
@@ -1030,10 +1030,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-K1DPVvnBCPxzD+G51/cxVIoc2X8uUVl1zpJeE6iKcgHMj4+tbat5Xu4TjV7v2QSDbIeAfLi2hIk+u2+s0MlpUQ==
-  /@types/node/13.7.4:
+  /@types/node/13.7.6:
     dev: true
     resolution:
-      integrity: sha512-oVeL12C6gQS/GAExndigSaLxTrKpQPxewx9bOcwfvJiJge4rr7wNaph4J+ns5hrmIV2as5qxqN8YKthn9qh0jw==
+      integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
   /@types/normalize-package-data/2.4.0:
     dev: true
     resolution:
@@ -1044,7 +1044,7 @@ packages:
       integrity: sha512-ce5d3q03Ex0sy4R14722Rmt6MT07Ua+k4FwDfdcToYJcMKNtRVQvJ6JCAPdAmAnbRb6CsX6aYb9m96NGod9uTw==
   /@types/resolve/0.0.8:
     dependencies:
-      '@types/node': 13.7.4
+      '@types/node': 13.7.6
     dev: true
     resolution:
       integrity: sha512-auApPaJf3NPfe18hSoJkp8EbZzer2ISk7o8mCC3M9he/a04+gbMF97NkpD2S8riMGvm4BMRI59/SZQSaLTKpsQ==
@@ -1230,14 +1230,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-clfQEh21R+D0leSbUdWf3OcfqyaCSAQ8Ryq00bofSekfr9W8u1jyYZo6ir0xu9Gtcf7BjcHJpnbZH7JOCpP60A==
-  /acorn-jsx/5.1.0_acorn@7.1.0:
+  /acorn-jsx/5.2.0_acorn@7.1.0:
     dependencies:
       acorn: 7.1.0
     dev: true
     peerDependencies:
       acorn: ^6.0.0 || ^7.0.0
     resolution:
-      integrity: sha512-tMUqwBWfLFbJbizRmEcWSLw6HnFzfdJs2sOJEOwwtVPMoH/0Ay+E703oZz78VSXZiiDcZrQ5XKjPIUQixhmgVw==
+      integrity: sha512-HiUX/+K2YpkpJ+SzBffkM/AQ2YE03S0U1kjTLVpoJdhZMOWy8qvXVN9JdLqv2QsaQ6MPYQIuNmwD8zOiYUofLQ==
   /acorn-walk/6.2.0:
     dev: true
     engines:
@@ -1448,7 +1448,7 @@ packages:
   /assetgraph/6.0.5:
     dependencies:
       acorn: 7.1.0
-      acorn-jsx: 5.1.0_acorn@7.1.0
+      acorn-jsx: 5.2.0_acorn@7.1.0
       bluebird: 3.7.2
       chalk: 2.4.2
       common-path-prefix: 1.0.0
@@ -1538,7 +1538,7 @@ packages:
       integrity: sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
   /autoprefixer/9.7.4:
     dependencies:
-      browserslist: 4.8.7
+      browserslist: 4.9.0
       caniuse-lite: 1.0.30001030
       chalk: 2.4.2
       normalize-range: 0.1.2
@@ -1778,15 +1778,15 @@ packages:
     dev: true
     resolution:
       integrity: sha512-Z942RysHXmJrhqk88FmKBVq/v5tqmSkDz7p54G/MGyjMnCFFnC79XWNbg+Vta8W6Wb2qtSZTSxIGkJrRpCFEiA==
-  /browserslist/4.8.7:
+  /browserslist/4.9.0:
     dependencies:
       caniuse-lite: 1.0.30001030
-      electron-to-chromium: 1.3.360
+      electron-to-chromium: 1.3.362
       node-releases: 1.1.50
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-gFOnZNYBHrEyUML0xr5NJ6edFaaKbTFX9S9kQHlYfCP0Rit/boRIz4G+Avq6/4haEKJXdGGUnoolx+5MWW2BoA==
+      integrity: sha512-seffIXhwgB84+OCeT/aMjpZnsAsYDiMSC+CEs3UkF8iU64BZGYcu+TZYs/IBpo4nRi0vJywUJWYdbTsOhFTweg==
   /buffer-equal/0.0.1:
     dev: true
     engines:
@@ -1929,7 +1929,7 @@ packages:
       integrity: sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
   /caniuse-api/3.0.0:
     dependencies:
-      browserslist: 4.8.7
+      browserslist: 4.9.0
       caniuse-lite: 1.0.30001030
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
@@ -2235,7 +2235,7 @@ packages:
       integrity: sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
   /core-js-compat/3.6.4:
     dependencies:
-      browserslist: 4.8.7
+      browserslist: 4.9.0
       semver: 7.0.0
     dev: true
     resolution:
@@ -2776,7 +2776,7 @@ packages:
       integrity: sha512-37qirFDz8cA5fimp9feo43fSuRo2gHwaIn6dXL8Ber1dGwUosDrGZeCCXq57WnIqE4aQ+u3eQZzsk1yOzhdwag==
   /dnserrors/2.1.2:
     dependencies:
-      createerror: 1.3.0
+      createerror: 1.2.0
       httperrors: 2.2.0
       lodash.defaults: 4.2.0
       lodash.omit: 4.5.0
@@ -2892,10 +2892,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-OoOpBOVDUyh4dMVkt1SThoSamMk=
-  /electron-to-chromium/1.3.360:
+  /electron-to-chromium/1.3.362:
     dev: true
     resolution:
-      integrity: sha512-RE1pv2sjQiDRRN1nI0fJ0eQHZ9le4oobu16OArnwEUV5ycAU5SNjFyvzjZ1gPUAqBa2Ud1XagtW8j3ZXfHuQHA==
+      integrity: sha512-xdU5VCoZyMPMOWtCaMgbr48OwWZHrMLbGnAOlEqibXiIGsb4kiCGWEHK5NOghcVLdBVIbr/BW+yuKxVuGTtzEg==
   /elliptic/6.5.2:
     dependencies:
       bn.js: 4.11.8
@@ -3698,10 +3698,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-0nRXAQJabHdabFRXk+1QL8DGSaE=
-  /hosted-git-info/2.8.5:
+  /hosted-git-info/2.8.7:
     dev: true
     resolution:
-      integrity: sha512-kssjab8CvdXfcXMXVcvsXum4Hwdq9XGtRD3TteMEvEbq0LXyiNQr6AprqKqfeaDXze7SxWvRxdpwE6ku7ikLkg==
+      integrity: sha512-ChkjQtKJ3GI6SsI4O5jwr8q8EPrWCnxuc4Tbx+vRI5x6mDOpjKKltNo1lRlszw3xwgTOSns1ZRBiMmmwpcvLxg==
   /hsl-regex/1.0.0:
     dev: true
     resolution:
@@ -4931,7 +4931,7 @@ packages:
       integrity: sha512-lgAmPv9eYZ0bGwUYAKlr8MG6K4CvWliWqnkcT2P8mMAgVrH3lqfBPorFlxiG1pHQnqmavJZ9vbMXUTNyMLbrgQ==
   /normalize-package-data/2.5.0:
     dependencies:
-      hosted-git-info: 2.8.5
+      hosted-git-info: 2.8.7
       resolve: 1.15.1
       semver: 5.7.1
       validate-npm-package-license: 3.0.4
@@ -5227,7 +5227,7 @@ packages:
       integrity: sha512-OOY5b7PAEFV0E2Fir1KOkxchnZNCdowAJgQ5NuxjpBKTRP3pQhwkrkxqQjeoKJ+fO7bCpmIZaogI4eZGDMEGOw==
   /parse5/3.0.3:
     dependencies:
-      '@types/node': 13.7.4
+      '@types/node': 13.7.6
     dev: true
     resolution:
       integrity: sha512-rgO9Zg5LLLkfJF9E6CCmXlSE4UVceloys8JrFqCcHloC3usd/kJCyPDwH2SOlzix2j3xaP9sUX3e8+kvkuleAA==
@@ -5480,7 +5480,7 @@ packages:
       integrity: sha512-aAe3OhkS6qJXBbqzvZth2Au4V3KieR5sRQ4ptb2b2O8wgvB3SJBsdG+jsn2BZbbwekDG8nTfcCNKcSfe/lEy8g==
   /postcss-colormin/4.0.3:
     dependencies:
-      browserslist: 4.8.7
+      browserslist: 4.9.0
       color: 3.1.2
       has: 1.0.3
       postcss: 7.0.27
@@ -5685,7 +5685,7 @@ packages:
       integrity: sha512-alx/zmoeXvJjp7L4mxEMjh8lxVlDFX1gqWHzaaQewwMZiVhLo42TEClKaeHbRf6J7j82ZOdTJ808RtN0ZOZwvw==
   /postcss-merge-rules/4.0.3:
     dependencies:
-      browserslist: 4.8.7
+      browserslist: 4.9.0
       caniuse-api: 3.0.0
       cssnano-util-same-parent: 4.0.1
       postcss: 7.0.27
@@ -5719,7 +5719,7 @@ packages:
   /postcss-minify-params/4.0.2:
     dependencies:
       alphanum-sort: 1.0.2
-      browserslist: 4.8.7
+      browserslist: 4.9.0
       cssnano-util-get-arguments: 4.0.0
       postcss: 7.0.27
       postcss-value-parser: 3.3.1
@@ -5882,7 +5882,7 @@ packages:
       integrity: sha512-acwJY95edP762e++00Ehq9L4sZCEcOPyaHwoaFOhIwWCDfik6YvqsYNxckee65JHLKzuNSSmAdxwD2Cud1Z54A==
   /postcss-normalize-unicode/4.0.1:
     dependencies:
-      browserslist: 4.8.7
+      browserslist: 4.9.0
       postcss: 7.0.27
       postcss-value-parser: 3.3.1
     dev: true
@@ -5946,7 +5946,7 @@ packages:
   /postcss-preset-env/6.7.0:
     dependencies:
       autoprefixer: 9.7.4
-      browserslist: 4.8.7
+      browserslist: 4.9.0
       caniuse-lite: 1.0.30001030
       css-blank-pseudo: 0.1.4
       css-has-pseudo: 0.10.0
@@ -5998,7 +5998,7 @@ packages:
       integrity: sha512-lgXW9sYJdLqtmw23otOzrtbDXofUdfYzNm4PIpNE322/swES3VU9XlXHeJS46zT2onFO7V1QFdD4Q9LiZj8mew==
   /postcss-reduce-initial/4.0.3:
     dependencies:
-      browserslist: 4.8.7
+      browserslist: 4.9.0
       caniuse-api: 3.0.0
       has: 1.0.3
       postcss: 7.0.27
@@ -6783,7 +6783,7 @@ packages:
   /rollup/1.31.1:
     dependencies:
       '@types/estree': 0.0.42
-      '@types/node': 13.7.4
+      '@types/node': 13.7.6
       acorn: 7.1.0
     dev: true
     hasBin: true
@@ -6812,7 +6812,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
-  /sapper/0.27.9_svelte@3.19.1:
+  /sapper/0.27.10_svelte@3.19.1:
     dependencies:
       html-minifier: 4.0.0
       http-link-header: 1.0.2
@@ -6825,7 +6825,7 @@ packages:
     peerDependencies:
       svelte: ^3.5.0
     resolution:
-      integrity: sha512-v3b3UgGeVhFUOpA5IZgdThdr4nZ6aMH6IxDsg1Yu2UWHWEV9vW/Zehch9M/xqJNp/x9n9X+S9syJg1s5QOOmFA==
+      integrity: sha512-hbl+uE7RClCdVst2qyaPuKjZOQx/1iSMiiBPFHU4IiAucuAkZM7hIwTfYQXLOltuAYoFfAEQVV3L9PJ81f7Oig==
   /sax/1.2.4:
     dev: true
     resolution:
@@ -7352,7 +7352,7 @@ packages:
       integrity: sha1-PFMZQukIwml8DsNEhYwobHygpgo=
   /stylehacks/4.0.3:
     dependencies:
-      browserslist: 4.8.7
+      browserslist: 4.9.0
       postcss: 7.0.27
       postcss-selector-parser: 3.1.2
     dev: true
@@ -8267,7 +8267,7 @@ specifiers:
   rollup-plugin-babel: ^4.3.3
   rollup-plugin-svelte: ^5.1.1
   rollup-plugin-terser: ^5.2.0
-  sapper: ^0.27.9
+  sapper: ^0.27.10
   sirv: next
   sitemap-generator: ^8.4.2
   subfont: ^4.2.0
