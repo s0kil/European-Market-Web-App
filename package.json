@@ -11,7 +11,7 @@
     "checkTypes": "cd src; npx svelte-type-checker",
     "subFont": "subfont __sapper__/export --in-place --recursive --inline-css",
     "optimizeImages": "imager -i static/images/**/*.jpg -o static/images/min/",
-    "serveExport": "simple-http-server -i -t=8 --nosort --nocache __sapper__/export"
+    "serveExport": "sirv --port 8000 __sapper__/export"
   },
   "dependencies": {
     "compression": "^1.7.4",
@@ -19,11 +19,11 @@
     "sirv": "next"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.6",
+    "@babel/core": "^7.8.7",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.8.3",
-    "@babel/preset-env": "^7.8.6",
-    "@babel/runtime": "^7.8.4",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/runtime": "^7.8.7",
     "@reshadow/svelte": "^0.0.1-alpha.74",
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-image": "^2.0.4",
@@ -41,19 +41,20 @@
     "modern-normalize": "^0.6.0",
     "prettier": "^1.19.1",
     "prettier-plugin-svelte": "^0.7.0",
-    "rollup": "^1.32.0",
-    "rollup-plugin-babel": "^4.3.3",
+    "rollup": "^2.0.2",
+    "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-svelte": "^5.1.1",
     "rollup-plugin-terser": "^5.2.0",
     "sapper": "^0.27.10",
+    "sirv-cli": "^0.4.5",
     "sitemap-generator": "^8.4.2",
     "subfont": "^4.2.0",
     "supports-webp": "^2.0.1",
-    "svelte": "^3.19.1",
+    "svelte": "^3.19.2",
     "svelte-loader": "^2.13.6",
     "svelte-type-checker": "^0.1.4",
     "typescript": "^3.8.3",
-    "webpack": "^4.41.6"
+    "webpack": "^4.42.0"
   },
   "subsets": {
     "netlify": {
