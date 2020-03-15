@@ -31,7 +31,7 @@ const locations = [
     location: "Lexington, SC",
     address: "5483 Sunset Blvd, Lexington, SC 29072",
     emailAddress: Default.emailAddress,
-    phoneNumber: Default.phoneNumber,
+    phoneNumber: "(803) 399-1618",
     status: Status.Open,
     hoursOfOperation: "Sun - Sat 9am - 7pm",
     pageSlug: "lexington-sc",
@@ -42,24 +42,24 @@ const locations = [
   },
   {
     location: "Columbia, SC",
-    address: "",
+    address: "163 Forum Dr, Columbia, SC 29229",
     emailAddress: Default.emailAddress,
     phoneNumber: Default.phoneNumber,
     status: Status.Soon,
     hoursOfOperation: "",
     pageSlug: "columbia-sc",
     coordinates: {
-      latitude: "",
-      longitude: ""
+      latitude: "34.1323251",
+      longitude: "-80.8797035"
     }
   },
   {
     location: "Spartanburg, SC",
     address: "8047 Warren H Abernathy Hwy, Spartanburg, SC 29301",
     emailAddress: Default.emailAddress,
-    phoneNumber: Default.phoneNumber,
+    phoneNumber: "(864) 310-4600",
     status: Status.Open,
-    hoursOfOperation: "Mon - Sat 9am - 8pm",
+    hoursOfOperation: "Mon - Fri 10am - 7pm, Sat 9 am - 7 pm",
     pageSlug: "spartanburg-sc",
     coordinates: {
       latitude: "34.9353588",
