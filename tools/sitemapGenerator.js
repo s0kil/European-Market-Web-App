@@ -10,6 +10,8 @@ let generator = SitemapGenerator("https://europeanmarketus.com", {
   // priorityMap: [1.0, 0.8, 0.6, 0.5]
 });
 
+generator.on("add", url => console.info(url));
+
 generator.on("done", () => {
   console.log("Sitemap Created");
 });
