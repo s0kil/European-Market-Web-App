@@ -29,6 +29,7 @@
   #header {
     height: 60px;
     top: 0;
+    display: flex;
   }
 
   #header a {
@@ -50,6 +51,13 @@
 
   img {
     max-height: 100%;
+  }
+
+  #header #store-link {
+    padding: 0 16px;
+    margin-left: 32px;
+    background: #9a1915;
+    color: rgb(255, 255, 255);
   }
 
   #footer {
@@ -107,6 +115,8 @@
         <div class="page-name">{segment}</div>
       {/if}
     </a>
+
+    <a id="store-link" href="store">Store</a>
   </div>
 
   <div id="footer">

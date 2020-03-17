@@ -9,14 +9,14 @@
 
   // Ackee Analytics
   const instance = ackeeTracker.create(
-      {
-        server: "https://esf-analytics.herokuapp.com",
-        domainId: "73a72786-e6ee-4d4c-b5b1-03fa7637c69e"
-      },
-      {
-        ignoreLocalhost: true,
-        detailed: true
-      }
+    {
+      server: "https://esf-analytics.herokuapp.com",
+      domainId: "73a72786-e6ee-4d4c-b5b1-03fa7637c69e"
+    },
+    {
+      ignoreLocalhost: true,
+      detailed: true
+    }
   );
 
   // Listen For `segment` Changes
@@ -61,7 +61,14 @@
   }
 </style>
 
+<!-- SnipCart Initialization -->
+<div
+  hidden
+  id="snipcart"
+  data-api-key="NTI2NjQwM2UtNjQ3ZC00MTQzLTk4YzEtODc0MDg3NjFjMWEyNjM3MjAwMzY2MjYxMzQ5MjI2"></div>
+<!-- SnipCart Initialization -->
+
 <main>
-  <Navigation {segment}/>
-  <slot/>
+  <Navigation {segment} />
+  <slot />
 </main>
