@@ -55,9 +55,11 @@
 
   #header #store-link {
     padding: 0 16px;
-    margin-left: 32px;
+    font-size: 1.2em;
+    margin-left: auto;
     background: #9a1915;
     color: rgb(255, 255, 255);
+    font-family: "cera_pro_black", sans-serif;
   }
 
   #footer {
@@ -116,7 +118,9 @@
       {/if}
     </a>
 
-    <a id="store-link" href="store">Store</a>
+    {#if segment !== 'store'}
+      <a id="store-link" class="page-name" href="store">Store</a>
+    {/if}
   </div>
 
   <div id="footer">
