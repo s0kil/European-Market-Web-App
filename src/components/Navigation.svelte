@@ -54,11 +54,12 @@
   }
 
   #header #store-link {
-    padding: 0 16px;
+    height: 40px;
+    padding: 0 20px;
     font-size: 1.2em;
-    margin-left: auto;
     background: #9a1915;
     color: rgb(255, 255, 255);
+    margin: auto 16px auto auto;
     font-family: "cera_pro_black", sans-serif;
   }
 
