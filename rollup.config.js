@@ -46,19 +46,17 @@ export default {
               "@babel/preset-env",
               {
                 targets: {
-                  browsers: ["last 10 versions", "ie >= 11"]
-                }
+                  browsers: ["> 0.1%", "ie >= 11"]
+                },
+                // https://babeljs.io/blog/2020/03/16/7.9.0#babel-preset-env-s-bugfixes-option-11083-https-githubcom-babel-babel-pull-11083
+                bugfixes: true,
+                debug: true
               }
             ]
           ],
           plugins: [
             "@babel/plugin-syntax-dynamic-import",
-            [
-              "@babel/plugin-transform-runtime",
-              {
-                useESModules: true
-              }
-            ]
+            "@babel/plugin-transform-runtime"
           ]
         }),
 
