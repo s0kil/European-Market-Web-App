@@ -1,6 +1,6 @@
 import { categories } from "./_products.js";
 
-export function get(_, res) {
+export async function get(_, res) {
   res.writeHead(200, {
     "Content-Type": "application/json"
   });

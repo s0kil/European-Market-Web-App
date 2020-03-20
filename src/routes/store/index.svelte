@@ -15,16 +15,17 @@
   import { loadSnipCart } from "./_helpers/snipcart.js";
 
   onMount(async () => {
-    // Preload SnipCart
-    if ((await loadSnipCart()) !== true) throw "SnipCart Did Not Load";
-    else console.info("SnipCart Loaded");
+    // Preload SnipCart, It Could Be Used In The Nested `/store/[slug]` Route
+    await loadSnipCart();
   });
 </script>
 
-<ul>
-  {#each productCategories as category}
-    <li>
-      <a style="color: white;" href="store/{category.slug}">{category.title}</a>
-    </li>
-  {/each}
-</ul>
+<section id="categories">
+  <ul>
+    {#each productCategories as category}
+      <li>
+        <a href="store/{category.slug}">{category.title}</a>
+      </li>
+    {/each}
+  </ul>
+</section>

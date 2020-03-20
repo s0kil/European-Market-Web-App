@@ -3,7 +3,7 @@ import loadAsset from "loadjs";
 // Load SnipCart Asynchronously
 export async function loadSnipCart() {
   // Check If SnipCart Already Loaded
-  if (window.Snipcart === "object") return true;
+  if (window.hasOwnProperty("Snipcart")) return true;
 
   const snipCartVersion = "3.0.10";
   return loadAsset(

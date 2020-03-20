@@ -7,12 +7,11 @@ export const products = fs.readFileSync(
   "utf8"
 );
 
-const productCategories = [];
-const productsDeserialized = JSON.parse(products);
+export const productsDeserialized = JSON.parse(products);
 
+export const productCategories = {};
 for (const product in productsDeserialized) {
   const category = productsDeserialized[product].categoryTitle;
-
   productCategories[category] = stringToSlug(category);
 }
 
