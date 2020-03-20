@@ -23,4 +23,7 @@ for (const key in productCategories) {
   });
 }
 
-export const categories = productCategoriesArray;
+export const categories = productCategoriesArray.sort((a, b) =>
+  // Sort By Title
+  a.title.localeCompare(b.title)
+);
