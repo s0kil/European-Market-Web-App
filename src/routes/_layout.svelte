@@ -61,13 +61,6 @@
   }
 </style>
 
-<!-- SnipCart Initialization -->
-<div
-  hidden
-  id="snipcart"
-  data-api-key="NTI2NjQwM2UtNjQ3ZC00MTQzLTk4YzEtODc0MDg3NjFjMWEyNjM3MjAwMzY2MjYxMzQ5MjI2"></div>
-<!-- SnipCart Initialization -->
-
 <main>
   <Navigation {segment} />
   <slot />
