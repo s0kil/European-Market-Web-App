@@ -1,10 +1,12 @@
 import loadAsset from "loadjs";
 
+// Load SnipCart Asynchronously
 export async function loadSnipCart() {
+  const snipCartVersion = "3.0.10";
   return loadAsset(
     [
-      "https://cdn.snipcart.com/themes/v3.0.9/default/snipcart.css",
-      "https://cdn.snipcart.com/themes/v3.0.9/default/snipcart.js"
+      `https://cdn.snipcart.com/themes/v${snipCartVersion}/default/snipcart.css`,
+      `https://cdn.snipcart.com/themes/v${snipCartVersion}/default/snipcart.js`
     ],
     {
       numRetries: 7,
