@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
 
+  import isBrowser from "../_utils/isBrowser";
   import { imageCDN } from "../_utils/image.js";
   import { submitForm } from "../_utils/form.js";
   import { imageCDNWebPHelper } from "../_utils/webpSupport.js";
@@ -30,7 +31,7 @@
   }
 
   function validateForm(inputsArray) {
-    if (typeof document === "object") {
+    if (isBrowser) {
       let inputs = document.querySelectorAll(inputsArray);
       return [...inputs].every(input => input.value.length > 0);
     }

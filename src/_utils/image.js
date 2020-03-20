@@ -1,5 +1,7 @@
+import isBrowser from "./isBrowser";
+
 export function imageCDN(path, options = "") {
-  if (typeof document === "object") {
+  if (isBrowser) {
     if (!location.origin.includes(":8000")) {
       return `https://akzwkfwsho.cloudimg.io/v7/${location.origin + path}?wat=0&optipress=3&org_if_sml=1${options}`;
       // return `https://images.weserv.nl/?url=${location.origin}${path}&l=9&il${options}`;
