@@ -1,4 +1,4 @@
-import babel from "rollup-plugin-babel";
+import babel from "@rollup/plugin-babel";
 import commonjs from "@rollup/plugin-commonjs";
 import config from "sapper/config/rollup.js";
 import pkg from "./package.json";
@@ -23,16 +23,16 @@ export default {
     plugins: [
       replace({
         "process.browser": true,
-        "process.env.NODE_ENV": JSON.stringify(mode)
+        "process.env.NODE_ENV": JSON.stringify(mode),
       }),
       svelte({
         dev,
         hydratable: true,
-        emitCss: true
+        emitCss: true,
       }),
       resolve({
         browser: true,
-        dedupe: ["svelte"]
+        dedupe: ["svelte"],
       }),
       commonjs(),
 
@@ -46,27 +46,27 @@ export default {
               "@babel/preset-env",
               {
                 targets: {
-                  browsers: ["> 0.1%", "ie >= 11"]
+                  browsers: ["> 0.1%", "ie >= 11"],
                 },
                 // https://babeljs.io/blog/2020/03/16/7.9.0#babel-preset-env-s-bugfixes-option-11083-https-githubcom-babel-babel-pull-11083
                 bugfixes: true,
-                debug: true
-              }
-            ]
+                debug: true,
+              },
+            ],
           ],
           plugins: [
             "@babel/plugin-syntax-dynamic-import",
-            "@babel/plugin-transform-runtime"
-          ]
+            "@babel/plugin-transform-runtime",
+          ],
         }),
 
       !dev &&
         terser({
-          module: true
-        })
+          module: true,
+        }),
     ],
 
-    onwarn
+    onwarn,
   },
 
   server: {
@@ -75,23 +75,23 @@ export default {
     plugins: [
       replace({
         "process.browser": false,
-        "process.env.NODE_ENV": JSON.stringify(mode)
+        "process.env.NODE_ENV": JSON.stringify(mode),
       }),
       svelte({
         generate: "ssr",
-        dev
+        dev,
       }),
       resolve({
-        dedupe: ["svelte"]
+        dedupe: ["svelte"],
       }),
-      commonjs()
+      commonjs(),
     ],
     external: Object.keys(pkg.dependencies).concat(
       require("module").builtinModules ||
         Object.keys(process.binding("natives"))
     ),
 
-    onwarn
+    onwarn,
   },
 
   serviceworker: {
@@ -101,12 +101,12 @@ export default {
       resolve(),
       replace({
         "process.browser": true,
-        "process.env.NODE_ENV": JSON.stringify(mode)
+        "process.env.NODE_ENV": JSON.stringify(mode),
       }),
       commonjs(),
-      !dev && terser()
+      !dev && terser(),
     ],
 
-    onwarn
-  }
+    onwarn,
+  },
 };
