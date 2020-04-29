@@ -53,6 +53,7 @@
     max-height: 100%;
   }
 
+  /*
   #header #store-link {
     height: 40px;
     padding: 0 20px;
@@ -62,6 +63,7 @@
     margin: auto 16px auto auto;
     font-family: "cera_pro_black", sans-serif;
   }
+  */
 
   #footer {
     height: 50px;
@@ -119,9 +121,11 @@
       {/if}
     </a>
 
+    <!--
     {#if segment !== 'store'}
       <a id="store-link" class="page-name" href="store">Store</a>
     {/if}
+    -->
   </div>
 
   <div id="footer">
