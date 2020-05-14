@@ -1,9 +1,14 @@
 <script>
   import { onMount } from "svelte";
   import { imageCDN } from "../_utils/image.js";
-  import { imageCDNWebPHelper } from "../_utils/webpSupport.js";
+  import { viewportHeight } from "../_utils/viewport.js";
+  import { beforeMount } from "../_utils/beforeMount.js";
 
   import Countries from "../components/Countries.svelte";
+
+  $: headerImgSrc = beforeMount(() =>
+    imageCDN("/images/min/european-meats.jpeg", `&h=${viewportHeight(60)}`)
+  );
 
   const ReadyState = {
     loading: "loading",
@@ -14,14 +19,7 @@
   let readyState;
   const updateReadyState = () => (readyState = document.readyState);
 
-  let headerImgSrc = "";
-  onMount(async () => {
-    let headerHeight = document.getElementById("intro-header").offsetHeight;
-    headerImgSrc = imageCDN(
-      "/images/min/european-meats.jpeg",
-      `&h=${headerHeight}${await imageCDNWebPHelper()}`
-    );
-
+  onMount(() => {
     updateReadyState();
     document.addEventListener("readystatechange", updateReadyState);
     return () =>

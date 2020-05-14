@@ -1,10 +1,13 @@
 <script>
-  import { onMount } from "svelte";
-
-  import isBrowser from "../_utils/isBrowser";
   import { imageCDN } from "../_utils/image.js";
+  import isBrowser from "../_utils/isBrowser.js";
   import { submitForm } from "../_utils/form.js";
-  import { imageCDNWebPHelper } from "../_utils/webpSupport.js";
+  import { beforeMount } from "../_utils/beforeMount.js";
+  import { viewportHeight } from "../_utils/viewport.js";
+
+  $: backgroundImage = beforeMount(() =>
+    imageCDN("/images/min/fresh-vegetables.jpeg", `&h=${viewportHeight(90)}`)
+  );
 
   let formStatus = "";
 
@@ -37,14 +40,6 @@
     }
     return false;
   }
-
-  let backgroundImage = "";
-  onMount(async () => {
-    backgroundImage = imageCDN(
-      "/images/min/fresh-vegetables.jpeg",
-      `&h=${screen.height}${await imageCDNWebPHelper()}`
-    );
-  });
 </script>
 
 <style>
