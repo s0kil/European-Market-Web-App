@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from "svelte";
   import { imageCDN } from "../_utils/image.js";
   import { viewportHeight } from "../_utils/viewport.js";
   import { beforeMount } from "../_utils/beforeMount.js";
@@ -9,22 +8,6 @@
   $: headerImgSrc = beforeMount(() =>
     imageCDN("/images/min/european-meats.jpeg", `&h=${viewportHeight(60)}`)
   );
-
-  const ReadyState = {
-    loading: "loading",
-    complete: "complete",
-    interactive: "interactive"
-  };
-
-  let readyState;
-  const updateReadyState = () => (readyState = document.readyState);
-
-  onMount(() => {
-    updateReadyState();
-    document.addEventListener("readystatechange", updateReadyState);
-    return () =>
-      document.removeEventListener("readystatechange", updateReadyState);
-  });
 </script>
 
 <style>
@@ -135,22 +118,18 @@
 
     </div>
 
-    {#if readyState === ReadyState.complete}
-      <img
-        loading="lazy"
-        alt="European Countries"
-        src={imageCDN('/images/min/european-countries.png')} />
-    {/if}
+    <img
+      loading="lazy"
+      alt="European Countries"
+      src={imageCDN('/images/min/european-countries.png')} />
   </div>
 
   <div id="our-story">
     <div>
-      {#if readyState === ReadyState.complete}
-        <img
-          loading="lazy"
-          alt="Polish Meats"
-          src={imageCDN('/images/min/polish-meats.jpeg', '&w=765')} />
-      {/if}
+      <img
+        loading="lazy"
+        alt="Polish Meats"
+        src={imageCDN('/images/min/polish-meats.jpeg', '&w=765')} />
     </div>
 
     <div>
