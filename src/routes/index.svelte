@@ -122,7 +122,7 @@
 
 <header
   id="intro-header"
-  style="background-image: url({headerImgSrc});"></header>
+  style="background-image: url({headerImgSrc || ''});" />
 
 <section>
   <div id="about">
@@ -139,7 +139,7 @@
       <img
         loading="lazy"
         alt="European Countries"
-        src="{imageCDN('/images/min/european-countries.png')}" />
+        src={imageCDN('/images/min/european-countries.png')} />
     {/if}
   </div>
 
@@ -149,7 +149,7 @@
         <img
           loading="lazy"
           alt="Polish Meats"
-          src="{imageCDN('/images/min/polish-meats.jpeg', '&w=765')}" />
+          src={imageCDN('/images/min/polish-meats.jpeg', '&w=765')} />
       {/if}
     </div>
 

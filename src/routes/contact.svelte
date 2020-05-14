@@ -125,7 +125,7 @@
   <title>Contact | European Market</title>
 </svelte:head>
 
-<section style="background-image: url({backgroundImage});">
+<section style="background-image: url({backgroundImage || ''});">
 
   <form
     name="contact"
@@ -133,7 +133,7 @@
     action="/contact"
     data-netlify="true"
     netlify-honeypot="bot-field"
-    on:submit|preventDefault="{handleSubmit}">
+    on:submit|preventDefault={handleSubmit}>
 
     <input type="hidden" name="bot-field" />
 
@@ -157,7 +157,7 @@
       required
       name="message"
       id="person-message"
-      placeholder="Message"></textarea>
+      placeholder="Message" />
 
     <button type="submit">Send</button>
 
