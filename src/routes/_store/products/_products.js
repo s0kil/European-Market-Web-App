@@ -19,7 +19,7 @@ const productCategoriesArray = [];
 for (const key in productCategories) {
   productCategoriesArray.push({
     title: key,
-    slug: productCategories[key]
+    slug: productCategories[key],
   });
 }
 
