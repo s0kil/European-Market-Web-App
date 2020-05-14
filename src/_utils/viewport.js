@@ -1,6 +1,6 @@
 import { memoize } from "./memoize.js";
 
-export const viewportHeight = memoize(value =>
+export const viewportHeight = memoize((value) =>
   Math.ceil(
     (value *
       Math.max(

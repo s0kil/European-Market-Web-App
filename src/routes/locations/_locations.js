@@ -1,12 +1,12 @@
 const Status = {
   Open: "Open",
   Closed: "Closed",
-  Soon: "Coming Soon"
+  Soon: "Coming Soon",
 };
 
 const Default = {
   phoneNumber: "(864) 590-6760",
-  emailAddress: "europeanmarketus@gmail.com"
+  emailAddress: "europeanmarketus@gmail.com",
 };
 
 /*
@@ -37,8 +37,8 @@ const locations = [
     pageSlug: "lexington-sc",
     coordinates: {
       latitude: "33.9979416",
-      longitude: "-81.2205587"
-    }
+      longitude: "-81.2205587",
+    },
   },
   {
     location: "Columbia, SC",
@@ -50,8 +50,8 @@ const locations = [
     pageSlug: "columbia-sc",
     coordinates: {
       latitude: "34.1323251",
-      longitude: "-80.8797035"
-    }
+      longitude: "-80.8797035",
+    },
   },
   {
     location: "Spartanburg, SC",
@@ -63,8 +63,8 @@ const locations = [
     pageSlug: "spartanburg-sc",
     coordinates: {
       latitude: "34.9353588",
-      longitude: "-82.0065515"
-    }
+      longitude: "-82.0065515",
+    },
   },
   {
     location: "Indian Land, SC",
@@ -76,8 +76,8 @@ const locations = [
     pageSlug: "indian-land-sc",
     coordinates: {
       latitude: "35.002738",
-      longitude: "-80.8571356"
-    }
+      longitude: "-80.8571356",
+    },
   },
   {
     location: "Anderson, SC",
@@ -89,8 +89,8 @@ const locations = [
     pageSlug: "anderson-sc",
     coordinates: {
       latitude: "34.5153964",
-      longitude: "-82.648982"
-    }
+      longitude: "-82.648982",
+    },
   },
   {
     location: "Boiling Springs, SC",
@@ -102,8 +102,8 @@ const locations = [
     pageSlug: "boiling-springs-sc",
     coordinates: {
       latitude: "34.9957813",
-      longitude: "-82.0013986"
-    }
+      longitude: "-82.0013986",
+    },
   },
   {
     location: "Greenville, SC",
@@ -115,8 +115,8 @@ const locations = [
     pageSlug: "greenville-sc",
     coordinates: {
       latitude: "34.8197697",
-      longitude: "-82.2762912"
-    }
+      longitude: "-82.2762912",
+    },
   },
   {
     location: "Hwy 9, Inman, SC",
@@ -128,8 +128,8 @@ const locations = [
     pageSlug: "hwy-9-inman-sc",
     coordinates: {
       latitude: "35.072714",
-      longitude: "-82.0196507"
-    }
+      longitude: "-82.0196507",
+    },
   },
   {
     location: "Warehouse Inman, SC",
@@ -141,8 +141,8 @@ const locations = [
     pageSlug: "warehouse-inman-sc",
     coordinates: {
       latitude: "35.0401305",
-      longitude: "-82.1090651"
-    }
+      longitude: "-82.1090651",
+    },
   },
   {
     location: "Ooltewah, TN",
@@ -155,9 +155,9 @@ const locations = [
     pageSlug: "ooltewah-tn",
     coordinates: {
       latitude: "35.0586237",
-      longitude: "-85.0698952"
-    }
-  }
+      longitude: "-85.0698952",
+    },
+  },
 ];
 
 export default locations;

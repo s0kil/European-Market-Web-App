@@ -1,4 +1,4 @@
-export const memoize = fun => {
+export const memoize = (fun) => {
   const cache = {};
   return (...funArgs) =>
     cache[funArgs] === undefined

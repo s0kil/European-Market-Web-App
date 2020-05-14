@@ -9,11 +9,11 @@ export async function loadSnipCart() {
   return loadAsset(
     [
       `https://cdn.snipcart.com/themes/v${snipCartVersion}/default/snipcart.css`,
-      `https://cdn.snipcart.com/themes/v${snipCartVersion}/default/snipcart.js`
+      `https://cdn.snipcart.com/themes/v${snipCartVersion}/default/snipcart.js`,
     ],
     {
       numRetries: 7,
-      returnPromise: true
+      returnPromise: true,
     }
   )
     .then(() => true)

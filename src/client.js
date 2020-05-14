@@ -3,5 +3,5 @@ import "instant.page";
 import * as sapper from "@sapper/app";
 
 sapper.start({
-  target: document.getElementById("app")
+  target: document.getElementById("app"),
 });
