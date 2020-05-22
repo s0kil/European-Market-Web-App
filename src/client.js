@@ -1,5 +1,3 @@
-import "instant.page";
-
 import * as sapper from "@sapper/app";
 
 sapper.start({
