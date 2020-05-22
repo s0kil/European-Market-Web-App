@@ -1,6 +1,8 @@
 <script context="module">
+  import { locationsEndpoint } from "./_endpoint";
+
   export async function preload({ params }) {
-    const res = await this.fetch(`locations/${params.slug}.json`);
+    const res = await this.fetch(locationsEndpoint(params.slug));
     const data = await res.json();
 
     if (res.status === 200) {
@@ -21,13 +23,33 @@
 
   export let location;
 
+  const weekday = (() => {
+    const day = new Date().getDay();
+    switch (day) {
+      case 0:
+        return "Sunday";
+      case 1:
+        return "Monday";
+      case 2:
+        return "Tuesday";
+      case 3:
+        return "Wednesday";
+      case 4:
+        return "Thursday";
+      case 5:
+        return "Friday";
+      case 6:
+        return "Saturday";
+    }
+  })();
+
   const mapBoxAccessToken =
     "pk.eyJ1IjoiZGFuaWVsc29raWwiLCJhIjoiY2s0NDZjaTFmMDh6ajNrbW1mb3h4cjJobiJ9.AcOfKPFXipCVNgaxZ66WTg";
 
   onMount(() => {
     // Check Is User Has Save-Data Enabled.
     if (!saveData()) {
-      let { latitude, longitude } = location.coordinates;
+      const { latitude, longitude } = location.coordinates;
 
       if (latitude && longitude) {
         tinyMap(document.getElementById("map"), {
@@ -55,13 +77,14 @@
   }
 
   .location {
+    --red: #9a1915;
     padding: 1rem;
     position: relative;
     background: rgba(255, 255, 255, 0.8);
   }
 
   .location h1 {
-    color: #9a1915;
+    color: var(--red);
     font-family: "Merriweather", serif;
   }
 
@@ -73,7 +96,7 @@
 
   .location a {
     color: #202020;
-    text-decoration: #9a1915 underline;
+    text-decoration: var(--red) underline;
   }
 
   .location .coming-soon {
@@ -81,12 +104,35 @@
     text-decoration: underline;
   }
 
+  .hours {
+    padding: 0;
+    margin: 1rem 0;
+  }
+
+  .hours li {
+    margin: 1rem 0;
+    list-style-type: none;
+    font-size: 1.2rem;
+    font-family: "Lato", sans-serif;
+  }
+  .hours li::before {
+    content: ">";
+    padding-right: 1rem;
+  }
+  .hours li.hours-today {
+    font-weight: bold;
+  }
+  .hours li.hours-today::before {
+    color: var(--red);
+  }
+
   @media (max-width: 400px) {
     .location h1 {
       font-size: 1.2rem;
     }
 
-    .location p {
+    .location p,
+    .hours li {
       font-size: 1rem;
     }
   }
@@ -103,7 +149,15 @@
 
   <h1>European Market {location.location}</h1>
 
-  <p>{location.hoursOfOperation}</p>
+  <ul class="hours">
+    {#each location.hoursOfOperation as hours}
+      {#if String(hours).startsWith(weekday)}
+        <li class="hours-today">{hours}</li>
+      {:else}
+        <li>{hours}</li>
+      {/if}
+    {/each}
+  </ul>
 
   <a
     rel="noopener noreferrer"
@@ -120,5 +174,5 @@
     <p>{location.phoneNumber}</p>
   </a>
 
-  <div id="map"></div>
+  <div id="map" />
 </section>

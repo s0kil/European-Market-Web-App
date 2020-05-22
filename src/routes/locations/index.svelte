@@ -1,10 +1,12 @@
 <script context="module">
+  import { locationsEndpoint } from "./_endpoint";
+
   export function preload({ params, query }) {
-    return this.fetch("locations.json")
+    return this.fetch(locationsEndpoint())
       .then(r => r.json())
-      .then(locations => {
-        return { locations };
-      });
+      .then(data => ({
+        locations: data
+      }));
   }
 </script>
 
@@ -26,7 +28,6 @@
   }
 
   .location p span {
-    /*color: blue;*/
     font-weight: bolder;
     font-family: "Lato", sans-serif;
     text-decoration: underline;
@@ -92,9 +93,9 @@
   <!-- Pre-Connect To Maps Server, For `locations/[slug].html` Page -->
   <link href="https://api.mapbox.com" rel="dns-prefetch" />
   <link
-    href="https://api.mapbox.com"
     rel="preconnect"
-    crossorigin="anonymous" />
+    crossorigin="anonymous"
+    href="https://api.mapbox.com" />
 </svelte:head>
 
 <section id="locations">
@@ -108,7 +109,7 @@
           {location.location}
         </p>
       {/if}
-      <a rel="prefetch" href="{'/locations/' + location.pageSlug}">
+      <a rel="prefetch" href={'/locations/' + location.pageSlug}>
         <span>More Info ></span>
       </a>
     </div>
