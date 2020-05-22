@@ -143,7 +143,7 @@
 </svelte:head>
 
 <section class="location">
-  {#if location.status != 'Open'}
+  {#if location.status === 'Coming Soon'}
     <p class="coming-soon">Coming Soon</p>
   {/if}
 

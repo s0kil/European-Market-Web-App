@@ -103,15 +103,20 @@
     <div class="location">
       {#if location.status === 'Open'}
         <p>{location.location}</p>
-      {:else}
+
+        <a rel="prefetch" href={'/locations/' + location.pageSlug}>
+          <span>More Info ></span>
+        </a>
+      {:else if location.status === 'Coming Soon'}
         <p>
           <span>Coming Soon</span>
           {location.location}
         </p>
+
+        <a rel="prefetch" href={'/locations/' + location.pageSlug}>
+          <span>More Info ></span>
+        </a>
       {/if}
-      <a rel="prefetch" href={'/locations/' + location.pageSlug}>
-        <span>More Info ></span>
-      </a>
     </div>
   {/each}
 </section>
