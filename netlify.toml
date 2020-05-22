@@ -2,3 +2,11 @@
 command = "npm run prod"
 publish = "__sapper__/export"
 environment = { NODE_VERSION = "14.2.0" }
+
+[[redirects]]
+from = "/our-story"
+to = "/"
+
+[[redirects]]
+from = "/locations/indian-land-sc/"
+to = "/locations/"
