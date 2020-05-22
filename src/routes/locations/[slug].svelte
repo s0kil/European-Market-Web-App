@@ -3,14 +3,15 @@
 
   export async function preload({ params }) {
     const res = await this.fetch(locationsEndpoint(params.slug));
-    const data = await res.json();
 
     if (res.status === 200) {
+      const data = await res.json();
       return {
         location: data
       };
     } else {
-      this.error(res.status, data.message);
+      const data = await res.text();
+      this.error(res.status, data);
     }
   }
 </script>
@@ -143,7 +144,7 @@
 </svelte:head>
 
 <section class="location">
-  {#if location.status != 'Open'}
+  {#if location.status === 'Coming Soon'}
     <p class="coming-soon">Coming Soon</p>
   {/if}
 
