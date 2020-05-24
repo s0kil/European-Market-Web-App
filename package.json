@@ -5,10 +5,10 @@
   "version": "0.0.1",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "preexport": "CI=true npx pnpm install --store=node_modules/.pnpm-store || echo skipping pnpm install",
+    "preexport": "npx pnpm install --store=node_modules/.pnpm-store || echo skipping pnpm install",
     "export": "sapper export --legacy",
     "dev": "PORT=8000 sapper dev",
-    "prod": "NODE_ENV=production npm run export && npm run subFont",
+    "prod": "npm run export && npm run subFont",
     "subFont": "subfont __sapper__/export --in-place --recursive --inline-css",
     "serveExport": "python3 -m http.server --directory __sapper__/export/ 8000"
   },
