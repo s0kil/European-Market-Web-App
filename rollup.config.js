@@ -56,7 +56,12 @@ export default {
           ],
           plugins: [
             "@babel/plugin-syntax-dynamic-import",
-            "@babel/plugin-transform-runtime",
+            [
+              "@babel/plugin-transform-runtime",
+              {
+                useESModules: true,
+              },
+            ],
           ],
         }),
 
@@ -66,6 +71,7 @@ export default {
         }),
     ],
 
+    preserveEntrySignatures: false,
     onwarn,
   },
 
@@ -91,6 +97,7 @@ export default {
         Object.keys(process.binding("natives"))
     ),
 
+    preserveEntrySignatures: "strict",
     onwarn,
   },
 
@@ -107,6 +114,7 @@ export default {
       !dev && terser(),
     ],
 
+    preserveEntrySignatures: false,
     onwarn,
   },
 };
