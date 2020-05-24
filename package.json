@@ -1,16 +1,15 @@
 {
-  "private": true,
   "name": "european-market-web-app",
+  "private": true,
   "description": "European Market Web App Built With Sapper + Svelte",
-  "version": "0.0.1",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
+    "dev": "PORT=8000 sapper dev",
     "preexport": "CI=true && npx pnpm install --store=node_modules/.pnpm-store || echo skipping pnpm install",
     "export": "sapper export --legacy",
-    "dev": "PORT=8000 sapper dev",
+    "preinstall": "npx only-allow pnpm",
     "prod": "npm run export && npm run subFont",
-    "subFont": "subfont __sapper__/export --in-place --recursive --inline-css",
-    "serveExport": "python3 -m http.server --directory __sapper__/export/ 8000"
+    "serveExport": "python3 -m http.server --directory __sapper__/export/ 8000",
+    "subFont": "subfont __sapper__/export --in-place --recursive --inline-css"
   },
   "dependencies": {
     "compression": "^1.7.4",
@@ -38,12 +37,5 @@
     "sitemap-generator": "^8.4.2",
     "subfont": "^5.0.0",
     "svelte": "^3.22.3"
-  },
-  "subsets": {
-    "netlify": {
-      "include": [
-        "netlify-cli"
-      ]
-    }
   }
 }
