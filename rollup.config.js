@@ -50,7 +50,6 @@ export default {
                 },
                 // https://babeljs.io/blog/2020/03/16/7.9.0#babel-preset-env-s-bugfixes-option-11083-https-githubcom-babel-babel-pull-11083
                 bugfixes: true,
-                debug: true,
               },
             ],
           ],
