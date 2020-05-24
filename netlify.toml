@@ -1,4 +1,5 @@
 [build]
+NPM_FLAGS = "--prefix=/"
 command = "npm run prod"
 publish = "__sapper__/export"
 environment = { NODE_VERSION = "14.3.0" }
