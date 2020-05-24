@@ -31,7 +31,6 @@
     "@rollup/plugin-node-resolve": "^8.0.0",
     "@rollup/plugin-replace": "^2.3.2",
     "@s0kil/tiny-map": "0.1.1",
-    "ackee-tracker": "^3.2.3",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.5.3",
     "flag-icon-css": "^3.4.6",

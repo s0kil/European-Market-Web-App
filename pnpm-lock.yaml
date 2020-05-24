@@ -17,7 +17,6 @@ devDependencies:
   '@rollup/plugin-node-resolve': 8.0.0_rollup@2.10.8
   '@rollup/plugin-replace': 2.3.2_rollup@2.10.8
   '@s0kil/tiny-map': 0.1.1
-  ackee-tracker: 3.2.3
   babel-loader: 8.1.0_@babel+core@7.9.6+webpack@4.43.0
   css-loader: 3.5.3_webpack@4.43.0
   flag-icon-css: 3.4.6
@@ -1274,12 +1273,6 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-Il80Qs2WjYlJIBNzNkK6KYqlVMTbZLXgHx2oT0pU/fjRHyEp+PEfEPY0R3WCwAGVOtauxh1hOxNgIf5bv7dQpA==
-  /ackee-tracker/3.2.3:
-    dependencies:
-      platform: 1.3.5
-    dev: true
-    resolution:
-      integrity: sha512-LZqwNn+pzzuKIKS93KLGlPeLIBHSmbT9MacWkjTDNDR8y9/7FvE92vxAYiD9Lx7n08fflZCrvTIw6I+d9825AA==
   /acorn-globals/4.3.4:
     dependencies:
       acorn: 6.4.1
@@ -5695,10 +5688,6 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-yBmscoBZpGHKscOImivjxJoATX8=
-  /platform/1.3.5:
-    dev: true
-    resolution:
-      integrity: sha512-TuvHS8AOIZNAlE77WUDiR4rySV/VMptyMfcfeoMgs4P8apaZM3JrnbzBiixKUv+XR6i+BXrQh8WAnjaSPFO65Q==
   /pn/1.1.0:
     dev: true
     resolution:
@@ -8615,7 +8604,6 @@ specifiers:
   '@rollup/plugin-node-resolve': ^8.0.0
   '@rollup/plugin-replace': ^2.3.2
   '@s0kil/tiny-map': 0.1.1
-  ackee-tracker: ^3.2.3
   babel-loader: ^8.1.0
   compression: ^1.7.4
   css-loader: ^3.5.3
