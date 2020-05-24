@@ -4,7 +4,8 @@
   "description": "European Market Web App Built With Sapper + Svelte",
   "version": "0.0.1",
   "scripts": {
-    "preexport": "[[ $CI = true ]] && npx pnpm install --store=node_modules/.pnpm-store || echo skipping pnpm install",
+    "preinstall": "npx only-allow pnpm",
+    "preexport": "CI=true npx pnpm install --store=node_modules/.pnpm-store || echo skipping pnpm install",
     "export": "sapper export --legacy",
     "dev": "PORT=8000 sapper dev",
     "prod": "NODE_ENV=production npm run export && npm run subFont",
