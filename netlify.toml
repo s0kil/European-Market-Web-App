@@ -14,32 +14,7 @@ X-Content-Type-Options = "nosniff"
 X-Permitted-Cross-Domain-Policies = "none"
 Strict-Transport-Security = "max-age=31536000"
 Content-Security-Policy = "form-action https:"
-Feature-Policy = '''
-accelerometer 'none';
-ambient-light-sensor 'none';
-autoplay 'none';
-battery 'none';
-camera 'none';
-display-capture 'none';
-document-domain 'none';
-encrypted-media 'none';
-fullscreen 'none';
-geolocation 'none';
-gyroscope 'none';
-layout-animations 'none';
-legacy-image-formats 'none';
-magnetometer 'none';
-microphone 'none';
-midi 'none';
-oversized-images 'none';
-payment 'none';
-picture-in-picture 'none';
-publickey-credentials-get 'none';
-sync-xhr 'none';
-usb 'none';
-wake-lock 'none';
-xr-spatial-tracking 'none';
-'''
+Feature-Policy = "accelerometer 'none'; ambient-light-sensor 'none'; autoplay 'none'; battery 'none'; camera 'none'; display-capture 'none'; document-domain 'none'; encrypted-media 'none'; fullscreen 'none'; geolocation 'none'; gyroscope 'none'; layout-animations 'none'; legacy-image-formats 'none'; magnetometer 'none'; microphone 'none'; midi 'none'; oversized-images 'none'; payment 'none'; picture-in-picture 'none'; publickey-credentials-get 'none'; sync-xhr 'none'; usb 'none'; wake-lock 'none'; xr-spatial-tracking 'none';"
 
 [[redirects]]
 from = "/our-story"
