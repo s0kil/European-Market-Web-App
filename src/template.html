@@ -13,8 +13,8 @@
     <meta name="theme-color" content="#870e14" />
 
     <!-- Preconnect To Image CDN -->
-    <link href="https://akzwkfwsho.cloudimg.io" rel="dns-prefetch" />
     <link href="https://akzwkfwsho.cloudimg.io" rel="preconnect" crossorigin />
+    <link href="https://akzwkfwsho.cloudimg.io" rel="dns-prefetch" />
 
     <meta
       name="description"
@@ -35,20 +35,23 @@
     </script>
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <meta
-      content="_I2Vj5uGpTxJOZ6LJhVdmlXjFa1mZ-7Sh7i2o2bkd28"
       name="google-site-verification"
+      content="_I2Vj5uGpTxJOZ6LJhVdmlXjFa1mZ-7Sh7i2o2bkd28"
     />
 
     %sapper.base%
 
+    <!-- Preconnect To Fonts CDN -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link href="https://fonts.gstatic.com" rel="dns-prefetch" />
     <link
-      href="https://fonts.googleapis.com/css?family=Lato|Merriweather&display=swap"
-      rel="preload"
       as="style"
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Merriweather&display=swap"
     />
     <link
-      href="https://fonts.googleapis.com/css?family=Lato|Merriweather&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Merriweather&display=swap"
     />
 
     <!-- Sapper generates a <style> tag containing critical CSS for the current page. CSS for the rest of the app will be loaded lazily when it precaches secondary pages -->
@@ -56,32 +59,9 @@
 
     <!-- This contains the contents of the <svelte:head> component, if the current page has one -->
     %sapper.head%
-
-    <!--
-    <script
-      crossorigin="anonymous"
-      src="https://browser.sentry-cdn.com/5.13.0/bundle.min.js"
-      integrity="sha384-ePH2Cp6F+/PJbfhDWeQuXujAbpil3zowccx6grtsxOals4qYqJzCjeIa7W2UqunJ"
-    ></script>
-    <script>
-      if (typeof "Sentry" === "function") {
-        Sentry.init({
-          dsn: "https://40c5ac0d7ac6406392b743157d846946@sentry.io/1886618",
-        });
-      }
-    </script>
-    -->
   </head>
 
   <body>
-    <!-- SnipCart Initialization -->
-    <div
-      hidden
-      id="snipcart"
-      data-api-key="NTI2NjQwM2UtNjQ3ZC00MTQzLTk4YzEtODc0MDg3NjFjMWEyNjM3MjAwMzY2MjYxMzQ5MjI2"
-    ></div>
-    <!-- SnipCart Initialization -->
-
     <div id="app">%sapper.html%</div>
 
     %sapper.scripts%
