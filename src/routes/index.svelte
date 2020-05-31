@@ -6,7 +6,7 @@
   import Countries from "../components/Countries.svelte";
 
   $: headerImgSrc = beforeMount(() =>
-    imageCDN("images/min/european-meats.jpeg", `&h=${viewportHeight(60)}`)
+    imageCDN("images/min/european-meats.jpg", `&h=${viewportHeight(60)}`)
   );
 </script>
 
@@ -131,7 +131,7 @@
         width="765"
         loading="lazy"
         alt="Polish Meats"
-        src={imageCDN('images/min/polish-meats.jpeg', '&w=765')} />
+        src={imageCDN('images/min/polish-meats.jpg', '&w=765')} />
     </div>
 
     <div>

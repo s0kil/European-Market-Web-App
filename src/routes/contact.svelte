@@ -6,7 +6,7 @@
   import { viewportHeight } from "../_utils/viewport.js";
 
   $: backgroundImage = beforeMount(() =>
-    imageCDN("images/min/fresh-vegetables.jpeg", `&h=${viewportHeight(90)}`)
+    imageCDN("images/min/fresh-vegetables.jpg", `&h=${viewportHeight(90)}`)
   );
 
   let formStatus = "";
