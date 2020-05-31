@@ -3,7 +3,7 @@ import isBrowser from "./isBrowser";
 export function imageCDN(path, options = "") {
   if (isBrowser) {
     if (!location.origin.includes(":8000")) {
-      return `https://esfimageapi.b-cdn.net/${path}&filter=antialias${options}`;
+      return `https://esfimageapi.b-cdn.net/${path}?wat=0&optipress=3&org_if_sml=1${options}`;
     } else return path;
   } else {
     // https://stackoverflow.com/a/19126281
