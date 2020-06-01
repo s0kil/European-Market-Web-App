@@ -78,23 +78,21 @@
     }
   }
 
-  @media (min-width: 50rem) {
-    .countries {
-      grid-template-columns: repeat(3, auto);
+  @media (max-width: 70rem) {
+    #about {
+      flex-direction: column;
     }
   }
 
-  @media (max-width: 38rem) {
+  @media (max-width: 50rem) {
     .countries {
       grid-template-columns: repeat(3, minmax(100px, auto));
-      justify-content: space-between;
     }
   }
 
   @media (max-width: 30rem) {
     .countries {
       grid-template-columns: repeat(2, minmax(100px, auto));
-      justify-content: space-between;
     }
   }
 </style>
