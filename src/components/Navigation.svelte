@@ -5,14 +5,6 @@
 </script>
 
 <style>
-  @font-face {
-    font-family: "cera_pro_black";
-    src: url("/fonts/cerapro-black-webfont.woff2") format("woff2"),
-      url("/fonts/cerapro-black-webfont.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
-
   #header,
   #footer {
     z-index: 1;

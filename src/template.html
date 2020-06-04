@@ -41,23 +41,45 @@
 
     %sapper.base%
 
-    <!-- Preconnect To Fonts CDN -->
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
-    <link href="https://fonts.gstatic.com" rel="dns-prefetch" />
-    <link
-      as="style"
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Lato&family=Merriweather&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Lato&family=Merriweather&display=swap"
-    />
+    <!-- Fonts -->
+    <style>
+      /* Cera Pro Black Bold */
+      @font-face {
+        font-family: "cera_pro_black";
+        font-style: normal;
+        font-weight: 700;
+        src: url("/fonts/cerapro/cerapro-black-webfont.woff2") format("woff2"),
+          url("/fonts/cerapro/cerapro-black-webfont.woff") format("woff");
+      }
+      /* Merriweather Regular */
+      @font-face {
+        font-family: "Merriweather";
+        font-style: normal;
+        font-weight: 400;
+        src: local("Merriweather Regular"), local("Merriweather-Regular"),
+          url("/fonts/merriweather/merriweather-regular.woff2") format("woff2"),
+          url("/fonts/merriweather/merriweather-regular.woff") format("woff");
+      }
+      /* Lato Regular */
+      @font-face {
+        font-family: "Lato";
+        font-style: normal;
+        font-weight: 400;
+        src: local("Lato Regular"), local("Lato-Regular"),
+          url("/fonts/lato/lato-regular.woff2") format("woff2"),
+          url("/fonts/lato/lato-regular.woff") format("woff");
+      }
+    </style>
 
-    <!-- Sapper generates a <style> tag containing critical CSS for the current page. CSS for the rest of the app will be loaded lazily when it precaches secondary pages -->
+    <!--
+      Sapper generates a <style> tag containing critical CSS for the current page.
+      CSS for the rest of the app will be loaded lazily when it precaches secondary pages
+    -->
     %sapper.styles%
 
-    <!-- This contains the contents of the <svelte:head> component, if the current page has one -->
+    <!--
+      This contains the contents of the <svelte:head> component, if the current page has one
+    -->
     %sapper.head%
   </head>
 
