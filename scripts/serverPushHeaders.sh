@@ -4,7 +4,7 @@ CLIENT_JS_FILE=$(cd __sapper__/export/ && find client -maxdepth 1 -iname "client
 
 HEADERS="
 /
- Link: </$CLIENT_JS_FILE>; rel=preload; as=script; crossorigin=anonymous;
+ Link: </$CLIENT_JS_FILE>; rel=preload; as=script; crossorigin
 "
 
 # https://unix.stackexchange.com/a/274709
