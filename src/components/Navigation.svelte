@@ -32,6 +32,10 @@
     padding: 0.4rem 0 0.4rem 16px;
   }
 
+  #header img {
+    max-height: 100%;
+  }
+
   .page-name {
     text-transform: capitalize;
     margin-left: 0.6rem;
@@ -39,10 +43,6 @@
     font-weight: bold;
     font-size: 1.6rem;
     color: rgb(196, 0, 9);
-  }
-
-  img {
-    max-height: 100%;
   }
 
   /*
@@ -103,12 +103,16 @@
     <a href=".">
       {#if !segment}
         <img
+          width="176"
+          height="48"
           alt="European Market Logo"
-          src={imageCDN('images/min/logo.png', '&h=110')} />
+          src={imageCDN('images/min/logo.png', '&h=60')} />
       {:else}
         <img
+          width="48"
+          height="48"
           alt="European Market Logo"
-          src={imageCDN('images/min/logo-sign.png', '&h=110')} />
+          src={imageCDN('images/min/logo-sign.png', '&h=60')} />
         <div class="page-name">{segment}</div>
       {/if}
     </a>
