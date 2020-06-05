@@ -78,6 +78,9 @@
       }
     </style>
 
+    <link rel="preload" href="%sapper.client%" as="script" />
+    <!-- <link rel="modulepreload" href="super-critical-stuff.mjs"> -->
+
     <!--
       Sapper generates a <style> tag containing critical CSS for the current page.
       CSS for the rest of the app will be loaded lazily when it precaches secondary pages
