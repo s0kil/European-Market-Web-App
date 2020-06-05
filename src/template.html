@@ -52,6 +52,7 @@
         font-family: "cera_pro_black";
         font-style: normal;
         font-weight: 700;
+        font-display: swap;
         src: url("/fonts/cerapro/cerapro-black-webfont.woff2") format("woff2"),
           url("/fonts/cerapro/cerapro-black-webfont.woff") format("woff");
       }
@@ -60,6 +61,7 @@
         font-family: "Merriweather";
         font-style: normal;
         font-weight: 400;
+        font-display: swap;
         src: local("Merriweather Regular"), local("Merriweather-Regular"),
           url("/fonts/merriweather/merriweather-regular.woff2") format("woff2"),
           url("/fonts/merriweather/merriweather-regular.woff") format("woff");
@@ -69,11 +71,15 @@
         font-family: "Lato";
         font-style: normal;
         font-weight: 400;
+        font-display: swap;
         src: local("Lato Regular"), local("Lato-Regular"),
           url("/fonts/lato/lato-regular.woff2") format("woff2"),
           url("/fonts/lato/lato-regular.woff") format("woff");
       }
     </style>
+
+    <link rel="preload" href="%sapper.client%" as="script" />
+    <!-- <link rel="modulepreload" href="super-critical-stuff.mjs"> -->
 
     <!--
       Sapper generates a <style> tag containing critical CSS for the current page.
