@@ -10,6 +10,7 @@
     "optimizeImages": "imager --inputs static/images/*.jpg --output-dir static/images/min/ --formats jpeg",
     "prod": "npm run export && npm run subFont",
     "serveExport": "python3 -m http.server --directory __sapper__/export/ 8000",
+    "serverPushHeaders": "./scripts/serverPushHeaders.sh",
     "subFont": "subfont __sapper__/export --in-place --recursive --inline-css"
   },
   "dependencies": {
