@@ -14,6 +14,7 @@ devDependencies:
   '@rollup/plugin-replace': 2.3.3_rollup@2.13.1
   '@s0kil/sapper': 0.27.14_svelte@3.23.0
   '@s0kil/tiny-map': 0.1.1
+  esbuild: 0.4.8
   modern-normalize: 0.6.0
   prettier: 2.0.5
   prettier-plugin-svelte: 1.1.0_prettier@2.0.5+svelte@3.23.0
@@ -2251,6 +2252,12 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-GbuJ/HyxOtVPNtcbgU7vcmPEZIfpeFnVgEGVvV2SrwU70ZZO0d7ZqRPm2gevD7FFxwNFpajdcEZZNJkEm7e4Pg==
+  /esbuild/0.4.8:
+    dev: true
+    hasBin: true
+    requiresBuild: true
+    resolution:
+      integrity: sha512-uBMYw7GY1dVL+/vgUTs2Yk7soR0t/nJYtA571M4UjcpUkdVb7fx+2vuf/NH4AtGpx4ZisYBJuBENm1iS95Y/zw==
   /escape-string-regexp/1.0.5:
     dev: true
     engines:
@@ -5634,6 +5641,7 @@ specifiers:
   '@s0kil/sapper': ^0.27.14
   '@s0kil/tiny-map': 0.1.1
   compression: ^1.7.4
+  esbuild: ^0.4.8
   modern-normalize: ^0.6.0
   polka: next
   prettier: ^2.0.5
