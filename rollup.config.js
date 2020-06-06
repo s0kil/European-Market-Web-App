@@ -1,11 +1,11 @@
 import babel from "@rollup/plugin-babel";
 import commonjs from "@rollup/plugin-commonjs";
 import config from "@s0kil/sapper/config/rollup.js";
+import esbuild from "rollup-plugin-esbuild";
 import pkg from "./package.json";
 import replace from "@rollup/plugin-replace";
 import resolve from "@rollup/plugin-node-resolve";
 import svelte from "rollup-plugin-svelte";
-import { terser } from "rollup-plugin-terser";
 
 const mode = process.env.NODE_ENV;
 const dev = mode === "development";
@@ -15,6 +15,11 @@ const onwarn = (warning, onwarn) =>
   (warning.code === "CIRCULAR_DEPENDENCY" &&
     /[/\\]@sapper[/\\]/.test(warning.message)) ||
   onwarn(warning);
+
+const optimizer = () =>
+  esbuild({
+    minify: !dev,
+  });
 
 export default {
   client: {
@@ -64,10 +69,7 @@ export default {
           ],
         }),
 
-      !dev &&
-        terser({
-          module: true,
-        }),
+      !dev && optimizer(),
     ],
 
     preserveEntrySignatures: false,
@@ -110,7 +112,7 @@ export default {
         "process.env.NODE_ENV": JSON.stringify(mode),
       }),
       commonjs(),
-      !dev && terser(),
+      !dev && optimizer(),
     ],
 
     preserveEntrySignatures: false,
