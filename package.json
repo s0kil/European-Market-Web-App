@@ -13,7 +13,7 @@
   "dependencies": {
     "compression": "^1.7.4",
     "polka": "next",
-    "sirv": "next"
+    "sirv": "^1.0.0-next.9"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
@@ -21,19 +21,19 @@
     "@babel/plugin-transform-runtime": "^7.10.1",
     "@babel/preset-env": "^7.10.2",
     "@babel/runtime": "^7.10.2",
-    "@rollup/plugin-babel": "^5.0.2",
-    "@rollup/plugin-commonjs": "12.0.0",
-    "@rollup/plugin-node-resolve": "^8.0.0",
-    "@rollup/plugin-replace": "^2.3.2",
+    "@rollup/plugin-babel": "^5.0.3",
+    "@rollup/plugin-commonjs": "13.0.0",
+    "@rollup/plugin-node-resolve": "^8.0.1",
+    "@rollup/plugin-replace": "^2.3.3",
     "@s0kil/sapper": "^0.27.14",
     "@s0kil/tiny-map": "0.1.1",
     "modern-normalize": "^0.6.0",
     "prettier": "^2.0.5",
     "prettier-plugin-svelte": "^1.1.0",
-    "rollup": "^2.13.1",
+    "rollup": "^2.15.0",
     "rollup-plugin-svelte": "^5.2.2",
     "rollup-plugin-terser": "^6.1.0",
     "subfont": "^5.0.2",
-    "svelte": "^3.23.0"
+    "svelte": "^3.23.1"
   }
 }
