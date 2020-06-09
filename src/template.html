@@ -85,16 +85,11 @@
       This contains the contents of the <svelte:head> component, if the current page has one
     -->
     %sapper.head%
-
-    <!--
-      Preload Sapper Client
-    -->
-    <link rel="modulepreload" href="%sapper.client%" />
-
-    %sapper.scripts%
   </head>
 
   <body>
     <div id="app">%sapper.html%</div>
+
+    %sapper.scripts%
   </body>
 </html>
