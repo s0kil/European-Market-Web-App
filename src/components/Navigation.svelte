@@ -100,7 +100,7 @@
 
 <nav>
   <div id="header">
-    <a href=".">
+    <a class="prerender-intention" href=".">
       {#if !segment}
         <img
           width="176"
@@ -127,10 +127,12 @@
   <div id="footer">
     <ul>
       <li>
-        <a rel="prefetch" href="locations">Our Locations</a>
+        <a class="prerender-intention" rel="prefetch" href="locations">
+          Our Locations
+        </a>
       </li>
       <li>
-        <a href="contact">Contact Us</a>
+        <a class="prerender-intention" href="contact">Contact Us</a>
       </li>
     </ul>
   </div>
