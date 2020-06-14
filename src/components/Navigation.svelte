@@ -106,13 +106,13 @@
           width="176"
           height="48"
           alt="European Market Logo"
-          src={imageCDN('images/min/logo.png', '&h=60')} />
+          src={imageCDN('images/min/logo.png', '?tr=h-60')} />
       {:else}
         <img
           width="48"
           height="48"
           alt="European Market Logo"
-          src={imageCDN('images/min/logo-sign.png', '&h=60')} />
+          src={imageCDN('images/min/logo-sign.png', '?tr=h-60')} />
         <div class="page-name">{segment}</div>
       {/if}
     </a>
