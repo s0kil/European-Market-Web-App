@@ -74,8 +74,17 @@
 
   form input:focus,
   form textarea:focus {
+    outline: none;
+  }
+
+  form input:not(:focus),
+  form textarea:not(:focus) {
+    opacity: 0.8;
+  }
+
+  form input:valid,
+  form textarea:valid {
     outline: 2px solid #517a3e;
-    box-shadow: 0 0 8px #517a3e;
   }
 
   form textarea {
