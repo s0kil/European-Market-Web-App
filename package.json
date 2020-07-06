@@ -33,7 +33,7 @@
     "rollup-plugin-svelte": "^5.2.3",
     "rollup-plugin-terser": "^6.1.0",
     "sapper": "github:s0kil/sapper",
-    "subfont": "^5.0.5",
+    "subfont": "^5.0.6",
     "svelte": "^3.23.2"
   }
 }
