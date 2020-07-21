@@ -3,9 +3,9 @@
 
   export function preload({ params, query }) {
     return this.fetch(locationsEndpoint())
-      .then(r => r.json())
-      .then(data => ({
-        locations: data
+      .then((response) => response.json())
+      .then((data) => ({
+        locations: data,
       }));
   }
 </script>
@@ -105,7 +105,7 @@
         <p>{location.location}</p>
 
         <a rel="prefetch" href={'/locations/' + location.pageSlug}>
-          <span>More Info ></span>
+          <span>More Info &gt;</span>
         </a>
       {:else if location.status === 'Coming Soon'}
         <p>
@@ -114,7 +114,7 @@
         </p>
 
         <a rel="prefetch" href={'/locations/' + location.pageSlug}>
-          <span>More Info ></span>
+          <span>More Info &gt;</span>
         </a>
       {/if}
     </div>

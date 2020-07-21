@@ -1,20 +1,20 @@
 [build]
-command = "npm run prod"
+command = "npm run lint && npm run prod"
+environment = {NODE_VERSION = "14.6.0"}
 publish = "__sapper__/export"
-environment = { NODE_VERSION = "14.4.0" }
 
 [[headers]]
 for = "/*"
 
 [headers.values]
-X-Frame-Options = "DENY"
-Referrer-Policy = "no-referrer"
-X-XSS-Protection = "1; mode=block"
-X-Content-Type-Options = "nosniff"
-X-Permitted-Cross-Domain-Policies = "none"
-Strict-Transport-Security = "max-age=31536000"
 Content-Security-Policy = "form-action https:"
 Feature-Policy = "accelerometer 'none'; ambient-light-sensor 'none'; autoplay 'none'; battery 'none'; camera 'none'; display-capture 'none'; document-domain 'none'; encrypted-media 'none'; fullscreen 'none'; geolocation 'none'; gyroscope 'none'; layout-animations 'none'; legacy-image-formats 'none'; magnetometer 'none'; microphone 'none'; midi 'none'; oversized-images 'none'; payment 'none'; picture-in-picture 'none'; publickey-credentials-get 'none'; sync-xhr 'none'; usb 'none'; wake-lock 'none'; xr-spatial-tracking 'none';"
+Referrer-Policy = "no-referrer"
+Strict-Transport-Security = "max-age=31536000"
+X-Content-Type-Options = "nosniff"
+X-Frame-Options = "DENY"
+X-Permitted-Cross-Domain-Policies = "none"
+X-XSS-Protection = "1; mode=block"
 
 [[redirects]]
 from = "/our-story"
