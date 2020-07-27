@@ -36,6 +36,6 @@
     "sapper": "github:s0kil/sapper",
     "subfont": "^5.1.0",
     "svelte": "^3.24.0",
-    "svelte-check": "^0.1.57"
+    "svelte-check": "^0.1.58"
   }
 }
