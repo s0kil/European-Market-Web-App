@@ -17,11 +17,11 @@
     "sirv": "^1.0.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.0",
+    "@babel/core": "^7.11.1",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.11.0",
     "@babel/preset-env": "^7.11.0",
-    "@babel/runtime": "^7.11.0",
+    "@babel/runtime": "^7.11.1",
     "@rollup/plugin-babel": "^5.1.0",
     "@rollup/plugin-commonjs": "14.0.0",
     "@rollup/plugin-node-resolve": "^8.4.0",
@@ -36,6 +36,6 @@
     "sapper": "^0.27.16",
     "subfont": "^5.2.0",
     "svelte": "^3.24.0",
-    "svelte-check": "^1.0.5"
+    "svelte-check": "^1.0.6"
   }
 }
