@@ -36,6 +36,6 @@
     "sapper": "^0.27.16",
     "subfont": "^5.2.0",
     "svelte": "^3.24.0",
-    "svelte-check": "^1.0.6"
+    "svelte-check": "^1.0.7"
   }
 }
