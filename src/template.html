@@ -25,6 +25,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 
+    <!-- Sapper creates a <script> tag containing `src/client.js` and anything else it needs to hydrate the app and initialize the router -->
+    %sapper.scripts%
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -85,7 +88,5 @@
 
   <body>
     <div id="app">%sapper.html%</div>
-
-    %sapper.scripts%
   </body>
 </html>
