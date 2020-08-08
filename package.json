@@ -9,7 +9,7 @@
     "optimizeImages": "imager --inputs static/images/*.jpg --output-dir static/images/min/ --formats jpeg",
     "prod": "npm run export && npm run subFont",
     "serveExport": "python3 -m http.server --directory __sapper__/export/ 8000",
-    "subFont": "subfont __sapper__/export --in-place --recursive --dry-run"
+    "subFont": "subfont __sapper__/export --in-place --recursive --inline-css --no-fallbacks"
   },
   "dependencies": {
     "compression": "^1.7.4",
