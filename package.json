@@ -30,12 +30,12 @@
     "modern-normalize": "^0.7.0",
     "prettier": "^2.0.5",
     "prettier-plugin-svelte": "^1.1.0",
-    "rollup": "^2.26.3",
+    "rollup": "^2.26.4",
     "rollup-plugin-svelte": "^5.2.3",
     "rollup-plugin-terser": "^7.0.0",
     "sapper": "^0.28.0",
     "subfont": "^5.2.0",
     "svelte": "^3.24.1",
-    "svelte-check": "^1.0.18"
+    "svelte-check": "^1.0.20"
   }
 }
