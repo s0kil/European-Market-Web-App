@@ -1,6 +1,6 @@
 [build]
 command = "npm run lint && npm run prod"
-environment = { NODE_VERSION = "14.8.0" }
+environment = { NODE_VERSION = "14.9.0" }
 publish = "__sapper__/export"
 
 [[headers]]
