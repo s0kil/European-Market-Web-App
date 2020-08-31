@@ -38,6 +38,6 @@
     "sitemap-generator": "^8.5.0",
     "subfont": "^5.2.0",
     "svelte": "^3.24.1",
-    "svelte-check": "^1.0.28"
+    "svelte-check": "^1.0.31"
   }
 }
