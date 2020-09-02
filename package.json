@@ -36,7 +36,7 @@
     "rollup-plugin-terser": "^7.0.1",
     "sapper": "^0.28.3",
     "sitemap-generator": "^8.5.0",
-    "subfont": "^5.2.0",
+    "subfont": "^5.2.1",
     "svelte": "^3.24.1",
     "svelte-check": "^1.0.32"
   }
