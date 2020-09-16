@@ -37,7 +37,7 @@
     "sapper": "^0.28.6",
     "sitemap-generator": "^8.5.1",
     "subfont": "^5.2.2",
-    "svelte": "^3.25.0",
+    "svelte": "^3.25.1",
     "svelte-check": "^1.0.41"
   }
 }
