@@ -1,5 +1,5 @@
 [build]
-command = "npm run lint && npm run prod && npm run generateSitemap"
+command = "npm run lint && npm run prod"
 publish = "__sapper__/export"
 
 [[headers]]
