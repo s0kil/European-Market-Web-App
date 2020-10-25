@@ -11,9 +11,7 @@
   );
 
   $: pageLoaded = false;
-  $: {
-    if (isBrowser) window.addEventListener("load", () => (pageLoaded = true));
-  }
+  if (isBrowser) window.addEventListener("load", () => (pageLoaded = true));
 </script>
 
 <style>
