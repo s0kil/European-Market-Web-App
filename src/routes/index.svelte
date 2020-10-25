@@ -1,13 +1,19 @@
 <script>
+  import Loadable from "svelte-loadable";
+
+  import isBrowser from "../_utils/isBrowser.js";
   import { imageCDN } from "../_utils/image.js";
   import { viewportHeight } from "../_utils/viewport.js";
   import { beforeMount } from "../_utils/beforeMount.js";
 
-  import Countries from "../components/Countries.svelte";
-
   $: headerImgSrc = beforeMount(() =>
     imageCDN("images/min/european-meats.jpg", `?tr=h-${viewportHeight(60)}`)
   );
+
+  $: pageLoaded = false;
+  $: {
+    if (isBrowser) window.addEventListener("load", () => (pageLoaded = true));
+  }
 </script>
 
 <style>
@@ -111,9 +117,10 @@
       <h1>Delicious & Nutritious Products From 25+ Different Countries</h1>
 
       <div class="countries">
-        <Countries />
+        {#if pageLoaded}
+          <Loadable loader={() => import('../components/Countries.svelte')} />
+        {/if}
       </div>
-
     </div>
 
     <img

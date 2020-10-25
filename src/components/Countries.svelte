@@ -21,29 +21,6 @@
   import Switzerland from "./CountryFlags/Switzerland.svelte";
   import Turkey from "./CountryFlags/Turkey.svelte";
   import Ukraine from "./CountryFlags/Ukraine.svelte";
-
-  /*
-  const countries = [
-    "Armenia",
-    "Austria",
-    "Belarus",
-    "Bulgaria",
-    "England",
-    "France",
-    "Germany",
-    "Greece",
-    "Israel",
-    "Italy",
-    "Latvia",
-    "Moldova",
-    "Poland",
-    "Russia",
-    "Sweden",
-    "Switzerland",
-    "Turkey",
-    "Ukraine"
-  ];
-  */
 </script>
 
 <style>

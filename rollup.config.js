@@ -6,6 +6,7 @@ import replace from "@rollup/plugin-replace";
 import resolve from "@rollup/plugin-node-resolve";
 import svelte from "rollup-plugin-svelte";
 import { terser } from "rollup-plugin-terser";
+import analyze from "rollup-plugin-analyzer";
 
 const mode = process.env.NODE_ENV;
 const dev = mode === "development";
@@ -69,6 +70,8 @@ export default {
         terser({
           module: true,
         }),
+
+      !dev && analyze(),
     ],
 
     preserveEntrySignatures: false,
