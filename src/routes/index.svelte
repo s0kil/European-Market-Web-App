@@ -12,6 +12,7 @@
 
   $: pageLoaded = false;
   if (isBrowser) window.addEventListener("load", () => (pageLoaded = true));
+  setTimeout(() => (pageLoaded = true), 1000); // On Fast Page Loads `load` Event Before The JS Is Evaluated
 </script>
 
 <style>
