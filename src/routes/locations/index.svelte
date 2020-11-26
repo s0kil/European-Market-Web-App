@@ -1,17 +1,17 @@
 <script context="module">
-  import { locationsEndpoint } from "./_endpoint";
+  import { locationsEndpoint } from "./_endpoint"
 
   export function preload({ params, query }) {
     return this.fetch(locationsEndpoint())
       .then((response) => response.json())
       .then((data) => ({
         locations: data,
-      }));
+      }))
   }
 </script>
 
 <script>
-  export let locations;
+  export let locations
 </script>
 
 <style>
@@ -108,10 +108,7 @@
           <span>More Info &gt;</span>
         </a>
       {:else if location.status === 'Coming Soon'}
-        <p>
-          <span>Coming Soon</span>
-          {location.location}
-        </p>
+        <p><span>Coming Soon</span> {location.location}</p>
 
         <a rel="prefetch" href={'/locations/' + location.pageSlug}>
           <span>More Info &gt;</span>

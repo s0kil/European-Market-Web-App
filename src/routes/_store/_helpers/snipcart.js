@@ -1,11 +1,11 @@
-import loadAsset from "loadjs";
+import loadAsset from "loadjs"
 
 // Load SnipCart Asynchronously
 export async function loadSnipCart() {
   // Check If SnipCart Already Loaded
-  if (window.hasOwnProperty("Snipcart")) return true;
+  if (window.hasOwnProperty("Snipcart")) return true
 
-  const snipCartVersion = "3.0.10";
+  const snipCartVersion = "3.0.10"
   return loadAsset(
     [
       `https://cdn.snipcart.com/themes/v${snipCartVersion}/default/snipcart.css`,
@@ -14,8 +14,8 @@ export async function loadSnipCart() {
     {
       numRetries: 7,
       returnPromise: true,
-    }
+    },
   )
     .then(() => true)
-    .catch(() => false);
+    .catch(() => false)
 }

@@ -1,9 +1,9 @@
 <script>
-  import "modern-normalize/modern-normalize.css";
+  import "modern-normalize/modern-normalize.css"
 
-  import Navigation from "../components/Navigation.svelte";
+  import Navigation from "../components/Navigation.svelte"
 
-  export let segment;
+  export let segment
 </script>
 
 <style>

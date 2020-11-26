@@ -1,7 +1,7 @@
 function saveData() {
   if ("connection" in navigator) {
-    return navigator.connection.saveData === true;
-  } else return false;
+    return navigator.connection.saveData === true
+  } else return false
 }
 
-export default saveData;
+export default saveData

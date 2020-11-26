@@ -1,44 +1,44 @@
 <script>
-  import { imageCDN } from "../_utils/image.js";
-  import isBrowser from "../_utils/isBrowser.js";
-  import { submitForm } from "../_utils/form.js";
-  import { beforeMount } from "../_utils/beforeMount.js";
-  import { viewportHeight } from "../_utils/viewport.js";
+  import { imageCDN } from "../_utils/image.js"
+  import isBrowser from "../_utils/isBrowser.js"
+  import { submitForm } from "../_utils/form.js"
+  import { beforeMount } from "../_utils/beforeMount.js"
+  import { viewportHeight } from "../_utils/viewport.js"
 
   $: backgroundImage = beforeMount(() =>
-    imageCDN("images/min/fresh-vegetables.jpg", `?tr=h-${viewportHeight(90)}`)
-  );
+    imageCDN("images/min/fresh-vegetables.jpg", `?tr=h-${viewportHeight(90)}`),
+  )
 
-  let formStatus = "";
+  let formStatus = ""
 
   function handleSubmit(event) {
     let isContactFormValid = validateForm([
       "#person-name",
       "#person-email",
-      "#person-message"
-    ]);
+      "#person-message",
+    ])
     if (!isContactFormValid) {
-      formStatus = "Please Fill In All Input Fields";
-      return;
+      formStatus = "Please Fill In All Input Fields"
+      return
     }
 
     submitForm(event.target)
       .then(() => {
-        formStatus = "Message Sent, We Will Contact You Soon.";
-        event.target.reset();
+        formStatus = "Message Sent, We Will Contact You Soon."
+        event.target.reset()
       })
-      .catch(error => {
-        formStatus = `Message Failed To Send, Error Message: ${error}`;
-        console.error(error);
-      });
+      .catch((error) => {
+        formStatus = `Message Failed To Send, Error Message: ${error}`
+        console.error(error)
+      })
   }
 
   function validateForm(inputsArray) {
     if (isBrowser) {
-      let inputs = document.querySelectorAll(inputsArray);
-      return [...inputs].every(input => input.value.length > 0);
+      let inputs = document.querySelectorAll(inputsArray)
+      return [...inputs].every((input) => input.value.length > 0)
     }
-    return false;
+    return false
   }
 </script>
 
@@ -135,7 +135,6 @@
 </svelte:head>
 
 <section style="background-image: url({backgroundImage || ''});">
-
   <form
     name="contact"
     method="POST"
@@ -143,7 +142,6 @@
     data-netlify="true"
     netlify-honeypot="bot-field"
     on:submit|preventDefault={handleSubmit}>
-
     <input type="hidden" name="bot-field" />
 
     <p>{formStatus}</p>
@@ -169,6 +167,5 @@
       placeholder="Message" />
 
     <button type="submit">Send</button>
-
   </form>
 </section>

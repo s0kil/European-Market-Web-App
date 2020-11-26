@@ -1,21 +1,21 @@
-import babel from "@rollup/plugin-babel";
-import commonjs from "@rollup/plugin-commonjs";
-import config from "sapper/config/rollup.js";
-import pkg from "./package.json";
-import replace from "@rollup/plugin-replace";
-import resolve from "@rollup/plugin-node-resolve";
-import svelte from "rollup-plugin-svelte";
-import { terser } from "rollup-plugin-terser";
+import babel from "@rollup/plugin-babel"
+import commonjs from "@rollup/plugin-commonjs"
+import config from "sapper/config/rollup.js"
+import pkg from "./package.json"
+import replace from "@rollup/plugin-replace"
+import resolve from "@rollup/plugin-node-resolve"
+import svelte from "rollup-plugin-svelte"
+import { terser } from "rollup-plugin-terser"
 
-const mode = process.env.NODE_ENV;
-const dev = mode === "development";
-const legacy = !!process.env.SAPPER_LEGACY_BUILD;
+const mode = process.env.NODE_ENV
+const dev = mode === "development"
+const legacy = !!process.env.SAPPER_LEGACY_BUILD
 
 const onwarn = (warning, onwarn) =>
   (warning.code === "MISSING_EXPORT" && /'preload'/.test(warning.message)) ||
   (warning.code === "CIRCULAR_DEPENDENCY" &&
     /[/\\]@sapper[/\\]/.test(warning.message)) ||
-  onwarn(warning);
+  onwarn(warning)
 
 export default {
   client: {
@@ -27,8 +27,10 @@ export default {
         "process.env.NODE_ENV": JSON.stringify(mode),
       }),
       svelte({
-        dev,
-        hydratable: true,
+        compilerOptions: {
+          dev,
+          hydratable: true,
+        },
         emitCss: true,
       }),
       resolve({
@@ -84,9 +86,11 @@ export default {
         "process.env.NODE_ENV": JSON.stringify(mode),
       }),
       svelte({
-        generate: "ssr",
-        hydratable: true,
-        dev,
+        compilerOptions: {
+          generate: "ssr",
+          hydratable: true,
+          dev,
+        },
       }),
       resolve({
         dedupe: ["svelte"],
@@ -95,7 +99,7 @@ export default {
     ],
     external: Object.keys(pkg.dependencies).concat(
       require("module").builtinModules ||
-        Object.keys(process.binding("natives"))
+        Object.keys(process.binding("natives")),
     ),
 
     preserveEntrySignatures: "strict",
@@ -120,4 +124,4 @@ export default {
     onwarn,
   },
   */
-};
+}

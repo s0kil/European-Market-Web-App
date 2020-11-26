@@ -1,13 +1,13 @@
 <script>
-  import { imageCDN } from "../_utils/image.js";
-  import { viewportHeight } from "../_utils/viewport.js";
-  import { beforeMount } from "../_utils/beforeMount.js";
+  import { imageCDN } from "../_utils/image.js"
+  import { viewportHeight } from "../_utils/viewport.js"
+  import { beforeMount } from "../_utils/beforeMount.js"
 
-  import Countries from "../components/Countries.svelte";
+  import Countries from "../components/Countries.svelte"
 
   $: headerImgSrc = beforeMount(() =>
-    imageCDN("images/min/european-meats.jpg", `?tr=h-${viewportHeight(60)}`)
-  );
+    imageCDN("images/min/european-meats.jpg", `?tr=h-${viewportHeight(60)}`),
+  )
 </script>
 
 <style>
@@ -113,7 +113,6 @@
       <div class="countries">
         <Countries />
       </div>
-
     </div>
 
     <img

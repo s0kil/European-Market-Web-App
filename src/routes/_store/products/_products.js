@@ -1,29 +1,29 @@
-const fs = require("fs");
+const fs = require("fs")
 
-import stringToSlug from "../../../_utils/stringToSlug";
+import stringToSlug from "../../../_utils/stringToSlug"
 
 export const products = fs.readFileSync(
   "src/routes/store/products/_products.json",
-  "utf8"
-);
+  "utf8",
+)
 
-export const productsDeserialized = JSON.parse(products);
+export const productsDeserialized = JSON.parse(products)
 
-export const productCategories = {};
+export const productCategories = {}
 for (const product in productsDeserialized) {
-  const category = productsDeserialized[product].categoryTitle;
-  productCategories[category] = stringToSlug(category);
+  const category = productsDeserialized[product].categoryTitle
+  productCategories[category] = stringToSlug(category)
 }
 
-const productCategoriesArray = [];
+const productCategoriesArray = []
 for (const key in productCategories) {
   productCategoriesArray.push({
     title: key,
     slug: productCategories[key],
-  });
+  })
 }
 
 export const categories = productCategoriesArray.sort((a, b) =>
   // Sort By Title
-  a.title.localeCompare(b.title)
-);
+  a.title.localeCompare(b.title),
+)

@@ -4,16 +4,17 @@ const handleLinkIntention = (linkElement) => {
     linkElement.href === "undefined" ||
     linkElement.href === window.location.href
   )
-    return;
+    return
 
-  const link = document.createElement("link");
-  link.rel = "prerender";
-  link.href = linkElement.href;
-  document.head.appendChild(link);
-};
+  console.log(linkElement.href)
 
-export const prerenderIntention = () => {
+  const link = document.createElement("link")
+  link.rel = "prerender"
+  link.href = linkElement.href
+  document.head.appendChild(link)
+}
+
+export const prerenderIntention = () =>
   [...document.getElementsByClassName("prerender-intention")].forEach((link) =>
-    handleLinkIntention(link)
-  );
-};
+    handleLinkIntention(link),
+  )

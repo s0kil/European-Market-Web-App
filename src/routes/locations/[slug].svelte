@@ -1,66 +1,66 @@
 <script context="module">
-  import { locationsEndpoint } from "./_endpoint";
+  import { locationsEndpoint } from "./_endpoint"
 
   export async function preload({ params }) {
-    const res = await this.fetch(locationsEndpoint(params.slug));
+    const res = await this.fetch(locationsEndpoint(params.slug))
 
     if (res.status === 200) {
-      const data = await res.json();
+      const data = await res.json()
       return {
-        location: data
-      };
+        location: data,
+      }
     } else {
-      const data = await res.text();
-      this.error(res.status, data);
+      const data = await res.text()
+      this.error(res.status, data)
     }
   }
 </script>
 
 <script>
-  import { onMount } from "svelte";
-  import { tinyMap } from "@s0kil/tiny-map";
+  import { onMount } from "svelte"
+  import { tinyMap } from "@s0kil/tiny-map"
 
-  import saveData from "../../_utils/saveData";
+  import saveData from "../../_utils/saveData"
 
-  export let location;
+  export let location
 
   const weekday = (() => {
-    const day = new Date().getDay();
+    const day = new Date().getDay()
     switch (day) {
       case 0:
-        return "Sunday";
+        return "Sunday"
       case 1:
-        return "Monday";
+        return "Monday"
       case 2:
-        return "Tuesday";
+        return "Tuesday"
       case 3:
-        return "Wednesday";
+        return "Wednesday"
       case 4:
-        return "Thursday";
+        return "Thursday"
       case 5:
-        return "Friday";
+        return "Friday"
       case 6:
-        return "Saturday";
+        return "Saturday"
     }
-  })();
+  })()
 
   const mapBoxAccessToken =
-    "pk.eyJ1IjoiZGFuaWVsc29raWwiLCJhIjoiY2s0NDZjaTFmMDh6ajNrbW1mb3h4cjJobiJ9.AcOfKPFXipCVNgaxZ66WTg";
+    "pk.eyJ1IjoiZGFuaWVsc29raWwiLCJhIjoiY2s0NDZjaTFmMDh6ajNrbW1mb3h4cjJobiJ9.AcOfKPFXipCVNgaxZ66WTg"
 
   onMount(() => {
     // Check Is User Has Save-Data Enabled.
     if (!saveData()) {
-      const { latitude, longitude } = location.coordinates;
+      const { latitude, longitude } = location.coordinates
 
       if (latitude && longitude) {
         tinyMap(document.getElementById("map"), {
           zoom: 16,
           center: [longitude, latitude],
-          tileUrl: `https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=${mapBoxAccessToken}`
-        });
+          tileUrl: `https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=${mapBoxAccessToken}`,
+        })
       }
     }
-  });
+  })
 </script>
 
 <style>
