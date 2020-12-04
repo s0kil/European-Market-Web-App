@@ -4,7 +4,7 @@
   "description": "European Market Web App Built With Sapper + Svelte",
   "scripts": {
     "dev": "PORT=8000 sapper dev",
-    "export": "sapper export --legacy",
+    "export": "sapper export",
     "lint": "svelte-check",
     "optimizeImages": "imager --inputs static/images/*.jpg --output-dir static/images/min/ --formats jpeg",
     "prod": "npm run export && npm run subFont",
