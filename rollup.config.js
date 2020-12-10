@@ -1,4 +1,3 @@
-import babel from "@rollup/plugin-babel"
 import commonjs from "@rollup/plugin-commonjs"
 import config from "sapper/config/rollup.js"
 import pkg from "./package.json"
@@ -9,7 +8,6 @@ import { terser } from "rollup-plugin-terser"
 
 const mode = process.env.NODE_ENV
 const dev = mode === "development"
-const legacy = !!process.env.SAPPER_LEGACY_BUILD
 
 const onwarn = (warning, onwarn) =>
   (warning.code === "MISSING_EXPORT" && /'preload'/.test(warning.message)) ||
@@ -38,34 +36,6 @@ export default {
         dedupe: ["svelte"],
       }),
       commonjs(),
-
-      legacy &&
-        babel({
-          extensions: [".js", ".mjs", ".html", ".svelte"],
-          babelHelpers: "runtime",
-          exclude: ["node_modules/@babel/**"],
-          presets: [
-            [
-              "@babel/preset-env",
-              {
-                targets: {
-                  browsers: ["> 0.1%", "ie >= 11"],
-                },
-                // https://babeljs.io/blog/2020/03/16/7.9.0#babel-preset-env-s-bugfixes-option-11083-https-githubcom-babel-babel-pull-11083
-                bugfixes: true,
-              },
-            ],
-          ],
-          plugins: [
-            "@babel/plugin-syntax-dynamic-import",
-            [
-              "@babel/plugin-transform-runtime",
-              {
-                useESModules: true,
-              },
-            ],
-          ],
-        }),
 
       !dev &&
         terser({
