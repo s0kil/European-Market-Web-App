@@ -19,19 +19,19 @@
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "17.0.0",
-    "@rollup/plugin-node-resolve": "^11.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.1",
     "@rollup/plugin-replace": "^2.3.4",
     "@s0kil/tiny-map": "0.1.1",
     "modern-normalize": "^1.0.0",
     "prettier": "^2.2.1",
-    "prettier-plugin-svelte": "^1.4.2",
-    "rollup": "^2.34.2",
+    "prettier-plugin-svelte": "^2.1.0",
+    "rollup": "^2.36.1",
     "rollup-plugin-svelte": "^7.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "sapper": "^0.28.10",
     "sitemap-generator": "^8.5.1",
-    "subfont": "^5.2.3",
-    "svelte": "^3.31.0",
-    "svelte-check": "^1.1.20"
+    "subfont": "^5.2.5",
+    "svelte": "^3.31.2",
+    "svelte-check": "^1.1.26"
   }
 }
