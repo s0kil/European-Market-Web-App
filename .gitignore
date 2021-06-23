@@ -8,3 +8,7 @@ yarn-error.log
 .idea
 # Local Netlify folder
 .netlify
+# SvelteKit
+.svelte-kit
+build
+functions

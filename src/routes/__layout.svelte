@@ -2,9 +2,12 @@
   import "modern-normalize/modern-normalize.css"
 
   import Navigation from "../components/Navigation.svelte"
-
-  export let segment
 </script>
+
+<main>
+  <Navigation />
+  <slot />
+</main>
 
 <style>
   :global(body) {
@@ -41,8 +44,3 @@
     background: rgb(255, 255, 255);
   }
 </style>
-
-<main>
-  <Navigation {segment} />
-  <slot />
-</main>

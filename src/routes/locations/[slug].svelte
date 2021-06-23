@@ -1,24 +1,27 @@
 <script context="module">
   import { locationsEndpoint } from "./_endpoint"
 
-  export async function preload({ params }) {
-    const res = await this.fetch(locationsEndpoint(params.slug))
+  export async function load({ page, fetch, session, context }) {
+    const response = await fetch(locationsEndpoint(page.params.slug))
 
-    if (res.status === 200) {
-      const data = await res.json()
+    if (response.status === 200) {
+      const location = await response.json()
       return {
-        location: data,
+        props: { location },
       }
     } else {
-      const data = await res.text()
-      this.error(res.status, data)
+      const text = await response.text()
+      return {
+        status: response.status,
+        error: text,
+      }
     }
   }
 </script>
 
 <script>
   import { onMount } from "svelte"
-  import { tinyMap } from "@s0kil/tiny-map"
+  import { tinyMap } from "$lib/tiny-map"
 
   import saveData from "../../_utils/saveData"
 
@@ -62,6 +65,46 @@
     }
   })
 </script>
+
+<svelte:head>
+  <title>{location.location} | European Market</title>
+</svelte:head>
+
+<section class="location">
+  {#if location.status === "Coming Soon"}
+    <p class="coming-soon">Coming Soon</p>
+  {/if}
+
+  <h1>European Market {location.location}</h1>
+
+  <ul class="hours">
+    {#each location.hoursOfOperation as hours}
+      {#if String(hours).startsWith(weekday)}
+        <li class="hours-today">{hours}</li>
+      {:else}
+        <li>{hours}</li>
+      {/if}
+    {/each}
+  </ul>
+
+  <a
+    rel="noopener noreferrer"
+    target="_blank"
+    href="https://www.google.com/maps/place/{location.address}"
+  >
+    <p>{location.address}</p>
+  </a>
+
+  <a href="mailto:{location.emailAddress}">
+    <p>{location.emailAddress}</p>
+  </a>
+
+  <a href="tel:{location.phoneNumber}">
+    <p>{location.phoneNumber}</p>
+  </a>
+
+  <div id="map" />
+</section>
 
 <style>
   #map {
@@ -138,42 +181,3 @@
     }
   }
 </style>
-
-<svelte:head>
-  <title>{location.location} | European Market</title>
-</svelte:head>
-
-<section class="location">
-  {#if location.status === 'Coming Soon'}
-    <p class="coming-soon">Coming Soon</p>
-  {/if}
-
-  <h1>European Market {location.location}</h1>
-
-  <ul class="hours">
-    {#each location.hoursOfOperation as hours}
-      {#if String(hours).startsWith(weekday)}
-        <li class="hours-today">{hours}</li>
-      {:else}
-        <li>{hours}</li>
-      {/if}
-    {/each}
-  </ul>
-
-  <a
-    rel="noopener noreferrer"
-    target="_blank"
-    href="https://www.google.com/maps/place/{location.address}">
-    <p>{location.address}</p>
-  </a>
-
-  <a href="mailto:{location.emailAddress}">
-    <p>{location.emailAddress}</p>
-  </a>
-
-  <a href="tel:{location.phoneNumber}">
-    <p>{location.phoneNumber}</p>
-  </a>
-
-  <div id="map" />
-</section>

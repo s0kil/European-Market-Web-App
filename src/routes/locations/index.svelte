@@ -1,18 +1,47 @@
 <script context="module">
   import { locationsEndpoint } from "./_endpoint"
 
-  export function preload({ params, query }) {
-    return this.fetch(locationsEndpoint())
-      .then((response) => response.json())
-      .then((data) => ({
-        locations: data,
-      }))
+  export async function load({ page, fetch, session, context }) {
+    const locations = await fetch(locationsEndpoint()).then((r) => r.json())
+    return { props: { locations } }
   }
 </script>
 
 <script>
   export let locations
 </script>
+
+<svelte:head>
+  <title>Locations | European Market</title>
+
+  <!-- Pre-Connect To Maps Server, For `locations/[slug].html` Page -->
+  <link href="https://api.mapbox.com" rel="dns-prefetch" />
+  <link
+    rel="preconnect"
+    crossorigin="anonymous"
+    href="https://api.mapbox.com"
+  />
+</svelte:head>
+
+<section id="locations">
+  {#each locations as location}
+    <div class="location">
+      {#if location.status === "Open"}
+        <p>{location.location}</p>
+
+        <a rel="prefetch" href={"/locations/" + location.pageSlug}>
+          <span>More Info &gt;</span>
+        </a>
+      {:else if location.status === "Coming Soon"}
+        <p><span>Coming Soon</span> {location.location}</p>
+
+        <a rel="prefetch" href={"/locations/" + location.pageSlug}>
+          <span>More Info &gt;</span>
+        </a>
+      {/if}
+    </div>
+  {/each}
+</section>
 
 <style>
   .location {
@@ -86,34 +115,3 @@
     }
   }
 </style>
-
-<svelte:head>
-  <title>Locations | European Market</title>
-
-  <!-- Pre-Connect To Maps Server, For `locations/[slug].html` Page -->
-  <link href="https://api.mapbox.com" rel="dns-prefetch" />
-  <link
-    rel="preconnect"
-    crossorigin="anonymous"
-    href="https://api.mapbox.com" />
-</svelte:head>
-
-<section id="locations">
-  {#each locations as location}
-    <div class="location">
-      {#if location.status === 'Open'}
-        <p>{location.location}</p>
-
-        <a rel="prefetch" href={'/locations/' + location.pageSlug}>
-          <span>More Info &gt;</span>
-        </a>
-      {:else if location.status === 'Coming Soon'}
-        <p><span>Coming Soon</span> {location.location}</p>
-
-        <a rel="prefetch" href={'/locations/' + location.pageSlug}>
-          <span>More Info &gt;</span>
-        </a>
-      {/if}
-    </div>
-  {/each}
-</section>
