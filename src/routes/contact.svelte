@@ -1,6 +1,7 @@
 <script>
+  import { browser } from "$app/env"
+
   import { imageCDN } from "../_utils/image.js"
-  import isBrowser from "../_utils/isBrowser.js"
   import { submitForm } from "../_utils/form.js"
   import { beforeMount } from "../_utils/beforeMount.js"
   import { viewportHeight } from "../_utils/viewport.js"
@@ -34,13 +35,57 @@
   }
 
   function validateForm(inputsArray) {
-    if (isBrowser) {
+    if (browser) {
       let inputs = document.querySelectorAll(inputsArray)
       return [...inputs].every((input) => input.value.length > 0)
     }
     return false
   }
 </script>
+
+<svelte:head>
+  <title>Contact | European Market</title>
+</svelte:head>
+
+<section style="background-image: url({backgroundImage || ''});">
+  <form
+    name="contact"
+    method="POST"
+    action="/contact"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+    on:submit|preventDefault={handleSubmit}
+  >
+    <input type="hidden" name="bot-field" />
+
+    <p>{formStatus}</p>
+
+    <input
+      required
+      name="name"
+      type="text"
+      id="person-name"
+      placeholder="Name"
+    />
+
+    <input
+      required
+      name="email"
+      type="email"
+      id="person-email"
+      placeholder="Email"
+    />
+
+    <textarea
+      required
+      name="message"
+      id="person-message"
+      placeholder="Message"
+    />
+
+    <button type="submit">Send</button>
+  </form>
+</section>
 
 <style>
   section {
@@ -129,43 +174,3 @@
     background: #517a3e;
   }
 </style>
-
-<svelte:head>
-  <title>Contact | European Market</title>
-</svelte:head>
-
-<section style="background-image: url({backgroundImage || ''});">
-  <form
-    name="contact"
-    method="POST"
-    action="/contact"
-    data-netlify="true"
-    netlify-honeypot="bot-field"
-    on:submit|preventDefault={handleSubmit}>
-    <input type="hidden" name="bot-field" />
-
-    <p>{formStatus}</p>
-
-    <input
-      required
-      name="name"
-      type="text"
-      id="person-name"
-      placeholder="Name" />
-
-    <input
-      required
-      name="email"
-      type="email"
-      id="person-email"
-      placeholder="Email" />
-
-    <textarea
-      required
-      name="message"
-      id="person-message"
-      placeholder="Message" />
-
-    <button type="submit">Send</button>
-  </form>
-</section>

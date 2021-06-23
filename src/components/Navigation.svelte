@@ -1,8 +1,32 @@
 <script>
-  export let segment;
-
-  import { imageCDN } from "../_utils/image.js";
+  import { imageCDN } from "../_utils/image.js"
 </script>
+
+<nav>
+  <div id="header">
+    <a class="prerender-intention" href="/">
+      <img
+        width="176"
+        height="48"
+        alt="European Market Logo"
+        src={imageCDN("images/min/logo.png", "?tr=h-60")}
+      />
+    </a>
+  </div>
+
+  <div id="footer">
+    <ul>
+      <li>
+        <a class="prerender-intention" rel="prefetch" href="/locations">
+          Our Locations
+        </a>
+      </li>
+      <li>
+        <a class="prerender-intention" href="/contact">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
 <style>
   #header,
@@ -35,27 +59,6 @@
   #header img {
     max-height: 100%;
   }
-
-  .page-name {
-    text-transform: capitalize;
-    margin-left: 0.6rem;
-    font-family: "cera_pro_black", sans-serif;
-    font-weight: bold;
-    font-size: 1.6rem;
-    color: rgb(196, 0, 9);
-  }
-
-  /*
-  #header #store-link {
-    height: 40px;
-    padding: 0 20px;
-    font-size: 1.2em;
-    background: #9a1915;
-    color: rgb(255, 255, 255);
-    margin: auto 16px auto auto;
-    font-family: "cera_pro_black", sans-serif;
-  }
-  */
 
   #footer {
     height: 50px;
@@ -97,43 +100,3 @@
     background: #9a1915;
   }
 </style>
-
-<nav>
-  <div id="header">
-    <a class="prerender-intention" href=".">
-      {#if !segment}
-        <img
-          width="176"
-          height="48"
-          alt="European Market Logo"
-          src={imageCDN('images/min/logo.png', '?tr=h-60')} />
-      {:else}
-        <img
-          width="48"
-          height="48"
-          alt="European Market Logo"
-          src={imageCDN('images/min/logo-sign.png', '?tr=h-60')} />
-        <div class="page-name">{segment}</div>
-      {/if}
-    </a>
-
-    <!--
-    {#if segment !== 'store'}
-      <a id="store-link" class="page-name" href="store">Store</a>
-    {/if}
-    -->
-  </div>
-
-  <div id="footer">
-    <ul>
-      <li>
-        <a class="prerender-intention" rel="prefetch" href="locations">
-          Our Locations
-        </a>
-      </li>
-      <li>
-        <a class="prerender-intention" href="contact">Contact Us</a>
-      </li>
-    </ul>
-  </div>
-</nav>

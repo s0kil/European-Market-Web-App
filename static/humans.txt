@@ -1,9 +1,8 @@
 # humanstxt.org/
-/* TEAM */      
+/* TEAM */
 Daniel Sokil
-https://sokil.dev
 http://github.com/s0kil
 
 
 # TECHNOLOGY COLOPHON
-HTML5, CSS3, JavaScript, Svelte, Sapper, Netlify, Cloudflare
+HTML5, CSS3, JavaScript, Svelte, SvelteKit, Netlify, Cloudflare

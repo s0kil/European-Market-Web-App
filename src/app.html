@@ -7,9 +7,6 @@
       content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes, minimal-ui"
     />
 
-    <!-- Polyfill.io -->
-    <!-- <script src="https://polyfill.io/v3/polyfill.min.js?flags=gated&rum=true&features=fetch"></script> -->
-
     <meta name="theme-color" content="#870e14" />
 
     <!-- Preconnect To Image CDN -->
@@ -25,9 +22,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 
-    <!-- Sapper creates a <script> tag containing `src/client.js` and anything else it needs to hydrate the app and initialize the router -->
-    %sapper.scripts%
-
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -36,13 +30,10 @@
         "logo": "https://europeanmarketus.com/images/logo/logo-sign.png"
       }
     </script>
-    <!-- <link rel="sitemap" type="application/xml" href="./sitemap.xml" /> -->
     <meta
       name="google-site-verification"
       content="_I2Vj5uGpTxJOZ6LJhVdmlXjFa1mZ-7Sh7i2o2bkd28"
     />
-
-    %sapper.base%
 
     <!-- Fonts -->
     <style>
@@ -74,19 +65,10 @@
       }
     </style>
 
-    <!--
-      Sapper generates a <style> tag containing critical CSS for the current page.
-      CSS for the rest of the app will be loaded lazily when it precaches secondary pages
-    -->
-    %sapper.styles%
-
-    <!--
-      This contains the contents of the <svelte:head> component, if the current page has one
-    -->
-    %sapper.head%
+    %svelte.head%
   </head>
 
   <body>
-    <div id="app">%sapper.html%</div>
+    %svelte.body%
   </body>
 </html>
