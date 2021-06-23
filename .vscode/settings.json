@@ -17,7 +17,9 @@
     ".gitattributes": false,
     ".gitignore": false,
     "package-lock.json": false,
-    ".svelte-kit": false
+    ".svelte-kit": false,
+    "functions": false,
+    "build": false
   },
   "explorerExclude.backup": {
     "**/.git": true,
@@ -37,6 +39,8 @@
     ".gitattributes": true,
     ".gitignore": true,
     "package-lock.json": true,
-    ".svelte-kit": true
+    ".svelte-kit": true,
+    "functions": true,
+    "build": true
   }
 }

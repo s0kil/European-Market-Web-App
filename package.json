@@ -15,10 +15,10 @@
     "trailingComma": "all"
   },
   "devDependencies": {
-    "@sveltejs/adapter-netlify": "^1.0.0-next.17",
-    "@sveltejs/adapter-node": "^1.0.0-next.27",
-    "@sveltejs/adapter-static": "^1.0.0-next.13",
-    "@sveltejs/kit": "^1.0.0-next.116",
+    "@sveltejs/adapter-netlify": "next",
+    "@sveltejs/adapter-node": "next",
+    "@sveltejs/adapter-static": "next",
+    "@sveltejs/kit": "next",
     "html-minifier": "^4.0.0",
     "modern-normalize": "^1.1.0",
     "prettier": "^2.3.1",
