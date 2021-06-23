@@ -1,27 +1,5 @@
 {
   "files.exclude": {
-    "**/.git": false,
-    "**/.svn": false,
-    "**/.hg": false,
-    "**/CVS": false,
-    "**/.DS_Store": false,
-    "**/.classpath": false,
-    "**/.factorypath": false,
-    "**/.idea": false,
-    "**/.project": false,
-    "**/.settings": false,
-    "**/target": false,
-    "__sapper__": false,
-    "node_modules": false,
-    ".vscode": false,
-    ".gitattributes": false,
-    ".gitignore": false,
-    "package-lock.json": false,
-    ".svelte-kit": false,
-    "functions": false,
-    "build": false
-  },
-  "explorerExclude.backup": {
     "**/.git": true,
     "**/.svn": true,
     "**/.hg": true,
@@ -41,6 +19,14 @@
     "package-lock.json": true,
     ".svelte-kit": true,
     "functions": true,
-    "build": true
-  }
+    "build": true,
+    "svelte.config.js": true,
+    ".npmrc": true,
+    ".prettierignore": true,
+    "jsconfig.json": true,
+    "netlify.toml": true,
+    "requirements.txt": true,
+    "runtime.txt": true
+  },
+  "explorerExclude.backup": null
 }
