@@ -1,7 +1,7 @@
 [build]
 command = "npm run build"
 publish = "build/"
-functions = "functions/"
+functions = "netlify/functions/"
 environment = { NODE_VERSION = "22" }
 
 [[headers]]
