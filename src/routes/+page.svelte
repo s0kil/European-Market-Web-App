@@ -102,7 +102,7 @@
 </section>
 
 <style>
-  header {
+  #intro-header {
     height: calc(60vh);
     width: 100%;
 
