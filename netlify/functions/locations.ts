@@ -11,7 +11,7 @@ const FIELD_MASK = [
   "businessStatus",
 ].join(",")
 
-const CACHE_SECONDS = 21600 // 6 hours
+const CACHE_SECONDS = 3600 // 1 hour
 
 interface StoreConfig {
   placeId: string
