@@ -18,44 +18,7 @@
     logo: "https://europeanmarketus.com/images/logo/logo-sign.png",
     description:
       "European grocery store offering products from 25+ countries since 1999.",
-    location: [
-      {
-        "@type": "GroceryStore",
-        name: "European Market - Chattanooga",
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Chattanooga",
-          addressRegion: "TN",
-          addressCountry: "US",
-        },
-        geo: {
-          "@type": "GeoCoordinates",
-          latitude: 35.0586237,
-          longitude: -85.0677065,
-        },
-        hasMap:
-          "https://www.google.com/maps/place/European+Market/@35.0586281,-85.0702814,17z",
-      },
-      {
-        "@type": "GroceryStore",
-        name: "European Market - Columbus",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "155 W Mills St",
-          addressLocality: "Columbus",
-          addressRegion: "NC",
-          postalCode: "28722",
-          addressCountry: "US",
-        },
-        geo: {
-          "@type": "GeoCoordinates",
-          latitude: 35.249447,
-          longitude: -82.2012913,
-        },
-        hasMap:
-          "https://www.google.com/maps/place/European+Market/@35.2494514,-82.2038662,17z",
-      },
-    ],
+    foundingDate: "1999-11",
   }}
 />
 

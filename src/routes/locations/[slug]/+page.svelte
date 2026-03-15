@@ -67,14 +67,14 @@
 <JsonLd
     schema={{
         "@type": "GroceryStore",
-        name: `European Market ${location.location}`,
+        name: `European Market - ${location.location}`,
+        url: `https://europeanmarketus.com/locations/${data.slug}`,
+        telephone: location.phoneNumber,
+        email: location.emailAddress,
         address: {
             "@type": "PostalAddress",
             streetAddress: location.address,
         },
-        telephone: location.phoneNumber,
-        email: location.emailAddress,
-        openingHours: location.hoursOfOperation,
         geo: location.coordinates?.latitude
             ? {
                   "@type": "GeoCoordinates",
@@ -82,7 +82,10 @@
                   longitude: location.coordinates.longitude,
               }
             : undefined,
-        url: `https://europeanmarketus.com/locations/${data.location ? "" : ""}`,
+        openingHours: location.hoursOfOperation,
+        priceRange: "$$",
+        image:
+            "https://ik.imagekit.io/esf/images/min/european-meats.jpg?tr=w-1200",
     }}
 />
 
