@@ -1,7 +1,21 @@
 <script lang="ts">
+  import { onMount } from "svelte"
   import { MetaTags } from "svelte-meta-tags"
+  import type { Location } from "$lib/data/locations"
 
   let { data } = $props()
+  let locations = $state(data.locations)
+
+  onMount(async () => {
+    try {
+      const response = await fetch("/api/locations")
+      if (response.ok) {
+        locations = (await response.json()) as Location[]
+      }
+    } catch {
+      // Keep static data on failure
+    }
+  })
 </script>
 
 <MetaTags
@@ -26,7 +40,7 @@
 </svelte:head>
 
 <section id="locations">
-  {#each data.locations as location}
+  {#each locations as location}
     <div class="location">
       {#if location.status === "Open"}
         <p>{location.location}</p>

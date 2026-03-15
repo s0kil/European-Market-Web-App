@@ -8,6 +8,8 @@ const pages = [
   { path: "/locations/columbus-nc", changefreq: "monthly", priority: "0.7" },
 ]
 
+export const prerender = true
+
 export const GET = () => {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

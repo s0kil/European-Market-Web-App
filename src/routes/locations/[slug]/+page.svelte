@@ -4,10 +4,11 @@
     import { PUBLIC_MAPBOX_TOKEN } from "$env/static/public";
     import { tinyMap } from "$lib/tiny-map";
     import { saveData } from "$lib/utils/save-data";
+    import type { LocationDetail } from "$lib/data/locations";
 
     let { data } = $props();
 
-    const location = $derived(data.location);
+    let location = $state(data.location);
 
     const weekday = (() => {
         const days = [
@@ -22,7 +23,20 @@
         return days[new Date().getDay()];
     })();
 
-    onMount(() => {
+    onMount(async () => {
+        // Hydrate with live data
+        try {
+            const response = await fetch(
+                `/api/locations?slug=${data.slug}`,
+            );
+            if (response.ok) {
+                location = (await response.json()) as LocationDetail;
+            }
+        } catch {
+            // Keep static data on failure
+        }
+
+        // Render map
         if (!saveData()) {
             const { latitude, longitude } = location.coordinates;
 

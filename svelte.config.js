@@ -9,12 +9,8 @@ const config = {
       pages: "build",
       assets: "build",
       precompress: true,
-      fallback: "404.html",
-      strict: false,
+      strict: true,
     }),
-    prerender: {
-      handleHttpError: "warn",
-    },
   },
 }
 
