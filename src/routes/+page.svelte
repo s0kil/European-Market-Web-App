@@ -40,8 +40,10 @@
       "European grocery store in Chattanooga, TN offering products from 25+ countries since 1999. Homemade cabbage rolls, pierogies, bulochki, chebureki, blintzes and fresh German bread daily.",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Chattanooga",
+      streetAddress: "4921 Ooltewah Ringgold Rd",
+      addressLocality: "Collegedale",
       addressRegion: "TN",
+      postalCode: "37363",
       addressCountry: "US",
     },
     foundingDate: "1999-11",
@@ -49,10 +51,11 @@
   }}
 />
 
-<header
+<div
   id="intro-header"
+  role="presentation"
   style="background-image: url({headerImgSrc});"
-></header>
+></div>
 
 <section>
   <div id="about">

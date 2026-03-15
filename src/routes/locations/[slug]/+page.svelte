@@ -23,6 +23,18 @@
         return days[new Date().getDay()];
     })();
 
+    function parseAddress(formatted: string) {
+        const parts = formatted.split(", ")
+        return {
+            "@type": "PostalAddress" as const,
+            streetAddress: parts[0] ?? "",
+            addressLocality: parts[1] ?? "",
+            addressRegion: parts[2]?.split(" ")[0] ?? "",
+            postalCode: parts[2]?.split(" ")[1] ?? "",
+            addressCountry: parts[3] ?? "US",
+        }
+    }
+
     onMount(async () => {
         // Hydrate with live data
         try {
@@ -71,10 +83,7 @@
         url: `https://europeanmarketus.com/locations/${data.slug}`,
         telephone: location.phoneNumber,
         email: location.emailAddress,
-        address: {
-            "@type": "PostalAddress",
-            streetAddress: location.address,
-        },
+        address: parseAddress(location.address),
         geo: location.coordinates?.latitude
             ? {
                   "@type": "GeoCoordinates",

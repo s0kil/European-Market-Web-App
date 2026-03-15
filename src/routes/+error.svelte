@@ -5,6 +5,7 @@
 
 <svelte:head>
   <title>{page.status} | European Market</title>
+  <meta name="robots" content="noindex" />
 </svelte:head>
 
 <section>

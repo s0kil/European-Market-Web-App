@@ -63,9 +63,9 @@
     >
         <input type="hidden" name="bot-field" />
 
-        {#if formStatus}
-            <p>{formStatus}</p>
-        {/if}
+        <p aria-live="polite" role="status">
+            {formStatus}
+        </p>
 
         <label for="person-name" class="sr-only">Name</label>
         <input
@@ -173,9 +173,9 @@
         background: #9a1915;
     }
 
-    form button:focus {
-        outline: none !important;
-        border: 1px #9a1915;
+    form button:focus-visible {
+        outline: 3px solid #9a1915;
+        outline-offset: 2px;
     }
 
     ::placeholder {

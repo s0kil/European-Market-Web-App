@@ -22,12 +22,29 @@
   }}
 />
 
-<main>
-  <Navigation />
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<Navigation />
+<main id="main-content">
   {@render children()}
 </main>
 
 <style>
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    z-index: 100;
+    padding: 0.5rem 1rem;
+    background: #fff;
+    color: #9a1915;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .skip-link:focus {
+    top: 0;
+  }
+
   :global(*),
   :global(*::before),
   :global(*::after) {
