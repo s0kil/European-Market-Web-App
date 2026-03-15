@@ -1,14 +1,10 @@
 .DS_Store
-/node_modules/
-/src/node_modules/@sapper/
-yarn-error.log
-/cypress/screenshots/
-/__sapper__/
+node_modules
+build
+.svelte-kit
+.netlify
+.env
+.env.*
+!.env.example
 *.log
 .idea
-# Local Netlify folder
-.netlify
-# SvelteKit
-.svelte-kit
-build
-functions
