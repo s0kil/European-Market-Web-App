@@ -8,7 +8,7 @@ environment = { NODE_VERSION = "22" }
 for = "/*"
 
 [headers.values]
-Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https://ik.imagekit.io https://api.mapbox.com data:; connect-src 'self' https://api.mapbox.com; font-src 'self'; form-action https:; frame-ancestors 'none'; base-uri 'self'"
+Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' https://ik.imagekit.io https://api.mapbox.com data:; connect-src 'self' https://api.mapbox.com https://cloudflareinsights.com; font-src 'self' data:; form-action https:; frame-ancestors 'none'; base-uri 'self'"
 Permissions-Policy = "accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), display-capture=(), document-domain=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), sync-xhr=(), usb=(), xr-spatial-tracking=()"
 Referrer-Policy = "no-referrer"
 Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
