@@ -1,36 +1,22 @@
 const SITE = "https://europeanmarketus.com"
-const LOCATIONS_API =
-  "https://danielsokil-esf-locations.builtwithdark.com/"
 
-const staticPages = ["/", "/contact", "/locations"]
+const pages = [
+  { path: "/", changefreq: "weekly", priority: "1.0" },
+  { path: "/contact", changefreq: "monthly", priority: "0.8" },
+  { path: "/locations", changefreq: "monthly", priority: "0.8" },
+  { path: "/locations/collegedale-tn", changefreq: "monthly", priority: "0.7" },
+  { path: "/locations/columbus-nc", changefreq: "monthly", priority: "0.7" },
+]
 
-interface Location {
-  pageSlug: string
-}
-
-export const GET = async ({ fetch }) => {
-  let locationPages: string[] = []
-
-  try {
-    const response = await fetch(LOCATIONS_API)
-    if (response.ok) {
-      const locations = (await response.json()) as Location[]
-      locationPages = locations.map((l) => `/locations/${l.pageSlug}`)
-    }
-  } catch {
-    // API unavailable — include only static pages
-  }
-
-  const allPages = [...staticPages, ...locationPages]
-
+export const GET = () => {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${allPages
+${pages
   .map(
-    (page) => `  <url>
-    <loc>${SITE}${page}</loc>
-    <changefreq>${page === "/" ? "weekly" : "monthly"}</changefreq>
-    <priority>${page === "/" ? "1.0" : page.startsWith("/locations/") && page !== "/locations" ? "0.7" : "0.8"}</priority>
+    (p) => `  <url>
+    <loc>${SITE}${p.path}</loc>
+    <changefreq>${p.changefreq}</changefreq>
+    <priority>${p.priority}</priority>
   </url>`,
   )
   .join("\n")}

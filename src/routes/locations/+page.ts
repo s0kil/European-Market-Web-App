@@ -1,6 +1,6 @@
 import type { PageLoad } from "./$types"
 
-const LOCATIONS_API = "https://danielsokil-esf-locations.builtwithdark.com/"
+const LOCATIONS_API = "/api/locations"
 
 interface Location {
   location: string

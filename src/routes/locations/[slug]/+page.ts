@@ -1,7 +1,7 @@
 import { error } from "@sveltejs/kit"
 import type { PageLoad } from "./$types"
 
-const LOCATIONS_API = "https://danielsokil-esf-locations.builtwithdark.com/"
+const LOCATIONS_API = "/api/locations"
 
 interface LocationDetail {
   location: string
@@ -17,7 +17,7 @@ interface LocationDetail {
 }
 
 export const load: PageLoad = async ({ params, fetch }) => {
-  const response = await fetch(`${LOCATIONS_API}${params.slug}`)
+  const response = await fetch(`${LOCATIONS_API}?slug=${params.slug}`)
 
   if (response.ok) {
     const location: LocationDetail = (await response.json()) as LocationDetail
