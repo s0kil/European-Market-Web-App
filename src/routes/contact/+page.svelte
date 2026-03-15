@@ -7,7 +7,7 @@
 
     let { data } = $props();
 
-    let backgroundImage = $state("");
+    let backgroundImage = $state(imageCDN("images/min/fresh-vegetables.jpg"));
 
     onMount(() => {
         backgroundImage = imageCDN(

@@ -7,7 +7,7 @@
 
   let { data } = $props()
 
-  let headerImgSrc = $state("")
+  let headerImgSrc = $state(imageCDN("images/min/european-meats.jpg"))
 
   onMount(() => {
     headerImgSrc = imageCDN(
