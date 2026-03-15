@@ -13,9 +13,15 @@ export async function submitForm(form: HTMLFormElement): Promise<Response> {
     data[key] = value.toString()
   }
 
-  return fetch("/", {
+  const response = await fetch("/", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: encode({ "form-name": "contact", ...data }),
   })
+
+  if (!response.ok) {
+    throw new Error(`Form submission failed: ${response.status}`)
+  }
+
+  return response
 }

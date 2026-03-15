@@ -67,22 +67,27 @@
             <p>{formStatus}</p>
         {/if}
 
+        <label for="person-name" class="sr-only">Name</label>
         <input
             required
             name="name"
             type="text"
             id="person-name"
             placeholder="Name"
+            autocomplete="name"
         />
 
+        <label for="person-email" class="sr-only">Email</label>
         <input
             required
             name="email"
             type="email"
             id="person-email"
             placeholder="Email"
+            autocomplete="email"
         />
 
+        <label for="person-message" class="sr-only">Message</label>
         <textarea
             required
             name="message"
@@ -95,6 +100,18 @@
 </section>
 
 <style>
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
     section {
         background-size: cover;
         background-repeat: no-repeat;

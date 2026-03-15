@@ -1,12 +1,20 @@
+import { LOCATIONS } from "$lib/data/locations"
+
 const SITE = "https://europeanmarketus.com"
 
-const pages = [
+const staticPages = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
   { path: "/contact", changefreq: "monthly", priority: "0.8" },
   { path: "/locations", changefreq: "monthly", priority: "0.8" },
-  { path: "/locations/collegedale-tn", changefreq: "monthly", priority: "0.7" },
-  { path: "/locations/columbus-nc", changefreq: "monthly", priority: "0.7" },
 ]
+
+const locationPages = LOCATIONS.map((l) => ({
+  path: `/locations/${l.pageSlug}`,
+  changefreq: "monthly",
+  priority: "0.7",
+}))
+
+const pages = [...staticPages, ...locationPages]
 
 export const prerender = true
 

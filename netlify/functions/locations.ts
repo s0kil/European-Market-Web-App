@@ -117,7 +117,7 @@ function toDetail(place: GooglePlace, config: StoreConfig): LocationDetail {
 
 const headers = {
   "Content-Type": "application/json",
-  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Origin": "https://europeanmarketus.com",
   "Cache-Control": `public, max-age=${CACHE_SECONDS}, s-maxage=${CACHE_SECONDS}`,
 }
 
