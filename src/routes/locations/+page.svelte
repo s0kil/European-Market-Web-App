@@ -1,10 +1,22 @@
 <script lang="ts">
+  import { MetaTags } from "svelte-meta-tags"
+
   let { data } = $props()
 </script>
 
-<svelte:head>
-  <title>Locations | European Market</title>
+<MetaTags
+  {...data.baseMetaTags}
+  title="Our Locations"
+  description="Find European Market store locations in the Chattanooga, TN area. View hours, addresses, and directions to our European grocery stores."
+  openGraph={{
+    ...data.baseMetaTags.openGraph,
+    title: "European Market Locations",
+    description:
+      "Find European Market store locations near you. European grocery products from 25+ countries.",
+  }}
+/>
 
+<svelte:head>
   <link href="https://api.mapbox.com" rel="dns-prefetch" />
   <link
     rel="preconnect"

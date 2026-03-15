@@ -1,5 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import { MetaTags, JsonLd } from "svelte-meta-tags";
     import { PUBLIC_MAPBOX_TOKEN } from "$env/static/public";
     import { tinyMap } from "$lib/tiny-map";
     import { saveData } from "$lib/utils/save-data";
@@ -39,9 +40,37 @@
     });
 </script>
 
-<svelte:head>
-    <title>{location.location} | European Market</title>
-</svelte:head>
+<MetaTags
+    {...data.baseMetaTags}
+    title={location.location}
+    description="European Market {location.location} — Hours, address, phone, and directions. European grocery products from 25+ countries."
+    openGraph={{
+        ...data.baseMetaTags.openGraph,
+        title: `European Market ${location.location}`,
+        description: `Visit European Market at ${location.address}. European grocery store with products from 25+ countries.`,
+    }}
+/>
+<JsonLd
+    schema={{
+        "@type": "GroceryStore",
+        name: `European Market ${location.location}`,
+        address: {
+            "@type": "PostalAddress",
+            streetAddress: location.address,
+        },
+        telephone: location.phoneNumber,
+        email: location.emailAddress,
+        openingHours: location.hoursOfOperation,
+        geo: location.coordinates?.latitude
+            ? {
+                  "@type": "GeoCoordinates",
+                  latitude: location.coordinates.latitude,
+                  longitude: location.coordinates.longitude,
+              }
+            : undefined,
+        url: `https://europeanmarketus.com/locations/${data.location ? "" : ""}`,
+    }}
+/>
 
 <section class="location">
     {#if location.status === "Coming Soon"}

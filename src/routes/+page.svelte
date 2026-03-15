@@ -1,8 +1,11 @@
 <script lang="ts">
   import { onMount } from "svelte"
+  import { MetaTags, JsonLd } from "svelte-meta-tags"
   import { imageCDN } from "$lib/utils/image"
   import { viewportHeight } from "$lib/utils/viewport"
   import Countries from "$lib/components/Countries.svelte"
+
+  let { data } = $props()
 
   let headerImgSrc = $state("")
 
@@ -14,9 +17,37 @@
   })
 </script>
 
-<svelte:head>
-  <title>Home | European Market</title>
-</svelte:head>
+<MetaTags
+  {...data.baseMetaTags}
+  title="Home"
+  description="European Market — Delicious & Nutritious Products From 25+ Different Countries. Homemade cabbage rolls, pierogies, bulochki, chebureki, blintzes and fresh German bread daily. Chattanooga, TN since 1999."
+  openGraph={{
+    ...data.baseMetaTags.openGraph,
+    title: "European Market — European Grocery Store in Chattanooga, TN",
+    description:
+      "Delicious & Nutritious Products From 25+ Different Countries including Armenia, Austria, Belarus, Bulgaria, England, France, Germany, Greece, Israel, Italy, Latvia, Moldova, Poland, Russia, Sweden, Switzerland, Turkey, and Ukraine.",
+  }}
+/>
+<JsonLd
+  schema={{
+    "@type": "GroceryStore",
+    name: "European Market",
+    url: "https://europeanmarketus.com",
+    logo: "https://europeanmarketus.com/images/logo/logo-sign.png",
+    image:
+      "https://ik.imagekit.io/esf/images/min/european-meats.jpg?tr=w-1200",
+    description:
+      "European grocery store in Chattanooga, TN offering products from 25+ countries since 1999. Homemade cabbage rolls, pierogies, bulochki, chebureki, blintzes and fresh German bread daily.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Chattanooga",
+      addressRegion: "TN",
+      addressCountry: "US",
+    },
+    foundingDate: "1999-11",
+    priceRange: "$$",
+  }}
+/>
 
 <header
   id="intro-header"

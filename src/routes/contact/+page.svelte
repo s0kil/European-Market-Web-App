@@ -1,8 +1,11 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import { MetaTags } from "svelte-meta-tags";
     import { imageCDN } from "$lib/utils/image";
     import { submitForm } from "$lib/utils/form";
     import { viewportHeight } from "$lib/utils/viewport";
+
+    let { data } = $props();
 
     let backgroundImage = $state("");
 
@@ -34,9 +37,17 @@
     }
 </script>
 
-<svelte:head>
-    <title>Contact | European Market</title>
-</svelte:head>
+<MetaTags
+    {...data.baseMetaTags}
+    title="Contact Us"
+    description="Contact European Market in Chattanooga, TN. Send us a message about our European grocery products, catering, or special orders."
+    openGraph={{
+        ...data.baseMetaTags.openGraph,
+        title: "Contact European Market",
+        description:
+            "Get in touch with European Market. We'd love to hear from you about our European grocery products.",
+    }}
+/>
 
 <section style="background-image: url({backgroundImage});">
     <form
